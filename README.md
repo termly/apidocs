@@ -1,5 +1,5 @@
-# external-api-docs
+# apidocs
 
-API documentation for the new external API
+API documentation for the new API
 
 
