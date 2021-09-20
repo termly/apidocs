@@ -6,4 +6,4 @@ Please see [here](security.md) for how to create the security elements required 
 
 # Endpoints
 
-* [Collaborators](collaborators.md)
+* [Collaborators](endpoints/collaborators.md)
