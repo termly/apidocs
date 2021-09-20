@@ -92,14 +92,13 @@ GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acc
 			"id": "col_2",
 			"account_id": "acct_1234",
 			"email": "collaborator2@example.com",
-			"first_name": "Collaborator",
-			"last_name": "Two",
 			"role": "editor",
 			"website_ids": [
 				"web_12",
 				"web_24",
 				"web_36"
-			]
+			],
+			"invitation_status": "pending"
 		}
 	],
 	"errors": [],
