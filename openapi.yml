@@ -5,7 +5,7 @@ info:
     Termly Public API
   version: v1
 servers:
-- url: https://api.termly.io/v1
+- url: https://api.termly.io/v3
 security:
 - apiKey: []
 paths:
@@ -74,11 +74,11 @@ paths:
                     description: email address of collaborator
                   role:
                     type: string
-                    description: role that the collaborotor has
+                    description: role that the collaborator has
                     enum: ['none', 'editor', 'admin', 'owner']
                   website_ids:
                     type: array
-                    description: ids of the websites that the role applies to (only required for the `editor` role)
+                    description: ids of the websites that the collaborator has access to (only required for the `editor` role)
                     items:
                       type: string
       responses:
@@ -101,6 +101,7 @@ paths:
                     - email: john@doe.com
                       id: col_123
                       role: editor
+                      invitation_URL: 'http://termly.io/invitation'
                       invitation_status: pending
                       account_id: acc_123
                       websites: [web_123, web_124]
@@ -138,11 +139,11 @@ paths:
                     description: ID of the collaborator to update
                   role:
                     type: string
-                    description: ids of the websites that the role applies to (only required for the `editor` role)
+                    description: role that the collaborator has (only required for the `editor` role)
                     enum: ['none', 'editor', 'admin', 'owner']
                   website_ids:
                     type: array
-                    description: ids of the websites that the role applies to
+                    description: ids of the websites that the collaborator has access to
                     items:
                       type: string
       responses:
@@ -259,7 +260,9 @@ paths:
                     account_id:
                       type: string
                     id:
-                      type: string
+                      type: array
+                      items:
+                        type: string
       responses:
         200:
           description: success
@@ -314,30 +317,25 @@ paths:
                   oneOf:
                     - allOf:
                       - $ref: '#/components/schemas/websiteResponse'  
-                      - $ref: '#components/schemas/_idx'
+                      - $ref: '#/components/schemas/_idx'
                     - $ref: '#/components/schemas/errorBody'
                     - $ref: '#/components/schemas/validationErrorBody'
               examples:
                 success:
                   value:
-                    - name: t2
+                    - name: termly
                       id: web_123
                       url: http://termly.io
-                      logo:
-                        url: null
                       uuid: 49a2570a-918c-4e2f-9417-952e2442369b
                       page_views: 0
-                      current_report_id: null
-                      current_report_updated_at: null
-                      next_report: null
+                      report:
+                        id: rep_124
+                        created_at: 2021-01-01 13:08
                       scan_period: trimonthly
                       subdomain: []
-                      scan_type: null
                       scan_status: null
-                      next_scan_date: null
                       cookie_count: null
                       unclassified_cookie_count: null
-                      new_cookie_count: null
                       company:
                         legal_name: Termly LLC
                         email: support@termly.io
@@ -350,11 +348,9 @@ paths:
                         country: USA
                       old_cookie_policy: null
                       consent_count: 0
-                      screenshot_url: null
                       code_snippet:
                         banner: "<script>\n  (function () {\n    var s = document.createElement('script');\n    s.type = 'text/javascript';\n    s.async = true;\n    s.src = 'http://localhost/embed.min.js';\n    s.id = '49a2570a-918c-4e2f-9417-952e2442369b';\n    s.setAttribute(\"data-name\", \"termly-embed-banner\");\n    var x = document.getElementsByTagName('script')[0];\n    x.parentNode.insertBefore(s, x);\n  })();\n</script>\n"
                         cookie_preference_button: "<button type=\"button\" style=\"background: white; width: 165px; height: 30px; border-radius: 3px; border: 1px solid #5f7d9c; font-family: Roboto, Arial; font-size: 10px; color: #5f7d9c; font-weight: 600; box-sizing: border-box; cursor: pointer; padding: 0; outline: none;\" onclick=\"displayPreferenceModal()\">Manage Cookie Preferences</button>\n"
-                      active_subscription: true
                       _idx: 1
                 object_not_found:
                   $ref: '#/components/examples/object_not_found'
@@ -406,15 +402,35 @@ paths:
               examples:
                 success:
                   value:
-                    - email: john@doe.com
-                      first_name: John
-                      id: col_123
-                      last_name: Doe
-                      role: editor
-                      invitation_status: pending
-                      account_id: acc_123
-                      websites: [web_123, web_124]
-                      _idx: 3
+                    - name: termly
+                      id: web_123
+                      url: http://termly.io
+                      uuid: 49a2570a-918c-4e2f-9417-952e2442369b
+                      page_views: 0
+                      report:
+                        id: rep_124
+                        created_at: 2021-01-01 13:08
+                      scan_period: trimonthly
+                      subdomain: []
+                      scan_status: null
+                      cookie_count: null
+                      unclassified_cookie_count: null
+                      company:
+                        legal_name: Termly LLC
+                        email: support@termly.io
+                        phone: 111-222-3333
+                        fax: 111-222-4444
+                        address: 1 Termly Way
+                        zip: 11111
+                        state: TE
+                        city: Termly
+                        country: USA
+                      old_cookie_policy: null
+                      consent_count: 0
+                      code_snippet:
+                        banner: "<script>\n  (function () {\n    var s = document.createElement('script');\n    s.type = 'text/javascript';\n    s.async = true;\n    s.src = 'http://localhost/embed.min.js';\n    s.id = '49a2570a-918c-4e2f-9417-952e2442369b';\n    s.setAttribute(\"data-name\", \"termly-embed-banner\");\n    var x = document.getElementsByTagName('script')[0];\n    x.parentNode.insertBefore(s, x);\n  })();\n</script>\n"
+                        cookie_preference_button: "<button type=\"button\" style=\"background: white; width: 165px; height: 30px; border-radius: 3px; border: 1px solid #5f7d9c; font-family: Roboto, Arial; font-size: 10px; color: #5f7d9c; font-weight: 600; box-sizing: border-box; cursor: pointer; padding: 0; outline: none;\" onclick=\"displayPreferenceModal()\">Manage Cookie Preferences</button>\n"
+                      _idx: 1
                 object_not_found:
                   $ref: '#/components/examples/object_not_found'
                 validation_error: 
@@ -442,8 +458,8 @@ paths:
                 properties:
                   account_id:
                     type: string
-                    description: ID of the account to retrieve the object from
-                  collaborator_id:
+                    description: ID of the account to delete the object from
+                  id:
                     type: string
                     description: ID of the website to delete
       responses:
@@ -474,7 +490,7 @@ paths:
               examples:
                 success:
                   value:
-                    - id: col_123
+                    - id: web_123
                       account_id: acc_123
                       _idx: 2
                 object_not_found:
@@ -550,7 +566,7 @@ paths:
                     properties:
                       account_id:
                         type: string
-                        description: ID of the account to retrieve the object from
+                        description: ID of the account to create the object for
                   - $ref: '#/components/schemas/customThemeRequest'
       responses:
         200:
@@ -608,10 +624,10 @@ paths:
                   properties:
                     account_id:
                       type: string
-                      description: ID of the account to retrieve the object from
+                      description: ID of the account to update the object on
                     website_id:
                       type: string
-                      description: ID of the website to retrieve the object from
+                      description: ID of the website to update the object on
                     id:
                       type: string
                       description: ID of the consent theme
@@ -669,10 +685,10 @@ paths:
                 properties:
                   account_id:
                     type: string
-                    description: ID of the account to retrieve the object from
+                    description: ID of the account to delete the object from
                   website_id:
                     type: string
-                    description: ID of the website to retrieve the object from
+                    description: ID of the website to delete the object from
                   id:
                     type: string
                     description: ID of the custom consent theme to delete
@@ -690,10 +706,10 @@ paths:
                         properties:
                           website_id:
                             type: string
-                            description: ID of the website to retrieve the object from
+                            description: ID of the website to delete the object from
                           account_id:
                             type: string
-                            description: ID of the account to retrieve the object from
+                            description: ID of the account to delete the object from
                           id:
                             type: string
                             description: ID of the consent theme to delete
@@ -803,10 +819,10 @@ paths:
                   properties:
                     account_id:
                       type: string
-                      description: ID of the account to retrieve the object from
+                      description: ID of the account to update the object for
                     website_id:
                       type: string
-                      description: ID of the website to retrieve the object from
+                      description: ID of the website to update the object for
                     id:
                       type: string
                       description: ID of the website to update
@@ -896,10 +912,10 @@ paths:
                         properties:
                           website_id:
                             type: string
-                            description: ID of the website to retrieve the object from
+                            description: ID of the website to delete the object from
                           account_id:
                             type: string
-                            description: ID of the account to retrieve the object from
+                            description: ID of the account to delete the object from
                           id:
                             type: string
                             description: ID of the cookie to delete
@@ -1090,29 +1106,14 @@ paths:
                           description: list of cookies
                           items:
                             $ref: '#/components/schemas/cookieResponse'
-                        scan_type:
-                          type: string
-                          description: type of scan perfomrned
-                        compliant_adequate_countries:
-                          type: boolean
-                          description: NOT SURE WHAT THIS MEANS
-                        compliant_disclose_cookie:
-                          type: boolean 
-                          description: NOT SURE WHAT THIS MEANS
                         scanned_domains:
                           type: array
                           description: list of domains scanned
                           items:
                             type: string
-                        screenshot_url:
-                          type: string
-                          description: screenshot taken durring the scan
                         detected_consent_banner:
                           type: boolean
                           description: true if the termly banner is detected on the site
-                        detected_cookie_category:
-                          type: boolean
-                          description: NOT SURE WHAT THIS MEANS
                         detected_cookie_preference:
                           type: boolean 
                           description: true if the cookie preference button is on the page
@@ -1554,12 +1555,6 @@ components:
         url:
           type: string
           description: url of the website
-        logo:
-          type: object
-          properties:
-            url:
-              type: string
-              description: URL of the website
         uuid:
           type: string
           description: UUID for snippets
@@ -1569,6 +1564,13 @@ components:
         scan_period:
           type: string
           description: period of scan
+        report: 
+          type: object
+          properties:
+            id: 
+              type: string
+            created_at:
+              type: string
         subdomains:
           type: array
           description: array of subdomains to scan
@@ -1578,9 +1580,6 @@ components:
           type: string
           description: latest scan status
           enum: ['scanning', 'success', 'error']
-        next_scan_date:
-          type: string
-          description: date of next scan
         cookie_count:
           type: integer
           description: total number of cookies found
@@ -1589,9 +1588,6 @@ components:
         unclassified_cookie_count:
           type: integer
           description: number of unclassified cookies
-        new_cookie_count:
-          type: integer
-          description: number of new cookies from the last scan
         company:
           type: object
           description: company information
@@ -1635,9 +1631,6 @@ components:
             cookie_preference_button:
               type: string
               description: Javascript snippet to install the preferences button on the website
-        active_subscription:
-          type: boolean
-          description: indicates if domain is currenly active in a subscription
     websiteRequest:
       type: object
       properties:
@@ -1716,6 +1709,9 @@ components:
         role:
           type: string
           description: collaborator's role
+        invitation_URL:
+          type: string
+          description: URL for collaborator to complete sign up
         invitation_status:
           type: string
           description: current status of invitation
