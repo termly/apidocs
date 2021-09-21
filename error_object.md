@@ -4,6 +4,29 @@ Documents all of the error formats and possible errors for the API endpoint to r
 
 # GET Errors
 
+When a GET request has an error it will be represented by an object in the `error` array with this shape:
+
+```JSON
+{
+  "error": "<string>",
+  "account_id": "<string>",
+  "id": "<string>"
+}
+```
+
+## Object not found
+
+Returned when the given `id` does not exist
+
+### Response
+
+```JSON
+{
+  "error": "object_not_found",
+  "account_id": "acct_123",
+  "id": "web_123"
+}
+```
 
 # POST PUT DELETE Errors
 

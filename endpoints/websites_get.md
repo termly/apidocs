@@ -96,7 +96,7 @@ The response will look like:
     * `cookie_preference_button` Javascript snippet to install the preferences button on the website
 
 
-`errors` will have 0 or more of the [error object](../error_object.md).
+`errors` will have 0 or more of the [error object](../error_object.md#get-errors).
 
 `paging` is an object that indicates if there are more results to retrieve. Please see [paging](../paging_object.md)
 
