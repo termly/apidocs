@@ -1,58 +1,46 @@
-# GET /domains/banners
+# Overview
 
-## Query
-
-### Parameters
-
-Array of objects, each object contains:
-
-- account_id: string
-- website_id: string
-
-### Example
-
-#### Sample JSON
+Retrieve all banners for the specified query. The query has the following JSON shape:
 
 ```json
 [
   {
-    "account_id": "ACCT1",
-    "website_id": "WEB1"
-  },
-  {
-    "account_id": "ACCT1",
-    "website_id": "WEB2"
-  },
-  {
-    "account_id": "ACCT2",
-    "website_id": "WEB3"
+    "account_id": "<string>",
+    "website_id": "<string>"
   }
 ]
 ```
-#### Sample URI
 
-`/api/v3/domains/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22ACCT1%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22WEB1%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22ACCT1%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22WEB2%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22ACCT2%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22WEB3%22%0A%20%20%7D%0A%5D%0A`
+At least 1 object with the field account_id is required. Once the query is constructed, pass the URL encoded value in the query string parameter `query`.
 
-## Response
+The response has the following shape:
 
-### Success
+```json
+{
+	"results": [],
+	"errors": [],
+	"paging": {}
+}
+```
+
+The results will contain 0 or more of the following objects:
 
 ```json
 {
   "results": [
     {
-      "id": "string",
-      "display_style": "banner",
-      "position": "bottom",
-      "theme_color": "blue",
+      "account_id": "string",
       "auto_accept_on_scroll": true,
       "display_consent_banner_by_region": true,
-      "show_cookie_preference": true,
+      "display_style": "banner",
+      "id": "string",
       "personalized_content": true,
+      "position": "bottom",
       "running_targeted_advertising": true,
       "share_data_to_3rd_party": true,
+      "show_cookie_preference": true,
+      "theme_color": "blue",
       "website_id": "string",
-      "account_id": "string"
     }
   ],
   "errors": [
@@ -72,50 +60,235 @@ Array of objects, each object contains:
     "total_pages": 0
   }
 }
+
+```
+- `account_id` is the unique identifier of the account
+- `auto_accept_on_scroll` is a user scrolling accepted as consent?
+- `display_consent_banner_by_region` are there User region-specific settings?
+- `display_style` is the Banner display style
+- `id` is the unique identifier of the banner
+- `personalized_content` does the website have content personalized for the user?
+- `position` is the position of the Banner
+- `running_targeted_advertising` are there targeted advertisements on the website?
+- `share_data_to_3rd_party` does the Website share data with third parties?
+- `show_cookie_preference` show the Cookie Preference Button in the banner?
+- `theme_color` is the color of the theme
+- `website_id` is the unique identifier of the website
+
+# Example 1
+
+Request for the banner on a single website.
+
+## Request
+
+`/api/v3/domains/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%0A%5D%0A`
+
+## Query
+
+```json
+[
+  {
+    "account_id": "account_1234",
+    "website_id": "website_1234"
+  }
+]
 ```
 
-### Error
-
-#### 400
-
-Bulk request exceeded limits. error: too_many_items
+## Response
 
 ```json
 {
-  "error": "string",
-  "_idx": "string"
+  "results": [
+    {
+      "account_id": "account_1234",
+      "auto_accept_on_scroll": true,
+      "display_consent_banner_by_region": true,
+      "display_style": "banner",
+      "id": "banner_1234",
+      "personalized_content": true,
+      "position": "bottom",
+      "running_targeted_advertising": true,
+      "share_data_to_3rd_party": true,
+      "show_cookie_preference": true,
+      "theme_color": "blue",
+      "website_id": "website_1234"
+    }
+  ],
+  "errors": [],
+  "paging": {
+    "count": 1,
+    "current_page": 1,
+    "next_page": null,
+    "previous_page": null,
+    "per_page": 25,
+    "total_count": 1,
+    "total_pages": 1
+  }
 }
 ```
 
-#### 401
+# Example 2
 
-API Key is not correct or has been disabled. error: unauthorized
+Request banners for multiple websites on the same account.
+
+## Request
+
+`/api/v3/domains/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_5678%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_2112%22%0A%20%20%7D%0A%5D`
+
+## Query
+
+```json
+[
+  {
+    "account_id": "account_1234",
+    "website_id": "website_1234"
+  },
+  {
+    "account_id": "account_1234",
+    "website_id": "website_5678"
+  },
+  {
+    "account_id": "account_1234",
+    "website_id": "website_2112"
+  }
+]
+```
+
+## Response
 
 ```json
 {
-  "error": "string",
-  "_idx": "string"
+  "results": [
+    {
+      "account_id": "account_1234",
+      "auto_accept_on_scroll": false,
+      "display_consent_banner_by_region": true,
+      "display_style": "banner",
+      "id": "banner_1234",
+      "personalized_content": true,
+      "position": "bottom",
+      "running_targeted_advertising": true,
+      "share_data_to_3rd_party": true,
+      "show_cookie_preference": true,
+      "theme_color": "blue",
+      "website_id": "website_1234"
+    },
+    {
+      "account_id": "account_1234",
+      "auto_accept_on_scroll": true,
+      "display_consent_banner_by_region": true,
+      "display_style": "banner",
+      "id": "banner_5678",
+      "personalized_content": true,
+      "position": "bottom",
+      "running_targeted_advertising": true,
+      "share_data_to_3rd_party": true,
+      "show_cookie_preference": true,
+      "theme_color": "blue",
+      "website_id": "website_5678"
+    },
+    {
+      "account_id": "account_1234",
+      "auto_accept_on_scroll": false,
+      "display_consent_banner_by_region": true,
+      "display_style": "banner",
+      "id": "banner_2112",
+      "personalized_content": true,
+      "position": "bottom",
+      "running_targeted_advertising": true,
+      "share_data_to_3rd_party": true,
+      "show_cookie_preference": true,
+      "theme_color": "blue",
+      "website_id": "website_2112"
+    }
+  ],
+  "errors": [],
+  "paging": {
+    "count": 3,
+    "current_page": 1,
+    "next_page": null,
+    "previous_page": null,
+    "per_page": 25,
+    "total_count": 3,
+    "total_pages": 1
+  }
 }
 ```
 
-#### 403
 
-API Key is correct but the API key does not have permission to perform the requested action on 1 or more of the items in the request. error: forbidden
+# Example 3
+
+## Request
+
+`/api/v3/domains/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_5678%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_2020%22%0A%20%20%7D%0A%5D`
+
+## Query
 
 ```json
-{
-  "error": "string",
-  "_idx": "string"
-}
+[
+  {
+    "account_id": "account_1234",
+    "website_id": "website_1234"
+  },
+  {
+    "account_id": "account_1234",
+    "website_id": "website_5678"
+  },
+  {
+    "account_id": "account_1234",
+    "website_id": "website_2020"
+  }
+]
 ```
 
-#### 500
-
-An unexpected error was encountered. error: server_error
+## Response
 
 ```json
 {
-  "error": "string",
-  "_idx": "string"
+  "results": [
+    {
+      "account_id": "account_1234",
+      "auto_accept_on_scroll": false,
+      "display_consent_banner_by_region": true,
+      "display_style": "banner",
+      "id": "banner_1234",
+      "personalized_content": true,
+      "position": "bottom",
+      "running_targeted_advertising": true,
+      "share_data_to_3rd_party": true,
+      "show_cookie_preference": true,
+      "theme_color": "blue",
+      "website_id": "website_1234"
+    },
+    {
+      "account_id": "account_1234",
+      "auto_accept_on_scroll": true,
+      "display_consent_banner_by_region": true,
+      "display_style": "banner",
+      "id": "banner_5678",
+      "personalized_content": true,
+      "position": "bottom",
+      "running_targeted_advertising": true,
+      "share_data_to_3rd_party": true,
+      "show_cookie_preference": true,
+      "theme_color": "blue",
+      "website_id": "website_5678"
+    }
+  ],
+  "errors": [
+    {
+      "error": "object_not_found",
+      "id": "website_2020"
+    }  
+  ],
+  "paging": {
+    "count": 2,
+    "current_page": 1,
+    "next_page": null,
+    "previous_page": null,
+    "per_page": 25,
+    "total_count": 2,
+    "total_pages": 1
+  }
 }
 ```
