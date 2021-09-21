@@ -27,9 +27,9 @@ Create new websites in the given account. The request body will be JSON:
 ]
 ```
 
-The body must have 1 or more of these objects.  Once created the JSON must be passed as the request body
+The body must have 1 or more of these objects.  Once created, the JSON must be passed as the request body.
 
-The response is an arry of successful response objects or a [failure object](../error_object.md):
+The response is an array of successful response objects or a [failure object](../error_object.md):
 
 ```JSON
 [
@@ -73,7 +73,7 @@ Each object can represent either a success or a failure. A success response is a
   "code_snippet": {
     "banner": "<string>",
     "cookie_preference_button": "<string>"
-  }
+  },
   "_idx": "<string>"
 }
 ```
@@ -86,6 +86,7 @@ If the entire request is in error or invalid the result JSON will be [error obje
 # Example 1
 
 Request to create a single website
+
 ## Request
 
 ```
@@ -164,7 +165,7 @@ POST https://api.termly.io/v1/websites
 
 # Example 2
 
-submit multiple websites one of which has a validation error
+Submit multiple websites one of which has a validation error
 
 ## Request
 

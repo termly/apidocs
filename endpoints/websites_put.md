@@ -28,7 +28,7 @@ Update an existing websites in the given account. The request body will be JSON:
 ]
 ```
 
-The body must have 1 or more of these objects. Any attributes not passed in will not be changed.  Once created the JSON must be passed as the request body
+The body must have 1 or more of these objects. Any attributes not passed in will not be changed.  Once created, the JSON must be passed as the request body
 
 The response is an arry of successful response objects or a [failure object](../error_object.md):
 
@@ -74,19 +74,20 @@ Each object can represent either a success or a failure. A success response is a
   "code_snippet": {
     "banner": "<string>",
     "cookie_preference_button": "<string>"
-  }
+  },
   "_idx": "<string>"
 }
 ```
 
 An error response is detailed in [error object](../error_object.md#delete-PUT-put-error-object)
 
-If the entire request is in error or invalid the result JSON will be [error object](../error_object.md#universal-errors)
+If the entire request is in error or invalid, the result JSON will be [error object](../error_object.md#universal-errors)
 
 
 # Example 1
 
 Request to update a single website
+
 ## Request
 
 ```
@@ -166,7 +167,7 @@ PUT https://api.termly.io/v1/websites
 
 # Example 2
 
-submit multiple websites one of which does not exist
+Submit multiple websites, one of which does not exist.
 
 ## Request
 

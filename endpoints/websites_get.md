@@ -72,11 +72,11 @@ The response will look like:
 * `url` url of the website including http protocol
 * `uuid` unique identifier used by the `code snippets` to identify the website
 * `page_views` number of page views that this site has had with the termly banner installed
-* `scan_period` howe often the website will be scanned
+* `scan_period` how often the website will be scanned (on of `weekly`, `monthly`, `trimonthly`)
 * `report` object describing the latest scan results
   * `id` unique identifier for the report
   * `created_at` timestamp of when the report was created
-* `subdomains` an array of subdomains that the scanner should scan as ell
+* `subdomains` an array of subdomains that the scanner will scan as well
   * items should be strings
 * `cookie_count` total number of cookies found
 * `cookie_policy_document_id` unique identifier of the cookie policy document 
@@ -176,7 +176,7 @@ GET https://api.termly.io/v1/websites?query=%5B%7B%22account_id%22%3A%20%22acct_
 
 # Example 2
 
-multiple accounts and websites in each account and one website cannot be found
+Multiple accounts and websites in each account and one website cannot be found
 
 ## Request
 
