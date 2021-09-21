@@ -2,7 +2,7 @@
 
 Documents all of the error formats and possible errors for the API endpoint to return.
 
-# Get Errors
+# GET Errors
 
 
 # POST PUT DELETE Errors
@@ -63,7 +63,7 @@ Returned when the requested change is not valid
 
 # Universal Errors
 
-Universal errors accour when the entire request is in error or unrecoverable. The JSON is formed as shown:
+Universal errors are raised when the entire request is in error or unrecoverable. The JSON is formed as shown:
 
 ```JSON
 {
@@ -73,7 +73,7 @@ Universal errors accour when the entire request is in error or unrecoverable. Th
 
 `error` code to identify the returned error
 
-## To Many Items
+## Too Many Items
 
 Returned when the bulk request has to many request objects. The current limit is 5 requests for POST/PUT/DELETE and 10 for GET.  
 
@@ -81,11 +81,11 @@ Returned when the bulk request has to many request objects. The current limit is
 
 ```JSON
 {
-  "error": "to_many_items"
+  "error": "too_many_items"
 }
 ```
 
-## In correct API key
+## Incorrect API key
 
 THe API key that was given does not exist or has been disabled.  
 

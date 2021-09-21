@@ -14,7 +14,7 @@ Retrieve all or some of the websites in an account for the specified query.  The
 ```
 
 
-at least 1 object with an `account_id` must be provided.  If you would like to retrieve all of the websites in an account omit the `ids` parameter.  Once constructed the must be URL encoded and be the value for the `query` parameter.
+At least 1 object with an `account_id` must be provided.  If you would like to retrieve all of the websites in an account omit the `ids` parameter.  if `ids` is sent it must have 1 or more items. Once constructed the object must be URL encoded and be the value for the `query` parameter.
 
 The response will look like:
 
@@ -26,7 +26,7 @@ The response will look like:
 }
 ```
 
-`results` will be 0 or more of this object:
+`results` will be 0 or more objects with this shape:
 
 ```JSON
 {

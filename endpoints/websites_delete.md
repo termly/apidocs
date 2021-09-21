@@ -14,7 +14,7 @@ Delete an existing website from an account.  The request parameters are passed i
 
 The body must have 1 or more request objects and will respond with the same number of success or [error objects](../error_object.md#post-put-delete-error-object). 
 
-If the entire request is in error or invalid the result JSON will be [error object](../error_object.md#universal-errors)
+If the entire request is in error or invalid, the result JSON will be an [error object](../error_object.md#universal-errors)
 
 
 # Example 1
