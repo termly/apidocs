@@ -6,6 +6,6 @@ Please see [here](security.md) for how to create the security elements required 
 
 # Endpoints
 
-* [Collaborators](endpoints/collaborators.md)
 * [Banners](endpoints/banners.md)
+* [Collaborators](endpoints/collaborators.md)
 * [Scan Report](endpoints/scan_report.md)
