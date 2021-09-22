@@ -29,59 +29,59 @@ The results will contain zero or more of the following objects:
 {
   "results": [
     {
-      "account_id": "string",
-      "compliant_adequate_countries": "bool",
-      "compliant_disclose_cookie": "bool",
+      "account_id": "<string>",
+      "compliant_adequate_countries": "<bool>",
+      "compliant_disclose_cookie": "<bool>",
       "cookies": [
         {
-          "category": "string",
-          "country": "string",
-          "domain": "string",
-          "de": "string",
-          "en_uk": "string",
-          "en_us": "string",
-          "expire": "string",
-          "fr": "string",
-          "id": "string",
-          "initiator": "string",
-          "name": "string",
-          "new": "bool",
-          "party_provider_type": "string",
-          "service": "string",
-          "service_policy_link": "string",
-          "source": "string",
-          "tracker_type": "string",
-          "url": "string",
-          "value": "string",
-          "website_id": "string"
+          "category": "<string>",
+          "country": "<string>",
+          "domain": "<string>",
+          "de": "<string>",
+          "en_uk": "<string>",
+          "en_us": "<string>",
+          "expire": "<string>",
+          "fr": "<string>",
+          "id": "<string>",
+          "initiator": "<string>",
+          "name": "<string>",
+          "new": "<bool>",
+          "party_provider_type": "<string>",
+          "service": "<string>",
+          "service_policy_link": "<string>",
+          "source": "<string>",
+          "tracker_type": "<string>",
+          "url": "<string>",
+          "value": "<string>",
+          "website_id": "<string>"
         }
       ],
-      "detected_consent_banner": "bool",
-      "detected_cookie_category": "bool",
-      "detected_cookie_preference": "bool",
-      "pages": "string",
-      "scan_failure_message": "string",
-      "scan_type": "string",
+      "detected_consent_banner": "<bool>",
+      "detected_cookie_category": "<bool>",
+      "detected_cookie_preference": "<bool>",
+      "pages": "<string>",
+      "scan_failure_message": "<string>",
+      "scan_type": "<string>",
       "scanned_domains": [
-        "string"
+        "<string>"
       ],
-      "screenshot_url": "string",
-      "status": "string",
-      "website_id": "string"
+      "screenshot_url": "<string>",
+      "status": "<string>",
+      "website_id": "<string>"
     }
   ],
   "errors": [
     {
-      "account_id": "string",
-      "error": "string",
-      "website_id": "string"
+      "account_id": "<string>",
+      "error": "<string>",
+      "website_id": "<string>"
     }
   ],
   "paging": {
     "count": 0,
     "current_page": 0,
-    "next_page": "string",
-    "previous_page": "string",
+    "next_page": "<string>",
+    "previous_page": "<string>",
     "per_page": 0,
     "total_count": 0,
     "total_pages": 0
