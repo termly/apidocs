@@ -1,6 +1,6 @@
 # Overview
 
-Creates cookies. The body has the following shape:
+Creates cookies. The requst body has the following shape:
 
 ```json
 {
@@ -48,7 +48,7 @@ Creates cookies. The body has the following shape:
 - `value` is the cookie value
 - `website_id` is the unique identifier of the website
 
-At least 1 object with the field account_id and website_id is required. Once the query is constructed, pass the URL encoded value in the query string parameter `query`.
+At least 1 object with the field account_id and website_id is required.
 
 The response has the following shape:
 

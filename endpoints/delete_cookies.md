@@ -1,6 +1,6 @@
 # Overview
 
-Deletes cookies. The query has the following shape:
+Deletes cookies. The request body has the following shape:
 
 ```json
 [
@@ -16,7 +16,7 @@ Deletes cookies. The query has the following shape:
 - `id` is the unique identifier of the cookie
 - `website_id` is the unique identifier of the website
 
-At least 1 object with the field account_id and website_id is required. Once the query is constructed, pass the URL encoded value in the query string parameter `query`.
+At least 1 object with the field account_id and website_id is required.
 
 The response has the following shape:
 
