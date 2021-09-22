@@ -14,7 +14,7 @@ Retrieve all or some of the websites in an account for the specified query.  The
 ```
 
 
-At least 1 object with an `account_id` must be provided.  If you would like to retrieve all of the websites in an account omit the `ids` parameter.  if `ids` is sent it must have 1 or more items. Once constructed the object must be URL encoded and be the value for the `query` parameter.
+At least 1 object with an `account_id` must be provided.  If you would like to retrieve all of the websites in an account omit the `ids` parameter.  If `ids` is sent it must have 1 or more items. Once constructed the object must be URL encoded and be the value for the `query` parameter.
 
 The response will look like:
 
@@ -28,14 +28,13 @@ The response will look like:
 
 `results` will be 0 or more objects with this shape:
 
-```JSON
+```
 {
   "account_id": "<string>",
   "id": "<string>",
   "name": "<string>",
   "url": "<string>",
-  "uuid": "<string>",
-  "page_views": "<integer>",
+  "page_views": <integer>,
   "scan_period": "<string>",
   "report": {
     "id": "<string>",
@@ -44,9 +43,9 @@ The response will look like:
   "subdomains": [
     "<string>"
   ],
-  "cookie_count": "<integer>",
+  "cookie_count": <integer>,
   "cookie_policy_document_id": "<string>",
-  "unclassified_cookie_count": "<integer>",
+  "unclassified_cookie_count": <integer>,
   "company": {
     "legal_name": "<string>",
     "email": "<string>",
@@ -58,7 +57,7 @@ The response will look like:
     "city": "<string>",
     "country": "<string>"
   },
-  "consent_count": "<integer>",
+  "consent_count": <integer>,
   "code_snippet": {
     "banner": "<string>",
     "cookie_preference_button": "<string>"
@@ -70,14 +69,13 @@ The response will look like:
 * `id` unique identifier of the website
 * `name` name of the website
 * `url` url of the website including http protocol
-* `uuid` unique identifier used by the `code snippets` to identify the website
 * `page_views` number of page views that this site has had with the termly banner installed
 * `scan_period` how often the website will be scanned (on of `weekly`, `monthly`, `trimonthly`)
 * `report` object describing the latest scan results
   * `id` unique identifier for the report
   * `created_at` timestamp of when the report was created
 * `subdomains` an array of subdomains that the scanner will scan as well
-  * items should be strings
+  * items are strings
 * `cookie_count` total number of cookies found
 * `cookie_policy_document_id` unique identifier of the cookie policy document 
 * `company` object containing all the company related information
@@ -91,9 +89,9 @@ The response will look like:
   * `city` city
   * `country` country
 * `consent_count` number of users who have consented to cookies
-* `code_snippet` object that contains Javascript snippets to install termly on the website
-    * `banner` Javascript snippet to install the banner on the website
-    * `cookie_preference_button` Javascript snippet to install the preferences button on the website
+* `code_snippet` object that contains JavaScript snippets to install termly on the website
+    * `banner` JavaScript snippet to install the banner on the website
+    * `cookie_preference_button` JavaScript snippet to install the preferences button on the website
 
 
 `errors` will have 0 or more of the [error object](../error_object.md#get-errors).
@@ -130,7 +128,6 @@ GET https://api.termly.io/v1/websites?query=%5B%7B%22account_id%22%3A%20%22acct_
       "id": "web_123",
       "name": "termly",
       "url": "https://termly.io",
-      "uuid": "85b7c541-50b6-400f-9a63-c91912442421",
       "page_views": 0,
       "scan_period": "trimonthly",
       "report": {
@@ -210,7 +207,6 @@ GET https://api.termly.io/v1/websites?query=%5B%20%7B%20%22account_id%22%3A%20%2
       "id": "web_123",
       "name": "termly",
       "url": "https://termly.io",
-      "uuid": "85b7c541-50b6-400f-9a63-c91912442421",
       "page_views": 0,
       "scan_period": "trimonthly",
       "report": {
@@ -245,7 +241,6 @@ GET https://api.termly.io/v1/websites?query=%5B%20%7B%20%22account_id%22%3A%20%2
       "id": "web_13",
       "name": "termly 2",
       "url": "https://termly.io",
-      "uuid": "85b7c541-50b6-400f-9a63-c91912442421",
       "page_views": 0,
       "scan_period": "trimonthly",
       "report": {

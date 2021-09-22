@@ -29,56 +29,54 @@ Create new websites in the given account. The request body will be JSON:
 
 The body must have 1 or more of these objects.  Once created, the JSON must be passed as the request body.
 
-The response is an array of successful response objects or a [failure object](../error_object.md):
+The response is an array of success or error response objects with this shape:
 
-```JSON
+
+
+or a [failure object](../error_object.md):
+
+```
 [
-  {}
+  {
+    "account_id": "<string>",
+    "id": "<string>",
+    "name": "<string>",
+    "url": "<string>",
+    "uuid": "<string>",
+    "page_views": "<integer>",
+    "scan_period": "<string>",
+    "report": {
+      "id": "<string>",
+      "created_at": "<string>"
+    },
+    "subdomains": [
+      "<string>"
+    ],
+    "cookie_count": "<integer>",
+    "cookie_policy_document_id": "<string>",
+    "unclassified_cookie_count": "<integer>",
+    "company": {
+      "legal_name": "<string>",
+      "email": "<string>",
+      "phone": "<string>",
+      "fax": "<string>",
+      "address": "<string>",
+      "zip": "<string>",
+      "state": "<string>",
+      "city": "<string>",
+      "country": "<string>"
+    },
+    "consent_count": "<integer>",
+    "code_snippet": {
+      "banner": "<string>",
+      "cookie_preference_button": "<string>"
+    },
+    "_idx": "<string>"
+  }
 ]
 ```
 
-Each object can represent either a success or a failure. A success response is a JSON object like this:
-
-```JSON
-{
-  "account_id": "<string>",
-  "id": "<string>",
-  "name": "<string>",
-  "url": "<string>",
-  "uuid": "<string>",
-  "page_views": "<integer>",
-  "scan_period": "<string>",
-  "report": {
-    "id": "<string>",
-    "created_at": "<string>"
-  },
-  "subdomains": [
-    "<string>"
-  ],
-  "cookie_count": "<integer>",
-  "cookie_policy_document_id": "<string>",
-  "unclassified_cookie_count": "<integer>",
-  "company": {
-    "legal_name": "<string>",
-    "email": "<string>",
-    "phone": "<string>",
-    "fax": "<string>",
-    "address": "<string>",
-    "zip": "<string>",
-    "state": "<string>",
-    "city": "<string>",
-    "country": "<string>"
-  },
-  "consent_count": "<integer>",
-  "code_snippet": {
-    "banner": "<string>",
-    "cookie_preference_button": "<string>"
-  },
-  "_idx": "<string>"
-}
-```
-
-An error response is detailed in [error object](../error_object.md#post-put-delete-error-object)
+The shape of an error object is described [here](../error_object.md#post-put-delete-error-object).
 
 If the entire request is in error or invalid the result JSON will be [error object](../error_object.md#universal-errors)
 

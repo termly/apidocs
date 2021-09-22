@@ -7,7 +7,8 @@ Please see [here](security.md) for how to create the security elements required 
 
 # General
 
-* Attributes that start with `_` are meta attributes that are not related to the action the API is performing
+Attributes that start with `_` are meta attributes that are not related to the action the API is performing
+
 * `_idx` refers to the index of the request that this response relates to.
 
 # Endpoints

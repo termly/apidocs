@@ -30,53 +30,47 @@ Update an existing websites in the given account. The request body will be JSON:
 
 The body must have 1 or more of these objects. Any attributes not passed in will not be changed.  Once created, the JSON must be passed as the request body
 
-The response is an array of successful response objects or a [failure object](../error_object.md):
+The response is an array of success or error response objects
 
-```JSON
-[
-  {}
-]
 ```
-
-Each object can represent either a success or a failure. A success response is a JSON object like this:
-
-```JSON
-{
-  "account_id": "<string>",
-  "id": "<string>",
-  "name": "<string>",
-  "url": "<string>",
-  "uuid": "<string>",
-  "page_views": "<integer>",
-  "scan_period": "<string>",
-  "report": {
+[
+  {
+    "account_id": "<string>",
     "id": "<string>",
-    "created_at": "<string>"
-  },
-  "subdomains": [
-    "<string>"
-  ],
-  "cookie_count": "<integer>",
-  "cookie_policy_document_id": "<string>",
-  "unclassified_cookie_count": "<integer>",
-  "company": {
-    "legal_name": "<string>",
-    "email": "<string>",
-    "phone": "<string>",
-    "fax": "<string>",
-    "address": "<string>",
-    "zip": "<string>",
-    "state": "<string>",
-    "city": "<string>",
-    "country": "<string>"
-  },
-  "consent_count": "<integer>",
-  "code_snippet": {
-    "banner": "<string>",
-    "cookie_preference_button": "<string>"
-  },
-  "_idx": "<string>"
-}
+    "name": "<string>",
+    "url": "<string>",
+    "uuid": "<string>",
+    "page_views": "<integer>",
+    "scan_period": "<string>",
+    "report": {
+      "id": "<string>",
+      "created_at": "<string>"
+    },
+    "subdomains": [
+      "<string>"
+    ],
+    "cookie_count": "<integer>",
+    "cookie_policy_document_id": "<string>",
+    "unclassified_cookie_count": "<integer>",
+    "company": {
+      "legal_name": "<string>",
+      "email": "<string>",
+      "phone": "<string>",
+      "fax": "<string>",
+      "address": "<string>",
+      "zip": "<string>",
+      "state": "<string>",
+      "city": "<string>",
+      "country": "<string>"
+    },
+    "consent_count": "<integer>",
+    "code_snippet": {
+      "banner": "<string>",
+      "cookie_preference_button": "<string>"
+    },
+    "_idx": "<string>"
+  }
+]
 ```
 
 An error response is detailed in [error object](../error_object.md#delete-PUT-put-error-object)

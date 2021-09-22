@@ -16,9 +16,8 @@ When a GET request has an error it will be represented by an object in the `erro
 
 ## Object not found
 
-Returned when the given `id` does not exist
+Returned when the given `id` does not exist:
 
-### Response
 
 ```JSON
 {
@@ -39,7 +38,7 @@ This type of error is returned when the request that made it was in error. This 
   "validation_errors": [
     {
       "field": "<string>",
-      "message": "<string>",
+      "error": "<string>",
     }
   ]
 
@@ -48,15 +47,13 @@ This type of error is returned when the request that made it was in error. This 
 
 * `error` code to identify the returned error
 * `_idx` indexed of the object in the request array that raised this error
-* `validation_errors` array of validation errors, only returned when code is **validation_error**
-  * `field` the attribute of the object that caused this validation failure. If the validation failure is general to the object this will be **object**
-  * `message` description of the validation error
+* `validation_errors` array of validation errors, only returned when code is `"validation_errors"`
+  * `field` the attribute of the object that caused this validation failure. If the validation failure is general to the object this will be `"object"`
+  * `error` validation error code f
 
 ## Object not found
 
 Returned when the requested object cannot be found
-
-### Response
 
 ```JSON
 {
@@ -69,16 +66,14 @@ Returned when the requested object cannot be found
 
 Returned when the requested change is not valid
 
-### Response
-
 ```JSON
 {
-  "error": "invalid",
+  "error": "validation_errors",
   "_idx": 2,
   "validation_errors": [
     {
       "field": "email",
-      "message": "must be unique"
+      "error": "must_be_unique"
     }
   ]
 }
@@ -100,8 +95,6 @@ Universal errors are raised when the entire request is in error or unrecoverable
 
 Returned when the bulk request has to many request objects. The current limit is 5 requests for POST/PUT/DELETE and 10 for GET.  
 
-### Response
-
 ```JSON
 {
   "error": "too_many_items"
@@ -112,8 +105,6 @@ Returned when the bulk request has to many request objects. The current limit is
 
 THe API key that was given does not exist or has been disabled.  
 
-### Response
-
 ```JSON
 {
   "error": "unauthorized"
@@ -123,9 +114,7 @@ THe API key that was given does not exist or has been disabled.
 
 ## Not authorized
 
-The API key does not have the correct role to complete 1 or more of the requested actions. Even if some of the requests would have been successful if 1 of the requests is not authorized the entire request will fail.
-
-### Response
+The API key does not have the correct role to complete one or more of the requested actions. Even if some of the requests would have been successful if one of the requests is not authorized the entire request will fail.
 
 ```JSON
 {
