@@ -1,6 +1,6 @@
 # Overview
 
-Retrieve the latest scan for the website. The query has the following JSON shape:
+Retrieve the latest scan for the website. The query has the following shape:
 
 ```json
 [
@@ -135,7 +135,7 @@ Request scan_report for a single website.
 
 ## Request
 
-`/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%0A%5D`
+GET `/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%0A%5D`
 
 ## Query
 
@@ -212,7 +212,7 @@ Request scan_report for a single website.
 
 ## Request
 
-`/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_4567%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_2112%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1029%22%0A%20%20%7D%0A%5D%0A`
+GET `/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_4567%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_2112%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1029%22%0A%20%20%7D%0A%5D%0A`
 
 Request scan_report for multiple websites.
 
@@ -383,7 +383,7 @@ Request scan_report for multiple websites. One website does not exist.
 
 ## Request
 
-`/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_4567%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_2112%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_9876%22%0A%20%20%7D%0A%5D`
+GET `/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_4567%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_2112%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_9876%22%0A%20%20%7D%0A%5D`
 
 ## Query
 

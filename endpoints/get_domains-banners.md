@@ -1,6 +1,6 @@
 # Overview
 
-Retrieve all banners for the specified query. The query has the following JSON shape:
+Retrieve all banners for the specified query. The query has the following shape:
 
 ```json
 [
@@ -60,7 +60,6 @@ The results will contain zero or more of the following objects:
     "total_pages": 0
   }
 }
-
 ```
 
 - `account_id` is the unique identifier of the account
@@ -82,7 +81,7 @@ Request banner for a single website.
 
 ## Request
 
-`/api/v3/domains/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%0A%5D%0A`
+GET `/api/v3/domains/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%0A%5D%0A`
 
 ## Query
 
@@ -134,7 +133,7 @@ Request banners for multiple websites on the same account.
 
 ## Request
 
-`/api/v3/domains/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_5678%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_2112%22%0A%20%20%7D%0A%5D`
+GET `/api/v3/domains/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_5678%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_2112%22%0A%20%20%7D%0A%5D`
 
 ## Query
 
@@ -223,7 +222,7 @@ Request banners for multiple websites. One website does not exist.
 
 ## Request
 
-`/api/v3/domains/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_5678%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_2020%22%0A%20%20%7D%0A%5D`
+GET `/api/v3/domains/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_5678%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_2020%22%0A%20%20%7D%0A%5D`
 
 ## Query
 
