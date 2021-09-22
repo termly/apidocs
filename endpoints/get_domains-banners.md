@@ -11,7 +11,7 @@ Retrieve all banners for the specified query. The query has the following JSON s
 ]
 ```
 
-At least 1 object with the field account_id is required. Once the query is constructed, pass the URL encoded value in the query string parameter `query`.
+At least 1 object with the field account_id and website_id is required. Once the query is constructed, pass the URL encoded value in the query string parameter `query`.
 
 The response has the following shape:
 
@@ -23,7 +23,7 @@ The response has the following shape:
 }
 ```
 
-The results will contain 0 or more of the following objects:
+The results will contain zero or more of the following objects:
 
 ```json
 {
@@ -62,6 +62,7 @@ The results will contain 0 or more of the following objects:
 }
 
 ```
+
 - `account_id` is the unique identifier of the account
 - `auto_accept_on_scroll` is a user scrolling accepted as consent?
 - `display_consent_banner_by_region` are there User region-specific settings?
@@ -77,7 +78,7 @@ The results will contain 0 or more of the following objects:
 
 # Example 1
 
-Request for the banner on a single website.
+Request banner for a single website.
 
 ## Request
 
@@ -217,6 +218,8 @@ Request banners for multiple websites on the same account.
 
 
 # Example 3
+
+Request banners for multiple websites. One website does not exist.
 
 ## Request
 
