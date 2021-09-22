@@ -7,3 +7,4 @@ Please see [here](security.md) for how to create the security elements required 
 # Endpoints
 
 * [Collaborators](endpoints/collaborators.md)
+* [Cookies](endpoints/cookies.md)
