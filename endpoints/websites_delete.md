@@ -1,6 +1,6 @@
 # Overview
 
-Delete an existing website from an account.  The request parameters are passed in as a JSON body:
+Delete an existing website from an account. The request parameters are passed in as a JSON body:
 
 
 ```JSON
@@ -14,7 +14,7 @@ Delete an existing website from an account.  The request parameters are passed i
 
 The body must have 1 or more request objects and will respond with the same number of success or [error objects](../error_object.md#post-put-delete-error-object). 
 
-If the entire request is in error or invalid, the result JSON will be an [error object](../error_object.md#universal-errors)
+If the entire request is in error or invalid, the result JSON will be an [error object](../error_object.md#universal-errors).
 
 
 # Example 1
@@ -48,13 +48,13 @@ DELETE https://api.termly.io/v1/website
 ```JSON
 [
   {
-    "_idx": 0,
+    "_idx": 1,
     "error": "object_not_found"
   },
   {
     "account_id": "acct_123",
     "id": "web_123",
-    "_idx": 1
+    "_idx": 2
   }
 ]
 ```

@@ -30,7 +30,7 @@ Update an existing websites in the given account. The request body will be JSON:
 
 The body must have 1 or more of these objects. Any attributes not passed in will not be changed.  Once created, the JSON must be passed as the request body
 
-The response is an arry of successful response objects or a [failure object](../error_object.md):
+The response is an array of successful response objects or a [failure object](../error_object.md):
 
 ```JSON
 [
