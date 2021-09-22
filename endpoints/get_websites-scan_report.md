@@ -46,28 +46,28 @@ The results will contain zero or more of the following objects:
           "initiator": "string",
           "name": "string",
           "new": "bool",
-          "party_provider_type": "string"
+          "party_provider_type": "string",
           "service": "string",
           "service_policy_link": "string",
           "source": "string",
           "tracker_type": "string",
           "url": "string",
           "value": "string",
-          "website_id": "string",
+          "website_id": "string"
         }
       ],
       "detected_consent_banner": "bool",
       "detected_cookie_category": "bool",
       "detected_cookie_preference": "bool",
       "pages": "string",
-      "scan_failure_message": "string"
+      "scan_failure_message": "string",
       "scan_type": "string",
       "scanned_domains": [
         "string"
       ],
       "screenshot_url": "string",
       "status": "string",
-      "website_id": "string",
+      "website_id": "string"
     }
   ],
   "errors": [
@@ -135,15 +135,15 @@ Request scan_report for a single website.
 
 ## Request
 
-GET `/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%0A%5D`
+GET `/api/v3/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%0A%5D`
 
 ## Query
 
 ```json
 [
   {
-    "account_id": "account_1234",
-    "website_id": "website_1234"
+    "account_id": "acct_1234",
+    "website_id": "web_1234"
   }
 ]
 ```
@@ -154,7 +154,7 @@ GET `/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%
 {
   "results": [
     {
-      "account_id": "account_1234",
+      "account_id": "acct_1234",
       "compliant_adequate_countries": "false",
       "compliant_disclose_cookie": "true",
       "cookies": [
@@ -178,7 +178,7 @@ GET `/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%
           "tracker_type": "http_cookie",
           "url": "https://example.com/cisforcookie",
           "value": "that's good enough for me",
-          "website_id": "website_1234"
+          "website_id": "web_1234"
         }
       ],
       "detected_consent_banner": true,
@@ -192,7 +192,7 @@ GET `/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%
       ],
       "screenshot_url": null,
       "status": "scan_finish",
-      "website_id": "website_1234"
+      "website_id": "web_1234"
     }
   ],
   "errors": [],
@@ -212,7 +212,7 @@ GET `/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%
 
 ## Request
 
-GET `/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_4567%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_2112%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1029%22%0A%20%20%7D%0A%5D%0A`
+GET `/api/v3/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_4567%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_2112%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1029%22%0A%20%20%7D%0A%5D%0A`
 
 Request scan_report for multiple websites.
 
@@ -221,16 +221,16 @@ Request scan_report for multiple websites.
 ```json
 [
   {
-    "account_id": "account_1234",
-    "website_id": "website_1234"
+    "account_id": "acct_1234",
+    "website_id": "web_1234"
   },
   {
-    "account_id": "account_1234",
-    "website_id": "website_4567"
+    "account_id": "acct_1234",
+    "website_id": "web_4567"
   },
   {
-    "account_id": "account_2112",
-    "website_id": "website_1029"
+    "account_id": "acct_2112",
+    "website_id": "web_1029"
   }
 ]
 ```
@@ -241,7 +241,7 @@ Request scan_report for multiple websites.
 {
   "results": [
     {
-      "account_id": "account_1234",
+      "account_id": "acct_1234",
       "compliant_adequate_countries": "false",
       "compliant_disclose_cookie": "true",
       "cookies": [
@@ -265,7 +265,7 @@ Request scan_report for multiple websites.
           "tracker_type": "http_cookie",
           "url": "https://example.com/cisforcookie",
           "value": "that's good enough for me",
-          "website_id": "website_1234"
+          "website_id": "web_1234"
         }
       ],
       "detected_consent_banner": true,
@@ -279,10 +279,10 @@ Request scan_report for multiple websites.
       ],
       "screenshot_url": null,
       "status": "scan_finish",
-      "website_id": "website_1234"
+      "website_id": "web_1234"
     },
     {
-      "account_id": "account_1234",
+      "account_id": "acct_1234",
       "compliant_adequate_countries": "false",
       "compliant_disclose_cookie": "true",
       "cookies": [
@@ -306,7 +306,7 @@ Request scan_report for multiple websites.
           "tracker_type": "http_cookie",
           "url": "https://example.com/cisforcookie",
           "value": "that's good enough for me",
-          "website_id": "website_4567"
+          "website_id": "web_4567"
         }
       ],
       "detected_consent_banner": true,
@@ -320,10 +320,10 @@ Request scan_report for multiple websites.
       ],
       "screenshot_url": null,
       "status": "scan_finish",
-      "website_id": "website_4567"
+      "website_id": "web_4567"
     },
     {
-      "account_id": "account_1234",
+      "account_id": "acct_1234",
       "compliant_adequate_countries": "false",
       "compliant_disclose_cookie": "true",
       "cookies": [
@@ -347,7 +347,7 @@ Request scan_report for multiple websites.
           "tracker_type": "http_cookie",
           "url": "https://example.com/cisforcookie",
           "value": "that's good enough for me",
-          "website_id": "website_1029"
+          "website_id": "web_1029"
         }
       ],
       "detected_consent_banner": true,
@@ -361,7 +361,7 @@ Request scan_report for multiple websites.
       ],
       "screenshot_url": null,
       "status": "scan_finish",
-      "website_id": "website_1029"
+      "website_id": "web_1029"
     }
   ],
   "errors": [],
@@ -383,23 +383,23 @@ Request scan_report for multiple websites. One website does not exist.
 
 ## Request
 
-GET `/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_4567%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_2112%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_9876%22%0A%20%20%7D%0A%5D`
+GET `/api/v3/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_4567%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_2112%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_9876%22%0A%20%20%7D%0A%5D`
 
 ## Query
 
 ```json
 [
   {
-    "account_id": "account_1234",
-    "website_id": "website_1234"
+    "account_id": "acct_1234",
+    "website_id": "web_1234"
   },
   {
-    "account_id": "account_1234",
-    "website_id": "website_4567"
+    "account_id": "acct_1234",
+    "website_id": "web_4567"
   },
   {
-    "account_id": "account_2112",
-    "website_id": "website_9876"
+    "account_id": "acct_2112",
+    "website_id": "web_9876"
   }
 ]
 ```
@@ -410,7 +410,7 @@ GET `/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%
 {
   "results": [
     {
-      "account_id": "account_1234",
+      "account_id": "acct_1234",
       "compliant_adequate_countries": "false",
       "compliant_disclose_cookie": "true",
       "cookies": [
@@ -434,7 +434,7 @@ GET `/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%
           "tracker_type": "http_cookie",
           "url": "https://example.com/cisforcookie",
           "value": "that's good enough for me",
-          "website_id": "website_1234"
+          "website_id": "web_1234"
         }
       ],
       "detected_consent_banner": true,
@@ -448,10 +448,10 @@ GET `/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%
       ],
       "screenshot_url": null,
       "status": "scan_finish",
-      "website_id": "website_1234"
+      "website_id": "web_1234"
     },
     {
-      "account_id": "account_1234",
+      "account_id": "acct_1234",
       "compliant_adequate_countries": "false",
       "compliant_disclose_cookie": "true",
       "cookies": [
@@ -475,7 +475,7 @@ GET `/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%
           "tracker_type": "http_cookie",
           "url": "https://example.com/cisforcookie",
           "value": "that's good enough for me",
-          "website_id": "website_4567"
+          "website_id": "web_4567"
         }
       ],
       "detected_consent_banner": true,
@@ -489,13 +489,13 @@ GET `/api/v3/domains/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%
       ],
       "screenshot_url": null,
       "status": "scan_finish",
-      "website_id": "website_4567"
+      "website_id": "web_4567"
     }
   ],
   "errors": [
     {
       "error": "object_not_found",
-      "id": "website_9876"
+      "id": "web_9876"
     }
   ],
   "paging": {

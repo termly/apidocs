@@ -29,35 +29,35 @@ The results will contain zero or more of the following objects:
 {
   "results": [
     {
-      "account_id": "string",
-      "auto_accept_on_scroll": true,
-      "display_consent_banner_by_region": true,
-      "display_style": "banner",
-      "id": "string",
-      "personalized_content": true,
-      "position": "bottom",
-      "running_targeted_advertising": true,
-      "share_data_to_3rd_party": true,
-      "show_cookie_preference": true,
-      "theme_color": "blue",
-      "website_id": "string",
+      "account_id": "<string>",
+      "auto_accept_on_scroll": "bool",
+      "display_consent_banner_by_region": "bool",
+      "display_style": "<string>",
+      "id": "<string>",
+      "personalized_content": "bool",
+      "position": "<enum{'bottom', 'bottom_left', 'bottom_right', 'top', 'top_left', 'top_right'}>",
+      "running_targeted_advertising": "bool",
+      "share_data_to_3rd_party": "bool",
+      "show_cookie_preference": "bool",
+      "theme_color": "<string>",
+      "website_id": "<string>"
     }
   ],
   "errors": [
     {
-      "error": "string",
-      "account_id": "string",
-      "website_id": "string"
+      "error": "<string>",
+      "account_id": "<string>",
+      "website_id": "<string>"
     }
   ],
   "paging": {
-    "count": 0,
-    "current_page": 0,
-    "next_page": "string",
-    "previous_page": "string",
-    "per_page": 0,
-    "total_count": 0,
-    "total_pages": 0
+    "count": "<string>",
+    "current_page": "<string>",
+    "next_page": "<string>",
+    "previous_page": "<string>",
+    "per_page": "<string>",
+    "total_count": "<string>",
+    "total_pages": "<string>"
   }
 }
 ```
@@ -65,7 +65,7 @@ The results will contain zero or more of the following objects:
 - `account_id` is the unique identifier of the account
 - `auto_accept_on_scroll` is a user scrolling accepted as consent?
 - `display_consent_banner_by_region` are there User region-specific settings?
-- `display_style` is the Banner display style
+- `display_style` is on of `banner`, `tooltip`, `modal`.
 - `id` is the unique identifier of the banner
 - `personalized_content` does the website have content personalized for the user?
 - `position` is the position of the Banner
@@ -81,15 +81,15 @@ Request banner for a single website.
 
 ## Request
 
-GET `/api/v3/domains/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%0A%5D%0A`
+GET `/api/v3/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%0A%5D%0A`
 
 ## Query
 
 ```json
 [
   {
-    "account_id": "account_1234",
-    "website_id": "website_1234"
+    "account_id": "acct_1234",
+    "website_id": "web_1234"
   }
 ]
 ```
@@ -100,18 +100,18 @@ GET `/api/v3/domains/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%2
 {
   "results": [
     {
-      "account_id": "account_1234",
+      "account_id": "acct_1234",
       "auto_accept_on_scroll": true,
       "display_consent_banner_by_region": true,
       "display_style": "banner",
-      "id": "banner_1234",
+      "id": "ban_1234",
       "personalized_content": true,
       "position": "bottom",
       "running_targeted_advertising": true,
       "share_data_to_3rd_party": true,
       "show_cookie_preference": true,
       "theme_color": "blue",
-      "website_id": "website_1234"
+      "website_id": "web_1234"
     }
   ],
   "errors": [],
@@ -133,23 +133,23 @@ Request banners for multiple websites on the same account.
 
 ## Request
 
-GET `/api/v3/domains/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_5678%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_2112%22%0A%20%20%7D%0A%5D`
+GET `/api/v3/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_5678%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_2112%22%0A%20%20%7D%0A%5D`
 
 ## Query
 
 ```json
 [
   {
-    "account_id": "account_1234",
-    "website_id": "website_1234"
+    "account_id": "acct_1234",
+    "website_id": "web_1234"
   },
   {
-    "account_id": "account_1234",
-    "website_id": "website_5678"
+    "account_id": "acct_1234",
+    "website_id": "web_5678"
   },
   {
-    "account_id": "account_1234",
-    "website_id": "website_2112"
+    "account_id": "acct_1234",
+    "website_id": "web_2112"
   }
 ]
 ```
@@ -160,46 +160,46 @@ GET `/api/v3/domains/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%2
 {
   "results": [
     {
-      "account_id": "account_1234",
+      "account_id": "acct_1234",
       "auto_accept_on_scroll": false,
       "display_consent_banner_by_region": true,
       "display_style": "banner",
-      "id": "banner_1234",
+      "id": "ban_1234",
       "personalized_content": true,
       "position": "bottom",
       "running_targeted_advertising": true,
       "share_data_to_3rd_party": true,
       "show_cookie_preference": true,
       "theme_color": "blue",
-      "website_id": "website_1234"
+      "website_id": "web_1234"
     },
     {
-      "account_id": "account_1234",
+      "account_id": "acct_1234",
       "auto_accept_on_scroll": true,
       "display_consent_banner_by_region": true,
       "display_style": "banner",
-      "id": "banner_5678",
+      "id": "ban_5678",
       "personalized_content": true,
       "position": "bottom",
       "running_targeted_advertising": true,
       "share_data_to_3rd_party": true,
       "show_cookie_preference": true,
       "theme_color": "blue",
-      "website_id": "website_5678"
+      "website_id": "web_5678"
     },
     {
-      "account_id": "account_1234",
+      "account_id": "acct_1234",
       "auto_accept_on_scroll": false,
       "display_consent_banner_by_region": true,
       "display_style": "banner",
-      "id": "banner_2112",
+      "id": "ban_2112",
       "personalized_content": true,
       "position": "bottom",
       "running_targeted_advertising": true,
       "share_data_to_3rd_party": true,
       "show_cookie_preference": true,
       "theme_color": "blue",
-      "website_id": "website_2112"
+      "website_id": "web_2112"
     }
   ],
   "errors": [],
@@ -222,23 +222,23 @@ Request banners for multiple websites. One website does not exist.
 
 ## Request
 
-GET `/api/v3/domains/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_5678%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22account_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22website_2020%22%0A%20%20%7D%0A%5D`
+GET `/api/v3/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_5678%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_2020%22%0A%20%20%7D%0A%5D`
 
 ## Query
 
 ```json
 [
   {
-    "account_id": "account_1234",
-    "website_id": "website_1234"
+    "account_id": "acct_1234",
+    "website_id": "web_1234"
   },
   {
-    "account_id": "account_1234",
-    "website_id": "website_5678"
+    "account_id": "acct_1234",
+    "website_id": "web_5678"
   },
   {
-    "account_id": "account_1234",
-    "website_id": "website_2020"
+    "account_id": "acct_1234",
+    "website_id": "web_2020"
   }
 ]
 ```
@@ -249,38 +249,39 @@ GET `/api/v3/domains/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%2
 {
   "results": [
     {
-      "account_id": "account_1234",
+      "account_id": "acct_1234",
       "auto_accept_on_scroll": false,
       "display_consent_banner_by_region": true,
       "display_style": "banner",
-      "id": "banner_1234",
+      "id": "ban_1234",
       "personalized_content": true,
       "position": "bottom",
       "running_targeted_advertising": true,
       "share_data_to_3rd_party": true,
       "show_cookie_preference": true,
       "theme_color": "blue",
-      "website_id": "website_1234"
+      "website_id": "web_1234"
     },
     {
-      "account_id": "account_1234",
+      "account_id": "acct_1234",
       "auto_accept_on_scroll": true,
       "display_consent_banner_by_region": true,
       "display_style": "banner",
-      "id": "banner_5678",
+      "id": "ban_5678",
       "personalized_content": true,
       "position": "bottom",
       "running_targeted_advertising": true,
       "share_data_to_3rd_party": true,
       "show_cookie_preference": true,
       "theme_color": "blue",
-      "website_id": "website_5678"
+      "website_id": "web_5678"
     }
   ],
   "errors": [
     {
+      "account_id": "acct_1234",
       "error": "object_not_found",
-      "id": "website_2020"
+      "id": "web_2020"
     }  
   ],
   "paging": {

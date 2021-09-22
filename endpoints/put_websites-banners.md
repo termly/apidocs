@@ -7,15 +7,15 @@ Updates the banner for a website. The body has the following shape:
   "items": [
     {
       "account_id": "<string>",
-      "auto_accept_on_scroll": bool,
-      "display_consent_banner_by_region": bool,
+      "auto_accept_on_scroll": "bool",
+      "display_consent_banner_by_region": "bool",
       "display_style": "<string>",
       "id": "<string>",
-      "personalized_content": bool,
+      "personalized_content": "bool",
       "position": "<string>",
-      "running_targeted_advertising": bool,
-      "share_data_to_3rd_party": bool,
-      "show_cookie_preference": bool,
+      "running_targeted_advertising": "bool",
+      "share_data_to_3rd_party": "bool",
+      "show_cookie_preference": "bool",
       "theme_color": "<string>",
       "website_id": "<string>"
     }
@@ -29,7 +29,7 @@ Updates the banner for a website. The body has the following shape:
 - `display_style` is the Banner display style
 - `id` is the unique identifier of the banner
 - `personalized_content` does the website have content personalized for the user?
-- `position` is the position of the Banner
+- `position` 
 - `running_targeted_advertising` are there targeted advertisements on the website?
 - `share_data_to_3rd_party` does the Website share data with third parties?
 - `show_cookie_preference` show the Cookie Preference Button in the banner?
@@ -44,7 +44,7 @@ The response has the following shape:
   {
     "id": "<string>",
     "website_id": "<string>",
-    "_idx": number
+    "_idx": "<string>"
   }
 ]
 ```
@@ -57,7 +57,7 @@ The results will contain zero or more of the following objects:
     {
       "id": "<string>",
       "website_id": "<string>",
-      "_idx": number
+      "_idx": "<string>"
     }
   ],
   "errors": [
@@ -79,17 +79,13 @@ The results will contain zero or more of the following objects:
 }
 ```
 
-- `_idx` is the index from the request body that correlates to this banner
-- `id` is the unique identifier of the banner
-- `website_id` is the unique identifier of the website
-
 # Example 1
 
 Request update for a single banner.
 
 ## Request
 
-PUT `/api/v3/domains/banners`
+PUT `/api/v3/websites/banners`
 
 ## Query
 
@@ -97,11 +93,11 @@ PUT `/api/v3/domains/banners`
 {
   "items": [
     {
-      "account_id": "account_1234",
+      "account_id": "acct_1234",
       "auto_accept_on_scroll": false,
       "display_consent_banner_by_region": true,
       "display_style": "banner",
-      "id": "banner_1234",
+      "id": "ban_1234",
       "personalized_content": false,
       "position": "bottom",
       "running_targeted_advertising": true,
@@ -120,7 +116,7 @@ PUT `/api/v3/domains/banners`
 {
   "results": [
     {
-      "id": "banner_1234",
+      "id": "ban_1234",
       "website_id": "website_1234",
       "_idx": 1
     }
@@ -144,7 +140,7 @@ Request update for multiple banners.
 
 ## Request
 
-PUT `/api/v3/domains/banners`
+PUT `/api/v3/websites/banners`
 
 ## Query
 
@@ -152,11 +148,11 @@ PUT `/api/v3/domains/banners`
 {
   "items": [
     {
-      "account_id": "account_1234",
+      "account_id": "acct_1234",
       "auto_accept_on_scroll": false,
       "display_consent_banner_by_region": true,
       "display_style": "banner",
-      "id": "banner_1234",
+      "id": "ban_1234",
       "personalized_content": false,
       "position": "bottom",
       "running_targeted_advertising": true,
@@ -166,11 +162,11 @@ PUT `/api/v3/domains/banners`
       "website_id": "website_1234"
     },
     {
-      "account_id": "account_1234",
+      "account_id": "acct_1234",
       "auto_accept_on_scroll": false,
       "display_consent_banner_by_region": true,
       "display_style": "banner",
-      "id": "banner_2112",
+      "id": "ban_2112",
       "personalized_content": false,
       "position": "bottom",
       "running_targeted_advertising": true,
@@ -189,12 +185,12 @@ PUT `/api/v3/domains/banners`
 {
   "results": [
     {
-      "id": "banner_1234",
+      "id": "ban_1234",
       "website_id": "website_1234",
       "_idx": 1
     },
     {
-      "id": "banner_2112",
+      "id": "ban_2112",
       "website_id": "website_9876",
       "_idx": 1
     }
@@ -218,7 +214,7 @@ Request update for multiple banners. One website does not exist.
 
 ## Request
 
-PUT `/api/v3/domains/banners`
+PUT `/api/v3/websites/banners`
 
 ## Query
 
@@ -226,11 +222,11 @@ PUT `/api/v3/domains/banners`
 {
   "items": [
     {
-      "account_id": "account_1234",
+      "account_id": "acct_1234",
       "auto_accept_on_scroll": false,
       "display_consent_banner_by_region": true,
       "display_style": "banner",
-      "id": "banner_1234",
+      "id": "ban_1234",
       "personalized_content": false,
       "position": "bottom",
       "running_targeted_advertising": true,
@@ -240,11 +236,11 @@ PUT `/api/v3/domains/banners`
       "website_id": "website_1234"
     },
     {
-      "account_id": "account_1234",
+      "account_id": "acct_1234",
       "auto_accept_on_scroll": false,
       "display_consent_banner_by_region": true,
       "display_style": "banner",
-      "id": "banner_2112",
+      "id": "ban_2112",
       "personalized_content": false,
       "position": "bottom",
       "running_targeted_advertising": true,
@@ -263,7 +259,7 @@ PUT `/api/v3/domains/banners`
 {
   "results": [
     {
-      "id": "banner_1234",
+      "id": "ban_1234",
       "website_id": "website_1234",
       "_idx": 1
     }
