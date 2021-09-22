@@ -14,3 +14,4 @@ Please see [here](security.md) for how to create the security elements required 
 
 * [Collaborators](endpoints/collaborators.md)
 * [Websites](endpoints/websites.md)
+* [Custom Consent Themes](endpoints/custom_consent_themes.md)
