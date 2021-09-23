@@ -154,7 +154,7 @@ PUT https://api.termly.io/v1/websites
       "banner": "<Javascript code>",
       "cookie_preference_button": "<Javascript code>"
     },
-    "_idx": 1
+    "_idx": 0
   }
 ]
 ```
@@ -256,10 +256,10 @@ Submit multiple websites, one of which does not exist.
       "banner": "<Javascript code>",
       "cookie_preference_button": "<Javascript code>"
     },
-    "_idx": 1
+    "_idx": 0
   },
   {
-    "_idx": 2,
+    "_idx": 1,
     "error": "object_not_found"
   }
 ]

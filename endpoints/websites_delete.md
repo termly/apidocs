@@ -48,13 +48,13 @@ DELETE https://api.termly.io/v1/website
 ```JSON
 [
   {
-    "_idx": 1,
+    "_idx": 0,
     "error": "object_not_found"
   },
   {
     "account_id": "acct_123",
     "id": "web_123",
-    "_idx": 2
+    "_idx": 1
   }
 ]
 ```

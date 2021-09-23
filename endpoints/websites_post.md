@@ -31,10 +31,6 @@ The body must have 1 or more of these objects.  Once created, the JSON must be p
 
 The response is an array of success or error response objects with this shape:
 
-
-
-or a [failure object](../error_object.md):
-
 ```
 [
   {
@@ -71,7 +67,7 @@ or a [failure object](../error_object.md):
       "banner": "<string>",
       "cookie_preference_button": "<string>"
     },
-    "_idx": "<string>"
+    "_idx": <integer>
   }
 ]
 ```
@@ -156,7 +152,7 @@ POST https://api.termly.io/v1/websites
       "banner": "<Javascript code>",
       "cookie_preference_button": "<Javascript code>"
     },
-    "_idx": 1
+    "_idx": 0
   }
 ]
 ```
@@ -256,10 +252,10 @@ Submit multiple websites one of which has a validation error
       "banner": "<Javascript code>",
       "cookie_preference_button": "<Javascript code>"
     },
-    "_idx": 1
+    "_idx": 0
   },
   {
-    "_idx": 2,
+    "_idx": 1,
     "error": "validation_error",
     "validation_errors": [
       {
