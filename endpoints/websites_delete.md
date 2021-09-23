@@ -1,6 +1,6 @@
 # Overview
 
-Delete an existing website from an account. The request parameters are passed in as a JSON body:
+Delete an existing website from an account. The query has the following JSON shape:
 
 
 ```JSON
@@ -12,7 +12,9 @@ Delete an existing website from an account. The request parameters are passed in
 ]
 ```
 
-The body must have 1 or more request objects and will respond with the same number of success or [error objects](../error_object.md#post-put-delete-error-object). 
+
+
+The query must have 1 or more request objects and will respond with the same number of success or [error objects](../error_object.md#post-put-delete-error-object). Once the JSON is constructed it is URL encoded and then is set to the value of the `query` parameter.
 
 If the entire request is in error or invalid, the result JSON will be an [error object](../error_object.md#universal-errors).
 
@@ -24,10 +26,10 @@ Multiple deletion requests
 ## Request
 
 ```
-DELETE https://api.termly.io/v1/website
+DELETE https://api.termly.io/v1/website?query=%5B%20%7B%22account_id%22%3A%20%22acct_123%22%2C%20%22id%22%3A%20%22web_1%22%7D%2C%20%7B%22account_id%22%3A%20%22acct_123%22%2C%20%22id%22%3A%20%22web_123%22%7D%5D
 ```
 
-## Request Body
+## Query
 
 ```JSON
 [
@@ -66,10 +68,10 @@ Multiple successful deletion requests from different accounts
 ## Request
 
 ```
-DELETE https://api.termly.io/v1/website
+DELETE https://api.termly.io/v1/website?query=%5B%7B%20%22account_id%22%3A%20%22acct_1234%22%2C%22id%22%3A%20%22web_1234%22%7D%2C%7B%20%22account_id%22%3A%20%22acct_123%22%2C%20%22id%22%3A%20%22web_123%22%7D%5D
 ```
 
-## Request Body
+## Query
 
 ```JSON
 [
