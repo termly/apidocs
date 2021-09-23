@@ -53,13 +53,13 @@ DELETE https://api.termly.io/v1/website
     "account_id": "acct_123",
     "website_id": "web_124",
     "id": "theme_123"
-    "_idx": 1,
+    "_idx": 0
   },
   {
     "account_id": "acct_123",
     "website_id": "web_123",
     "id": "theme_12"
-    "_idx": 2
+    "_idx": 1
   }
 ]
 ```
@@ -105,17 +105,17 @@ DELETE https://api.termly.io/v1/website
     "account_id": "acct_123",
     "website_id": "web_124",
     "id": "theme_123"
-    "_idx": 1,
+    "_idx": 0,
   },
   {
     "account_id": "acct_123",
     "website_id": "web_123",
     "id": "theme_12",
-    "_idx": 2
+    "_idx": 1
   },
   {
     "error": "object_not_found",
-    "_idx": 3
+    "_idx": 2
   }
 ]
 ```

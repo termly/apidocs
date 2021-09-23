@@ -105,7 +105,7 @@ PUT https://api.termly.io/v1/websites/custom_consent_theme
     "background": "#000000",
     "btn_background": "#000000",
     "btn_text_color": "#000000",
-    "_idx": 1
+    "_idx": 0
   },
   {
     "website_id": "web_125",
@@ -118,7 +118,7 @@ PUT https://api.termly.io/v1/websites/custom_consent_theme
     "background": "#000100",
     "btn_background": "#400000",
     "btn_text_color": "#030000",
-    "_idx": 2
+    "_idx": 1
   }
 ]
 ```
@@ -173,11 +173,11 @@ Multiple request one of which references a nonexistent account.
     "background": "#000000",
     "btn_background": "#000000",
     "btn_text_color": "#000000",
-    "_idx": 1
+    "_idx": 0
   },
   {
     "error": "object_not_found",
-    "_idx": 2
+    "_idx": 1
   }
 ]
 ```

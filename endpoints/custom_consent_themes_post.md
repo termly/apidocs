@@ -89,7 +89,7 @@ POST https://api.termly.io/v1/websites/custom_consent_themes
     "background": "#000000",
     "btn_background": "#000000",
     "btn_text_color": "#000000",
-    "_idx": 1
+    "_idx": 0
   }
 ]
 ```
@@ -148,7 +148,7 @@ POST https://api.termly.io/v1/websites/custom_consent_themes
     "background": "#000000",
     "btn_background": "#000000",
     "btn_text_color": "#000000",
-    "idx": 1
+    "_idx": 0
   },
   {
     "website_id": "web_124",
@@ -161,7 +161,7 @@ POST https://api.termly.io/v1/websites/custom_consent_themes
     "background": "#000001",
     "btn_background": "#000001",
     "btn_text_color": "#000001",
-    "idx": 2
+    "_idx": 1
   }  
 ]
 ```
