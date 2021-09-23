@@ -1,6 +1,6 @@
 # Overview
 
-Deletes cookies. The request body has the following shape:
+Deletes cookies. The query has the following shape:
 
 ```json
 [
@@ -44,7 +44,7 @@ Delete one cookie.
 
 ## Request
 
-`DELETE /api/v3/websites/cookies`
+`DELETE /api/v3/websites/cookies?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22id%22%3A%20%22ck_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%0A%5D`
 
 ## Query
 
@@ -89,7 +89,7 @@ Delete multiple cookies.
 
 ## Request
 
-`DELETE /api/v3/websites/cookies`
+`DELETE /api/v3/websites/cookies?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22id%22%3A%20%22ck_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22id%22%3A%20%22ck_0123%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%0A%5D%0A`
 
 ## Query
 
@@ -145,7 +145,7 @@ Delete multiple cookies with one not found.
 
 ## Request
 
-`DELETE /api/v3/websites/cookies`
+`DELETE /api/v3/websites/cookies?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22id%22%3A%20%22ck_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22id%22%3A%20%22ck_0123%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%0A%5D%0A`
 
 ## Query
 
