@@ -39,7 +39,7 @@ The response will look like:
 ```
 
 * `account_id` unique identifier of the account that owns the website
-* `website_id` unique identifier of the website
+* `website_id` unique identifier of the website that owns the document
 * `id` unique identifier of the document
 * `document` base 64 encoded HTML document
 
@@ -76,7 +76,7 @@ GET https://api.termly.io/v1/websites/documents/preview?query=%5B%7B%22account_i
     {
       "account_id": "acct_123",
       "website_id": "web_123",
-      "id": "doc_123",
+      "ids": ["doc_123"],
       "document": "aefweafho..."
     }
   ],
@@ -95,7 +95,7 @@ GET https://api.termly.io/v1/websites/documents/preview?query=%5B%7B%22account_i
 
 # Example 2
 
-Multiple accounts and documents in each account and one document cannot be found
+Multiple accounts and documents in each account and one document cannot be found.
 
 ## Request
 
@@ -135,7 +135,7 @@ GET https://api.termly.io/v1/websites/documents/preview?query=%5B%20%7B%20%22acc
     {
       "account_id": "acct_1234",
       "website_id": "web_1234",
-      "id": "doc_12",
+      "id": "doc_14",
       "document": "aefweafhfasdfso..."
     }
   ],

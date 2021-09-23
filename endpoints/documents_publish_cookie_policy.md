@@ -1,6 +1,6 @@
 # Overview
 
-When information in the cookie policy is changed it needs to be republished.  Information that is in the cookie policy
+When information in the cookie policy is changed it needs to be republished.  Information that is in the cookie policy.
 
 * `company information` in the `/websites` endpoint
 * `cookies`
@@ -38,7 +38,7 @@ If the entire request is in error or invalid the result JSON will be [error obje
 
 # Example 1
 
-Request the cookie policy be published for a given website
+Request the cookie policy be published for a given website.
 
 ## Request
 
@@ -70,7 +70,7 @@ POST https://api.termly.io/v1/websites/documents/publish_cookie_policies
 
 # Example 2
 
-Multiple accounts and websites to publish document or website cannot be found
+Multiple accounts and websites to publish document or website cannot be found.
 
 ## Request
 
