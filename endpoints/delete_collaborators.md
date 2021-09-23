@@ -44,7 +44,7 @@ Request for a single collaborator.
 
 ## Request
 ```shell
-GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acct_1234%22%2C%22id%22%3A%22col_1234%22%7D%5D
+DELETE https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acct_1234%22%2C%22id%22%3A%22col_1234%22%7D%5D
 
 ```
 
@@ -76,7 +76,7 @@ Request for a single account and 2 collaborators. One of the collaborators does 
 
 ## Request
 ```shell
-GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acct_1234%22%2C%22id%22%3A%22col_12%22%7D%2C%7B%22account_id%22%3A%22acct_1234%22%2C%22id%22%3A%22col_34%22%7D%5D
+DELETE https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acct_1234%22%2C%22id%22%3A%22col_12%22%7D%2C%7B%22account_id%22%3A%22acct_1234%22%2C%22id%22%3A%22col_34%22%7D%5D
 
 ```
 
