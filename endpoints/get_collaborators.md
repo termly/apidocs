@@ -14,7 +14,7 @@ Retrieve all or some of the collaborators for the specified query. The query has
 
 ```
 
-At least 1 object with the field `account_id` is required. If you wish to retrieve all collaborators for an account, omit the `ids` field. Once the query is constructed, it passed in the query string parameter `query`. It must be URL encoded.
+At least 1 object with the field `account_id` is required. If you wish to retrieve all collaborators for an account, omit the `ids` field. Once the query is constructed, it is passed in the query string parameter `query`. It must be URL encoded.
 
 The response has the following shape:
 
@@ -36,6 +36,8 @@ The response has the following shape:
 	"email": "<string>",
 	"first_name": "<string|null>",
 	"last_name": "<string|null>",
+	"invitation_url": "<string|null>",
+	"invitation_status": "<enum{'pending', 'accepted'}>",
 	"role": "<enum{'admin', 'owner', 'editor'}>",
 	"website_ids": [
 		"<string>"
@@ -49,6 +51,8 @@ The response has the following shape:
 * `email` is the email address of the collaborator
 * `first_name` is the Given name of the collaborator if provided by the collaborator upon signing in for the first time.
 * `last_name` is the Surname of the collaborator if provided by the collaborator upon signing in for the first time.
+* `invitation_url` is the URL sent to the collaborator so they can activate their account. If the inivitation has been accepted, this field is null.
+* `invitation_status` indicates whether or not the invite has been accepted.
 * `role` is one of the following values - `admin`, `owner`, or `editor`. Please see [here](collaborator_roles.md) for details.
 * `website_ids` is an array of website unique identifiers. This field is only provided if the `role` is `editor`.
 
@@ -86,6 +90,7 @@ GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acc
 			"first_name": "Collaborator",
 			"last_name": "One",
 			"role": "admin",
+			"invitation_url": null,
 			"invitation_status": "accepted"
 		},
 		{
@@ -98,6 +103,7 @@ GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acc
 				"web_24",
 				"web_36"
 			],
+			"invitation_url": "https://app.termly.io/invitation",
 			"invitation_status": "pending"
 		}
 	],
@@ -149,6 +155,7 @@ GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acc
 			"first_name": "Collaborator",
 			"last_name": "One",
 			"role": "admin",
+			"invitation_url": null,
 			"invitation_status": "accepted"
 		},
 		{
@@ -162,7 +169,9 @@ GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acc
 				"web_12",
 				"web_24",
 				"web_36"
-			]
+			],
+			"invitation_url": "https://app.termly.io/invitation",
+			"invitation_status": "pending"
 		}
 	],
 	"errors": [],
@@ -213,6 +222,7 @@ GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acc
 			"first_name": "Collaborator",
 			"last_name": "One",
 			"role": "admin",
+			"invitation_url": null,
 			"invitation_status": "accepted"
 		}
 	],
