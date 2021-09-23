@@ -1,6 +1,6 @@
 # Overview
 
-Delete an existing custom consent theme. The request parameters are passed in as a JSON body:
+Delete an existing custom consent theme. The query has the following JSON shape:
 
 
 ```JSON
@@ -13,7 +13,7 @@ Delete an existing custom consent theme. The request parameters are passed in as
 ]
 ```
 
-The body must have 1 or more request objects and will respond with the same number of success or [error objects](../error_object.md#post-put-delete-error-object). 
+The query must have 1 or more request objects and will respond with the same number of success or [error objects](../error_object.md#post-put-delete-error-object). Once constructed the object must be URL encoded and be the value for the `query` parameter.
 
 If the entire request is in error or invalid, the result JSON will be an [error object](../error_object.md#universal-errors).
 
@@ -24,10 +24,10 @@ Multiple deletion requests
 ## Request
 
 ```
-DELETE https://api.termly.io/v1/website
+DELETE https://api.termly.io/v1/website?query=%5B%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_124%22%2C%22id%22%3A%22theme_123%22%7D%2C%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_123%22%2C%22id%22%3A%22theme_12%22%7D%5D
 ```
 
-## Request Body
+## Query
 
 ```JSON
 [
@@ -71,10 +71,10 @@ Multiple requests with one failure
 ## Request
 
 ```
-DELETE https://api.termly.io/v1/website
+DELETE https://api.termly.io/v1/website?query=%5B%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_124%22%2C%22id%22%3A%22theme_123%22%7D%2C%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_123%22%2C%22id%22%3A%22theme_12%22%7D%2C%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_123%22%2C%22id%22%3A%22theme_123%22%7D%5D
 ```
 
-## Request Body
+## Query
 
 ```JSON
 [
