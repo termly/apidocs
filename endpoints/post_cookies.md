@@ -5,7 +5,7 @@ Creates cookies. The requst body has the following shape:
 ```json
 {
   "account_id": "<string>",
-  "category": "<string>",
+  "category": "<enum{'unclassified', 'essential', 'performance', 'analytics;', 'advertising', 'social_networking'}>",
   "country": "<string>",
   "domain": "<string>",
   "de": "<string>",
@@ -20,7 +20,7 @@ Creates cookies. The requst body has the following shape:
   "service": "<string>",
   "service_policy_link": "<string>",
   "source": "<string>",
-  "tracker_type": "<string>",
+  "tracker_type": "<enum{'http_cookie', 'html_local_storage', 'html_session_storage', 'server_cookie', 'pixel_tracker', 'indexed_db'}>",
   "url": "<string>",
   "value": "<string>",
   "website_id": "<string>"
@@ -67,7 +67,7 @@ The results will contain zero or more of the following objects:
   "account_id": "<string>",
   "cookie_id": "<string>",
   "website_id": "<string>",
-  "_idx": "<number>"
+  "_idx": "<integer>"
 }
 ```
 
@@ -82,32 +82,30 @@ POST `/api/v3/websites/cookies`
 ## Query
 
 ```json
-{
-    "items": [
-        {
-            "account_id": "acct_1234",
-            "category": null,
-            "country": "United States",
-            "domain": "https://example.com",
-            "de": null,
-            "en_uk": null,
-            "en_us": "Tracks the widget",
-            "expire": "Friday, June 13, 2102",
-            "fr": null,
-            "initiator": null,
-            "name": "ACME Tracker",
-            "new": false,
-            "party_provider_type": "third_party",
-            "service": null,
-            "service_policy_link": null,
-            "source": null,
-            "tracker_type": "http_cookie",
-            "url": "https://example.com/cisforcookie",
-            "value": "that's good enough for me",
-            "website_id": "web_1234"
-        }
-    ]
-}
+[
+    {
+        "account_id": "acct_1234",
+        "category": null,
+        "country": "United States",
+        "domain": "https://example.com",
+        "de": null,
+        "en_uk": null,
+        "en_us": "Tracks the widget",
+        "expire": "Friday, June 13, 2102",
+        "fr": null,
+        "initiator": null,
+        "name": "ACME Tracker",
+        "new": false,
+        "party_provider_type": "third_party",
+        "service": null,
+        "service_policy_link": null,
+        "source": null,
+        "tracker_type": "http_cookie",
+        "url": "https://example.com/cisforcookie",
+        "value": "that's good enough for me",
+        "website_id": "web_1234"
+    }
+]
 ```
 
 ## Response
@@ -146,76 +144,74 @@ POST `/api/v3/websites/cookies`
 ## Query
 
 ```json
-{
-    "items": [
-        {
-            "account_id": "acct_1234",
-            "category": null,
-            "country": "United States",
-            "domain": "https://example.com",
-            "de": null,
-            "en_uk": null,
-            "en_us": "Tracks the widget",
-            "expire": "Friday, June 13, 2102",
-            "fr": null,
-            "initiator": null,
-            "name": "ACME Tracker",
-            "new": false,
-            "party_provider_type": "third_party",
-            "service": null,
-            "service_policy_link": null,
-            "source": null,
-            "tracker_type": "http_cookie",
-            "url": "https://example.com/cisforcookie",
-            "value": "that's good enough for me",
-            "website_id": "web_1234"
-        },
-        {
-            "account_id": "acct_1234",
-            "category": null,
-            "country": "United States",
-            "domain": "https://example.com",
-            "de": null,
-            "en_uk": null,
-            "en_us": "Tracks the widget",
-            "expire": "Friday, June 13, 2102",
-            "fr": null,
-            "initiator": null,
-            "name": "ACME Tracker",
-            "new": false,
-            "party_provider_type": "third_party",
-            "service": null,
-            "service_policy_link": null,
-            "source": null,
-            "tracker_type": "http_cookie",
-            "url": "https://example.com/cisforcookie",
-            "value": "that's good enough for me",
-            "website_id": "web_0987"
-        },
-        {
-            "account_id": "acct_4567",
-            "category": null,
-            "country": "United States",
-            "domain": "https://example.com",
-            "de": null,
-            "en_uk": null,
-            "en_us": "Tracks the widget",
-            "expire": "Friday, June 13, 2102",
-            "fr": null,
-            "initiator": null,
-            "name": "ACME Tracker",
-            "new": false,
-            "party_provider_type": "third_party",
-            "service": null,
-            "service_policy_link": null,
-            "source": null,
-            "tracker_type": "http_cookie",
-            "url": "https://example.com/cisforcookie",
-            "value": "that's good enough for me",
-            "website_id": "web_4567"
-        }
-    ]
-}
+[
+    {
+        "account_id": "acct_1234",
+        "category": null,
+        "country": "United States",
+        "domain": "https://example.com",
+        "de": null,
+        "en_uk": null,
+        "en_us": "Tracks the widget",
+        "expire": "Friday, June 13, 2102",
+        "fr": null,
+        "initiator": null,
+        "name": "ACME Tracker",
+        "new": false,
+        "party_provider_type": "third_party",
+        "service": null,
+        "service_policy_link": null,
+        "source": null,
+        "tracker_type": "http_cookie",
+        "url": "https://example.com/cisforcookie",
+        "value": "that's good enough for me",
+        "website_id": "web_1234"
+    },
+    {
+        "account_id": "acct_1234",
+        "category": null,
+        "country": "United States",
+        "domain": "https://example.com",
+        "de": null,
+        "en_uk": null,
+        "en_us": "Tracks the widget",
+        "expire": "Friday, June 13, 2102",
+        "fr": null,
+        "initiator": null,
+        "name": "ACME Tracker",
+        "new": false,
+        "party_provider_type": "third_party",
+        "service": null,
+        "service_policy_link": null,
+        "source": null,
+        "tracker_type": "http_cookie",
+        "url": "https://example.com/cisforcookie",
+        "value": "that's good enough for me",
+        "website_id": "web_0987"
+    },
+    {
+        "account_id": "acct_4567",
+        "category": null,
+        "country": "United States",
+        "domain": "https://example.com",
+        "de": null,
+        "en_uk": null,
+        "en_us": "Tracks the widget",
+        "expire": "Friday, June 13, 2102",
+        "fr": null,
+        "initiator": null,
+        "name": "ACME Tracker",
+        "new": false,
+        "party_provider_type": "third_party",
+        "service": null,
+        "service_policy_link": null,
+        "source": null,
+        "tracker_type": "http_cookie",
+        "url": "https://example.com/cisforcookie",
+        "value": "that's good enough for me",
+        "website_id": "web_4567"
+    }
+]
 ```
 
 ## Response
@@ -266,54 +262,52 @@ POST `/api/v3/websites/cookies`
 ## Query
 
 ```json
-{
-    "items": [
-        {
-            "account_id": "acct_1234",
-            "category": null,
-            "country": "United States",
-            "domain": "https://example.com",
-            "de": null,
-            "en_uk": null,
-            "en_us": "Tracks the widget",
-            "expire": "Friday, June 13, 2102",
-            "fr": null,
-            "initiator": null,
-            "name": "ACME Tracker",
-            "new": false,
-            "party_provider_type": "third_party",
-            "service": null,
-            "service_policy_link": null,
-            "source": null,
-            "tracker_type": "http_cookie",
-            "url": "https://example.com/cisforcookie",
-            "value": "that's good enough for me",
-            "website_id": "web_1234"
-        },
-        {
-            "account_id": "acct_1234",
-            "category": null,
-            "country": "United States",
-            "domain": "https://example.com",
-            "de": null,
-            "en_uk": null,
-            "en_us": "Tracks the widget",
-            "expire": "Friday, June 13, 2102",
-            "fr": null,
-            "initiator": null,
-            "name": "ACME Tracker",
-            "new": false,
-            "party_provider_type": "third_party",
-            "service": null,
-            "service_policy_link": null,
-            "source": null,
-            "tracker_type": "http_cookie",
-            "url": "https://example.com/cisforcookie",
-            "value": "that's good enough for me",
-            "website_id": "web_0987"
-        }
-    ]
-}
+[
+    {
+        "account_id": "acct_1234",
+        "category": null,
+        "country": "United States",
+        "domain": "https://example.com",
+        "de": null,
+        "en_uk": null,
+        "en_us": "Tracks the widget",
+        "expire": "Friday, June 13, 2102",
+        "fr": null,
+        "initiator": null,
+        "name": "ACME Tracker",
+        "new": false,
+        "party_provider_type": "third_party",
+        "service": null,
+        "service_policy_link": null,
+        "source": null,
+        "tracker_type": "http_cookie",
+        "url": "https://example.com/cisforcookie",
+        "value": "that's good enough for me",
+        "website_id": "web_1234"
+    },
+    {
+        "account_id": "acct_1234",
+        "category": null,
+        "country": "United States",
+        "domain": "https://example.com",
+        "de": null,
+        "en_uk": null,
+        "en_us": "Tracks the widget",
+        "expire": "Friday, June 13, 2102",
+        "fr": null,
+        "initiator": null,
+        "name": "ACME Tracker",
+        "new": false,
+        "party_provider_type": "third_party",
+        "service": null,
+        "service_policy_link": null,
+        "source": null,
+        "tracker_type": "http_cookie",
+        "url": "https://example.com/cisforcookie",
+        "value": "that's good enough for me",
+        "website_id": "web_0987"
+    }
+]
 ```
 
 ## Response

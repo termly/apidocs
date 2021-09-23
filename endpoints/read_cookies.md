@@ -28,7 +28,7 @@ The results will contain zero or more of the following objects:
 ```json
 {
   "account_id": "<string>",
-  "category": "<string>",
+  "category": "<enum{'unclassified', 'essential', 'performance', 'analytics;', 'advertising', 'social_networking'}>",
   "country": "<string>",
   "domain": "<string>",
   "de": "<string>",
@@ -44,7 +44,7 @@ The results will contain zero or more of the following objects:
   "service": "<string>",
   "service_policy_link": "<string>",
   "source": "<string>",
-  "tracker_type": "<string>",
+  "tracker_type": "<enum{'http_cookie', 'html_local_storage', 'html_session_storage', 'server_cookie', 'pixel_tracker', 'indexed_db'}>",
   "url": "<string>",
   "value": "<string>",
   "website_id": "<string>"

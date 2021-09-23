@@ -117,7 +117,7 @@ Delete multiple cookies.
         "account_id": "acct_1234",
         "cookie_id": "ck_1234",
         "website_id": "web_1234",
-        "_idx": 1
+        "_idx": 0
       },    
       {
         "account_id": "acct_1234",
@@ -173,7 +173,7 @@ Delete multiple cookies with one not found.
         "account_id": "acct_1234",
         "cookie_id": "ck_1234",
         "website_id": "web_1234",
-        "_idx": 1
+        "_idx": 0
       }    
     ],
 	"errors": [
