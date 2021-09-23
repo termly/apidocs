@@ -30,15 +30,15 @@ The results will contain zero or more of the following objects:
   "results": [
     {
       "account_id": "<string>",
-      "auto_accept_on_scroll": "bool",
-      "display_consent_banner_by_region": "bool",
-      "display_style": "<string>",
+      "auto_accept_on_scroll": "<bool>",
+      "display_consent_banner_by_region": "<bool>",
+      "display_style": "<enum{'banner', 'tooltip', 'modal'}>",
       "id": "<string>",
-      "personalized_content": "bool",
+      "personalized_content": "<bool>",
       "position": "<enum{'bottom', 'bottom_left', 'bottom_right', 'top', 'top_left', 'top_right'}>",
-      "running_targeted_advertising": "bool",
-      "share_data_to_3rd_party": "bool",
-      "show_cookie_preference": "bool",
+      "running_targeted_advertising": "<bool>",
+      "share_data_to_3rd_party": "<bool>",
+      "show_cookie_preference": "<bool>",
       "theme_color": "<string>",
       "website_id": "<string>"
     }
@@ -51,13 +51,13 @@ The results will contain zero or more of the following objects:
     }
   ],
   "paging": {
-    "count": "<string>",
-    "current_page": "<string>",
+    "count": "<integer>",
+    "current_page": "<integer>",
     "next_page": "<string>",
     "previous_page": "<string>",
-    "per_page": "<string>",
-    "total_count": "<string>",
-    "total_pages": "<string>"
+    "per_page": "<integer>",
+    "total_count": "<integer>",
+    "total_pages": "<integer>"
   }
 }
 ```
@@ -65,7 +65,7 @@ The results will contain zero or more of the following objects:
 - `account_id` is the unique identifier of the account
 - `auto_accept_on_scroll` is a user scrolling accepted as consent?
 - `display_consent_banner_by_region` are there User region-specific settings?
-- `display_style` is on of `banner`, `tooltip`, `modal`.
+- `display_style` is one of `banner`, `tooltip`, `modal`.
 - `id` is the unique identifier of the banner
 - `personalized_content` does the website have content personalized for the user?
 - `position` is the position of the Banner

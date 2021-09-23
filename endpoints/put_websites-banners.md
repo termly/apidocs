@@ -12,11 +12,11 @@ Updates the banner for a website. The body has the following shape:
       "display_style": "<string>",
       "id": "<string>",
       "personalized_content": "bool",
-      "position": "<string>",
+      "position": "<enum{'bottom', 'bottom_left', 'bottom_right', 'top', 'top_left', 'top_right'}>",
       "running_targeted_advertising": "bool",
       "share_data_to_3rd_party": "bool",
       "show_cookie_preference": "bool",
-      "theme_color": "<string>",
+      "theme_color": "<enum{'blue', 'light', 'green', 'red', 'black', 'navy_blue'}>",
       "website_id": "<string>"
     }
   ]
@@ -29,7 +29,7 @@ Updates the banner for a website. The body has the following shape:
 - `display_style` is the Banner display style
 - `id` is the unique identifier of the banner
 - `personalized_content` does the website have content personalized for the user?
-- `position` 
+- `position` is the position in which the banner is displayed
 - `running_targeted_advertising` are there targeted advertisements on the website?
 - `share_data_to_3rd_party` does the Website share data with third parties?
 - `show_cookie_preference` show the Cookie Preference Button in the banner?
@@ -68,13 +68,13 @@ The results will contain zero or more of the following objects:
     }
   ],
   "paging": {
-    "count": 0,
-    "current_page": 0,
+    "count": "<integer>",
+    "current_page": "<integer>",
     "next_page": "string",
     "previous_page": "string",
-    "per_page": 0,
-    "total_count": 0,
-    "total_pages": 0
+    "per_page": "<integer>",
+    "total_count": "<integer>",
+    "total_pages": "<integer>"
   }
 }
 ```
@@ -103,7 +103,7 @@ PUT `/api/v3/websites/banners`
       "running_targeted_advertising": true,
       "share_data_to_3rd_party": false,
       "show_cookie_preference": true,
-      "theme_color": "chartreuse",
+      "theme_color": "green",
       "website_id": "website_1234"
     }
   ]
@@ -158,7 +158,7 @@ PUT `/api/v3/websites/banners`
       "running_targeted_advertising": true,
       "share_data_to_3rd_party": false,
       "show_cookie_preference": true,
-      "theme_color": "chartreuse",
+      "theme_color": "green",
       "website_id": "website_1234"
     },
     {
@@ -172,7 +172,7 @@ PUT `/api/v3/websites/banners`
       "running_targeted_advertising": true,
       "share_data_to_3rd_party": false,
       "show_cookie_preference": true,
-      "theme_color": "chartreuse",
+      "theme_color": "green",
       "website_id": "website_9876"
     }
   ]
@@ -232,7 +232,7 @@ PUT `/api/v3/websites/banners`
       "running_targeted_advertising": true,
       "share_data_to_3rd_party": false,
       "show_cookie_preference": true,
-      "theme_color": "chartreuse",
+      "theme_color": "green",
       "website_id": "website_1234"
     },
     {
@@ -246,7 +246,7 @@ PUT `/api/v3/websites/banners`
       "running_targeted_advertising": true,
       "share_data_to_3rd_party": false,
       "show_cookie_preference": true,
-      "theme_color": "chartreuse",
+      "theme_color": "green",
       "website_id": "website_9876"
     }
   ]

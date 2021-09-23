@@ -65,7 +65,6 @@ The results will contain zero or more of the following objects:
       "scanned_domains": [
         "<string>"
       ],
-      "screenshot_url": "<string>",
       "status": "<string>",
       "website_id": "<string>"
     }
@@ -78,13 +77,13 @@ The results will contain zero or more of the following objects:
     }
   ],
   "paging": {
-    "count": 0,
-    "current_page": 0,
+    "count": "<integer>",
+    "current_page": "<integer>",
     "next_page": "<string>",
     "previous_page": "<string>",
-    "per_page": 0,
-    "total_count": 0,
-    "total_pages": 0
+    "per_page": "<integer>",
+    "total_count": "<integer>",
+    "total_pages": "<integer>"
   }
 }
 ```
@@ -100,7 +99,6 @@ The results will contain zero or more of the following objects:
 - `scan_failure_message` is a description of the failure if the scan failed
 - `scan_type` is the type of scan, either `all_pages` or `one_page`
 - `scanned_domains` is a list of strings, each string represents a domain that was scanned
-- `screenshot_url` is a URL containing the screenshot rendered during the scan
 - `status` is the status of the scan, one of `scanning`, `scan_finish`, or `scan_fault`
 - `website_id` is the unique identifier of the website
 
@@ -190,7 +188,6 @@ GET `/api/v3/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22
       "scanned_domains": [
         "example.com"
       ],
-      "screenshot_url": null,
       "status": "scan_finish",
       "website_id": "web_1234"
     }
@@ -277,7 +274,6 @@ Request scan_report for multiple websites.
       "scanned_domains": [
         "example.com"
       ],
-      "screenshot_url": null,
       "status": "scan_finish",
       "website_id": "web_1234"
     },
@@ -318,7 +314,6 @@ Request scan_report for multiple websites.
       "scanned_domains": [
         "example.com"
       ],
-      "screenshot_url": null,
       "status": "scan_finish",
       "website_id": "web_4567"
     },
@@ -359,7 +354,6 @@ Request scan_report for multiple websites.
       "scanned_domains": [
         "example.com"
       ],
-      "screenshot_url": null,
       "status": "scan_finish",
       "website_id": "web_1029"
     }
@@ -446,7 +440,6 @@ GET `/api/v3/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22
       "scanned_domains": [
         "example.com"
       ],
-      "screenshot_url": null,
       "status": "scan_finish",
       "website_id": "web_1234"
     },
@@ -487,7 +480,6 @@ GET `/api/v3/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22
       "scanned_domains": [
         "example.com"
       ],
-      "screenshot_url": null,
       "status": "scan_finish",
       "website_id": "web_4567"
     }
