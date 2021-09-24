@@ -24,7 +24,7 @@ At least 1 object is required in the request.
 
 The response is an array of objects. If the collaborator can be updated successfully, the object will have the following shape:
 
-```json
+```
 {
 	"_idx": <integer>,
 	"id": "<string>",
@@ -47,7 +47,7 @@ The response is an array of objects. If the collaborator can be updated successf
 * `email` is the email address of the collaborator
 * `first_name` is the Given name of the collaborator if provided by the collaborator upon signing in for the first time.
 * `last_name` is the Surname of the collaborator if provided by the collaborator upon signing in for the first time.
-* `invitation_url` is the URL sent to the collaborator so they can activate their account
+* `invitation_url` is the URL sent to the collaborator so they can activate their account.
 * `invitation_status` indicates whether or not the invite has been accepted.
 * `role` is one of the following values - `admin`, `owner`, or `editor`. Please see [here](collaborator_roles.md) for details.
 * `website_ids` is an array of website unique identifiers. This field is only provided if the `role` is `editor`.

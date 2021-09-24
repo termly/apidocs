@@ -16,7 +16,7 @@ At least 1 object with the field `account_id` is required. Once the query is con
 
 The response is an array of the following objects. If the deletion was successful, the objects have the following shape
 
-```json
+```
 [
 	{
 		"account_id": "<string>",
@@ -29,7 +29,7 @@ The response is an array of the following objects. If the deletion was successfu
 
 If there is an error when deleting, the objects have the following shape
 
-```json
+```
 [
 	{
 		"error": "<string>",

@@ -2,14 +2,14 @@
 
 Update an existing websites in the given account. The request body will be JSON:
 
-```JSON
+```
 [
   {
     "account_id": "<string>",
     "id": "<string>",
     "name": "<string>",
     "url": "<string>",
-    "scan_period": "<string>",
+    "scan_period": "<enum{'weekly', 'monthly', 'trimonthly'}>",
     "subdomains": [
       "<string>"
     ],
@@ -41,7 +41,7 @@ The response is an array of success or error response objects
     "url": "<string>",
     "uuid": "<string>",
     "page_views": "<integer>",
-    "scan_period": "<string>",
+    "scan_period": "<enum{'weekly', 'monthly', 'trimonthly'}>",
     "report": {
       "id": "<string>",
       "created_at": "<string>"
