@@ -84,12 +84,12 @@ GET https://api.termly.io/v1/websites/documents/publish_cookie_policies
 [
   {
     "account_id": "acct_123",
-    "website_id": "web_123",
+    "website_id": "web_123"
   },
 
   {
     "account_id": "acct_1234",
-    "website_id": "web_1234",
+    "website_id": "web_1234"
   }
 ]
 ```
