@@ -39,7 +39,7 @@ The response is an array of success or error response objects with this shape:
     "name": "<string>",
     "url": "<string>",
     "uuid": "<string>",
-    "page_views": "<integer>",
+    "page_views": <integer>,
     "scan_period": "<enum{'weekly', 'monthly', 'trimonthly'}>",
     "report": {
       "id": "<string>",
@@ -48,9 +48,9 @@ The response is an array of success or error response objects with this shape:
     "subdomains": [
       "<string>"
     ],
-    "cookie_count": "<integer>",
+    "cookie_count": <integer>,
     "cookie_policy_document_id": "<string>",
-    "unclassified_cookie_count": "<integer>",
+    "unclassified_cookie_count": <integer>,
     "company": {
       "legal_name": "<string>",
       "email": "<string>",
@@ -62,7 +62,7 @@ The response is an array of success or error response objects with this shape:
       "city": "<string>",
       "country": "<string>"
     },
-    "consent_count": "<integer>",
+    "consent_count": <integer>,
     "code_snippet": {
       "banner": "<string>",
       "cookie_preference_button": "<string>"
@@ -74,7 +74,7 @@ The response is an array of success or error response objects with this shape:
 
 The shape of an error object is described [here](../error_object.md#post-put-delete-error-object).
 
-If the entire request is in error or invalid the result JSON will be [error object](../error_object.md#universal-errors)
+If the entire request is in error or invalid the result JSON will be [request error object](../request_errors.md)
 
 
 # Example 1

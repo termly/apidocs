@@ -81,7 +81,7 @@ The results will contain zero or more of the following objects:
   "url": "<string>",
   "value": "<string>",
   "website_id": "<string>"
-  "_idx": "<integer>"
+  "_idx": <integer>
 }
 ```
 

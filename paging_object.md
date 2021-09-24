@@ -4,13 +4,13 @@ Large result sets will be served back on separate pages.  The paging object is m
 
 ```JSON
 {
-  "count": "<integer>",
-  "current_page": "<integer>",
+  "count": <integer>,
+  "current_page": <integer>,
   "next_page": "<string>",
   "previous_page": "<string>",
-  "per_page": "<integer>",
-  "total_count": "<integer>",
-  "total_pages": "<integer>"
+  "per_page": <integer>,
+  "total_count": <integer>,
+  "total_pages": <integer>
 }
 ```
 
