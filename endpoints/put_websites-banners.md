@@ -49,16 +49,6 @@ The response has the following shape:
 ]
 ```
 
-The results will contain zero or more of the following objects:
-
-```json
-{
-  "id": "<string>",
-  "website_id": "<string>",
-  "_idx": "<string>"
-}
-```
-
 # Example 1
 
 Request update for a single banner.

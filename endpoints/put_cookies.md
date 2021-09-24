@@ -119,7 +119,7 @@ PUT `/api/v3/websites/cookies`
         "account_id": "acct_1234",
         "cookie_id": "ck_1234",
         "website_id": "web_1234",
-        "_idx": 1
+        "_idx": 0
     }
 ]
 ```
@@ -216,19 +216,19 @@ PUT `/api/v3/websites/cookies`
         "account_id": "acct_1234",
         "cookie_id": "ck_1234",
         "website_id": "web_1234",
-        "_idx": 1
+        "_idx": 0
     },
     {
         "account_id": "acct_1234",
         "cookie_id": "ck_5678",
         "website_id": "web_0987",
-        "_idx": 2
+        "_idx": 1
     },
     {
         "account_id": "acct_4567",
         "cookie_id": "ck_2112",
         "website_id": "web_4567",
-        "_idx": 3
+        "_idx": 2
     }
 ]
 ```
