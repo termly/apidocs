@@ -9,7 +9,7 @@ Updates the banner for a website. The body has the following shape:
       "account_id": "<string>",
       "auto_accept_on_scroll": "<bool>",
       "display_consent_banner_by_region": "<bool>",
-      "display_style": "<string>",
+      "display_style": "<enum{'banner', 'modal', 'tooltip'}>",
       "id": "<string>",
       "personalized_content": "<bool>",
       "position": "<enum{'bottom', 'bottom_left', 'bottom_right', 'top', 'top_left', 'top_right'}>",
@@ -26,7 +26,7 @@ Updates the banner for a website. The body has the following shape:
 - `account_id` is the unique identifier of the account
 - `auto_accept_on_scroll` is a user scrolling accepted as consent?
 - `display_consent_banner_by_region` are there User region-specific settings?
-- `display_style` is the Banner display style
+- `display_style` is one of `banner`, `modal`, `tooltip`
 - `id` is the unique identifier of the banner
 - `personalized_content` does the website have content personalized for the user?
 - `position` is the position in which the banner is displayed
