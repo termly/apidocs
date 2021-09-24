@@ -49,7 +49,7 @@ This type of error is returned when the request that made it was in error. This 
 * `_idx` indexed of the object in the request array that raised this error
 * `validation_errors` array of validation errors, only returned when code is `"validation_errors"`
   * `field` the attribute of the object that caused this validation failure. If the validation failure is general to the object this will be `"object"`
-  * `error` validation error code f
+  * `error` validation error code
 
 ## Object not found
 

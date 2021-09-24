@@ -290,3 +290,43 @@ GET https://api.termly.io/v1/websites?query=%5B%20%7B%20%22account_id%22%3A%20%2
   }
 }
 ```
+
+
+# Example 3
+
+Request wit `ids` parameter but value is empty array
+
+## Request
+
+```
+GET https://api.termly.io/v1/websites?query=%5B%7B%22account_id%22%3A%22acct_123%22%2C%22ids%22%3A%5B%5D%7D%5D
+``` 
+
+## Query
+
+```JSON
+[
+  {
+    "account_id": "acct_123",
+    "ids": []
+  }
+]
+```
+
+## Response
+
+```JSON
+{
+  "results": [],
+  "errors": [],
+  "paging": {
+    "count": 1,
+    "current_page": 1,
+    "next_page": null,
+    "previous_page": null,
+    "per_page": 25,
+    "total_count": 1,
+    "total_pages": 1
+  }
+}
+```
