@@ -314,7 +314,7 @@ PUT `/api/v3/websites/cookies`
         "cookie_id": "ck_1234",
         "website_id": "web_1234",
         "_idx": 0
-    }
+    },
     {
         "account_id": "acct_1234",
         "error": "object_not_found",

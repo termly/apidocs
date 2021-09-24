@@ -1,13 +1,52 @@
-# <_VERB_> <_domain_>
+# Overview
+
+Retrieve the <entity> for the website. The query has the following shape:
+
+```json
+{}
+```
+
+At least 1 object with the field account_id and website_id is required. Once the query is constructed, pass the URL encoded value in the query string parameter `query`.
+
+The response has the following shape:
+
+```json
+{
+	"results": [],
+	"errors": [],
+	"paging": {}
+}
+```
+
+The results will contain zero or more of the following objects:
+
+```json
+{}
+```
+
+- `<field>` description
+
+# Example 1
+
+## Request
 
 ## Query
 
 ## Response
 
-### Success
+# Example 2
 
-### Error
+## Request
 
-#### 4nn
+## Query
 
-#### 5nn
+## Response
+
+# Example 3
+
+## Request
+
+## Query
+
+## Response
+
