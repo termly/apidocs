@@ -30,7 +30,7 @@ This type of error is returned when the request that made it was in error. This 
 ```JSON
 {
   "error": "<string",
-  "_idx": "<integer>",
+  "_idx": <integer>,
 }
 ```
 

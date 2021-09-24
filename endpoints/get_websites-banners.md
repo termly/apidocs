@@ -51,13 +51,13 @@ The results will contain zero or more of the following objects:
     }
   ],
   "paging": {
-    "count": "<integer>",
-    "current_page": "<integer>",
+    "count": <integer>,
+    "current_page": <integer>,
     "next_page": "<string>",
     "previous_page": "<string>",
-    "per_page": "<integer>",
-    "total_count": "<integer>",
-    "total_pages": "<integer>"
+    "per_page": <integer>,
+    "total_count": <integer>,
+    "total_pages": <integer>
   }
 }
 ```

@@ -5,7 +5,7 @@ This type of error is returned when the request has a validation errors. This re
 ```JSON
 {
   "error": "<string",
-  "_idx": "<integer>",
+  "_idx": <integer>,
   "validation_errors": [
     {
       "field": "<string>",
