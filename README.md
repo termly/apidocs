@@ -8,4 +8,5 @@ Please see [here](security.md) for how to create the security elements required 
 
 * [Banners](endpoints/banners.md)
 * [Collaborators](endpoints/collaborators.md)
+* [Cookies](endpoints/cookies.md)
 * [Scan Report](endpoints/scan_report.md)
