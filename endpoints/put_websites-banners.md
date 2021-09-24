@@ -7,15 +7,15 @@ Updates the banner for a website. The body has the following shape:
   "items": [
     {
       "account_id": "<string>",
-      "auto_accept_on_scroll": "bool",
-      "display_consent_banner_by_region": "bool",
+      "auto_accept_on_scroll": "<bool>",
+      "display_consent_banner_by_region": "<bool>",
       "display_style": "<string>",
       "id": "<string>",
-      "personalized_content": "bool",
+      "personalized_content": "<bool>",
       "position": "<enum{'bottom', 'bottom_left', 'bottom_right', 'top', 'top_left', 'top_right'}>",
-      "running_targeted_advertising": "bool",
-      "share_data_to_3rd_party": "bool",
-      "show_cookie_preference": "bool",
+      "running_targeted_advertising": "<bool>",
+      "share_data_to_3rd_party": "<bool>",
+      "show_cookie_preference": "<bool>",
       "theme_color": "<enum{'blue', 'light', 'green', 'red', 'black', 'navy_blue'}>",
       "website_id": "<string>"
     }
@@ -62,16 +62,16 @@ The results will contain zero or more of the following objects:
   ],
   "errors": [
     {
-      "error": "string",
-      "account_id": "string",
-      "website_id": "string"
+      "error": "<string>",
+      "account_id": "<string>",
+      "website_id": "<string>"
     }
   ],
   "paging": {
     "count": "<integer>",
     "current_page": "<integer>",
-    "next_page": "string",
-    "previous_page": "string",
+    "next_page": "<string>",
+    "previous_page": "<string>",
     "per_page": "<integer>",
     "total_count": "<integer>",
     "total_pages": "<integer>"
