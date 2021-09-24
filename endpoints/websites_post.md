@@ -74,7 +74,7 @@ The response is an array of success or error response objects with this shape:
 
 The shape of an error object is described [here](../error_object.md#post-put-delete-error-object).
 
-If the entire request is in error or invalid the result JSON will be [error object](../error_object.md#universal-errors)
+If the entire request is in error or invalid the result JSON will be [request error object](../request_errors.md)
 
 
 # Example 1

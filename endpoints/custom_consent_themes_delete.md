@@ -15,7 +15,7 @@ Delete an existing custom consent theme. The query has the following JSON shape:
 
 The query must have 1 or more request objects and will respond with the same number of success or [error objects](../error_object.md#post-put-delete-error-object). Once constructed the object must be URL encoded and be the value for the `query` parameter.
 
-If the entire request is in error or invalid, the result JSON will be an [error object](../error_object.md#universal-errors).
+If the entire request is in error or invalid, the result JSON will be a [request error](../request_errors.md).
 
 # Example 1
 
