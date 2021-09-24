@@ -34,7 +34,7 @@ The results will contain zero or more of the following objects:
   "de": "<string>",
   "en_uk": "<string>",
   "en_us": "<string>",
-  "expire": "<string>",
+  "lifetime": "<string>",
   "fr": "<string>",
   "id": "<string>",
   "initiator": "<string>",
@@ -58,7 +58,7 @@ The results will contain zero or more of the following objects:
 - `de` is the description in German
 - `en_uk` is the description in UK English
 - `en_us` is the description in US English
-- `expire` is the expiry of the cookie in seconds
+- `lifetime` is the length of time in seconds before the cookie is deleted from the browser
 - `fr` is the description in French
 - `id` is the unique identifier of the cookie
 - `initiator`  is the url that sourced the cookie
@@ -105,7 +105,7 @@ Get one cookie.
       "de": null,
       "en_uk": null,
       "en_us": "Tracks the widget",
-      "expire": "Friday, June 13, 2102",
+      "lifetime": "Friday, June 13, 2102",
       "fr": null,
       "id": "ck_1234",
       "initiator": null,
@@ -170,7 +170,7 @@ Get multiple cookies.
       "de": null,
       "en_uk": null,
       "en_us": "Tracks the widget",
-      "expire": "Friday, June 13, 2102",
+      "lifetime": "Friday, June 13, 2102",
       "fr": null,
       "id": "ck_1234",
       "initiator": null,
@@ -193,7 +193,7 @@ Get multiple cookies.
       "de": null,
       "en_uk": null,
       "en_us": "Tracks the widget",
-      "expire": "Friday, June 13, 2102",
+      "lifetime": "Friday, June 13, 2102",
       "fr": null,
       "id": "ck_1234",
       "initiator": null,
@@ -258,7 +258,7 @@ Get multiple cookies, one is not found.
       "de": null,
       "en_uk": null,
       "en_us": "Tracks the widget",
-      "expire": "Friday, June 13, 2102",
+      "lifetime": "Friday, June 13, 2102",
       "fr": null,
       "id": "ck_1234",
       "initiator": null,

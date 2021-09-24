@@ -11,7 +11,7 @@ Creates cookies. The request body has the following shape:
   "de": "<string>",
   "en_uk": "<string>",
   "en_us": "<string>",
-  "expire": "<string>",
+  "lifetime": "<string>",
   "fr": "<string>",
   "initiator": "<string>",
   "name": "<string>",
@@ -33,7 +33,7 @@ Creates cookies. The request body has the following shape:
 - `de` is the description in German
 - `en_uk` is the description in UK English
 - `en_us` is the description in US English
-- `expire` is the expiry of the cookie in seconds
+- `lifetime` is the length of time in seconds before the cookie is deleted from the browser
 - `fr` is the description in French
 - `initiator`  is the url that sourced the cookie
 - `name` is the name of the cookie
@@ -68,7 +68,7 @@ The results will contain zero or more of the following objects:
   "de": "<string>",
   "en_uk": "<string>",
   "en_us": "<string>",
-  "expire": "<string>",
+  "lifetime": "<string>",
   "fr": "<string>",
   "party_provider_type": "<string>",
   "initiator": "<string>",
@@ -95,7 +95,7 @@ Creates a single cookie for a single website.
 
 POST `/api/v3/websites/cookies`
 
-## Query
+## Request Body
 
 ```json
 [
@@ -107,7 +107,7 @@ POST `/api/v3/websites/cookies`
     "de": null,
     "en_uk": null,
     "en_us": "Tracks the widget",
-    "expire": "Friday, June 13, 2102",
+    "lifetime": "Friday, June 13, 2102",
     "fr": null,
     "initiator": null,
     "name": "ACME Tracker",
@@ -151,21 +151,13 @@ POST `/api/v3/websites/cookies`
 [
   {
     "account_id": "acct_1234",
-    "category": null,
     "country": "United States",
     "domain": "https://example.com",
-    "de": null,
-    "en_uk": null,
     "en_us": "Tracks the widget",
-    "expire": "Friday, June 13, 2102",
-    "fr": null,
-    "initiator": null,
+    "lifetime": "Friday, June 13, 2102",
     "name": "ACME Tracker",
     "new": false,
     "party_provider_type": "third_party",
-    "service": null,
-    "service_policy_link": null,
-    "source": null,
     "tracker_type": "http_cookie",
     "url": "https://example.com/cisforcookie",
     "value": "that's good enough for me",
@@ -173,21 +165,14 @@ POST `/api/v3/websites/cookies`
   },
   {
     "account_id": "acct_1234",
-    "category": null,
     "country": "United States",
     "domain": "https://example.com",
-    "de": null,
-    "en_uk": null,
     "en_us": "Tracks the widget",
-    "expire": "Friday, June 13, 2102",
+    "lifetime": "Friday, June 13, 2102",
     "fr": null,
-    "initiator": null,
     "name": "ACME Tracker",
     "new": false,
     "party_provider_type": "third_party",
-    "service": null,
-    "service_policy_link": null,
-    "source": null,
     "tracker_type": "http_cookie",
     "url": "https://example.com/cisforcookie",
     "value": "that's good enough for me",
@@ -195,21 +180,13 @@ POST `/api/v3/websites/cookies`
   },
   {
     "account_id": "acct_4567",
-    "category": null,
     "country": "United States",
     "domain": "https://example.com",
-    "de": null,
-    "en_uk": null,
     "en_us": "Tracks the widget",
-    "expire": "Friday, June 13, 2102",
-    "fr": null,
-    "initiator": null,
+    "lifetime": "Friday, June 13, 2102",
     "name": "ACME Tracker",
     "new": false,
     "party_provider_type": "third_party",
-    "service": null,
-    "service_policy_link": null,
-    "source": null,
     "tracker_type": "http_cookie",
     "url": "https://example.com/cisforcookie",
     "value": "that's good enough for me",
@@ -263,7 +240,7 @@ POST `/api/v3/websites/cookies`
     "de": null,
     "en_uk": null,
     "en_us": "Tracks the widget",
-    "expire": "Friday, June 13, 2102",
+    "lifetime": "Friday, June 13, 2102",
     "fr": null,
     "initiator": null,
     "name": "ACME Tracker",
@@ -285,7 +262,7 @@ POST `/api/v3/websites/cookies`
     "de": null,
     "en_uk": null,
     "en_us": "Tracks the widget",
-    "expire": "Friday, June 13, 2102",
+    "lifetime": "Friday, June 13, 2102",
     "fr": null,
     "initiator": null,
     "name": "ACME Tracker",
