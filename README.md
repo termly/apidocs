@@ -16,3 +16,4 @@ Attributes that start with `_` are meta attributes that are not related to the a
 * [Collaborators](endpoints/collaborators.md)
 * [Cookies](endpoints/cookies.md)
 * [Websites](endpoints/websites.md)
+* [Custom Consent Themes](endpoints/custom_consent_themes.md)
