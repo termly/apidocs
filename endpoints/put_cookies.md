@@ -114,26 +114,14 @@ PUT `/api/v3/websites/cookies`
 ## Response
 
 ```json
-{
-	"results": [
-      {
+[
+    {
         "account_id": "acct_1234",
         "cookie_id": "ck_1234",
         "website_id": "web_1234",
         "_idx": 1
-      }
-    ],
-	"errors": [],
-	"paging": {
-      "count": 1,
-      "current_page": 1,
-      "next_page": null,
-      "previous_page": null,
-      "per_page": 50,
-      "total_count": 1,
-      "total_pages": 1
     }
-}
+]
 ```
 
 # Example 2
@@ -223,38 +211,26 @@ PUT `/api/v3/websites/cookies`
 ## Response
 
 ```json
-{
-	"results": [
-      {
+[
+    {
         "account_id": "acct_1234",
         "cookie_id": "ck_1234",
         "website_id": "web_1234",
         "_idx": 1
-      },
-      {
+    },
+    {
         "account_id": "acct_1234",
         "cookie_id": "ck_5678",
         "website_id": "web_0987",
         "_idx": 2
-      },
-      {
+    },
+    {
         "account_id": "acct_4567",
         "cookie_id": "ck_2112",
         "website_id": "web_4567",
         "_idx": 3
-      }
-    ],
-	"errors": [],
-	"paging": {
-      "count": 3,
-      "current_page": 1,
-      "next_page": null,
-      "previous_page": null,
-      "per_page": 50,
-      "total_count": 3,
-      "total_pages": 1
     }
-}
+]
 ```
 
 # Example 3
@@ -321,29 +297,12 @@ PUT `/api/v3/websites/cookies`
 ## Response
 
 ```json
-{
-	"results": [
-      {
+[
+    {
         "account_id": "acct_1234",
         "cookie_id": "ck_1234",
         "website_id": "web_1234",
         "_idx": 1
-      }
-    ],
-	"errors": [
-      {
-        "account_id": "acct_1234",
-        "error": "object_not_found",
-        "id": "web_0987"
-      }    ],
-	"paging": {
-      "count": 1,
-      "current_page": 1,
-      "next_page": null,
-      "previous_page": null,
-      "per_page": 50,
-      "total_count": 1,
-      "total_pages": 1
     }
-}
+]
 ```

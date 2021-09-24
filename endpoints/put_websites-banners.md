@@ -53,29 +53,9 @@ The results will contain zero or more of the following objects:
 
 ```json
 {
-  "results": [
-    {
-      "id": "<string>",
-      "website_id": "<string>",
-      "_idx": "<string>"
-    }
-  ],
-  "errors": [
-    {
-      "error": "<string>",
-      "account_id": "<string>",
-      "website_id": "<string>"
-    }
-  ],
-  "paging": {
-    "count": "<integer>",
-    "current_page": "<integer>",
-    "next_page": "<string>",
-    "previous_page": "<string>",
-    "per_page": "<integer>",
-    "total_count": "<integer>",
-    "total_pages": "<integer>"
-  }
+  "id": "<string>",
+  "website_id": "<string>",
+  "_idx": "<string>"
 }
 ```
 
@@ -87,11 +67,10 @@ Request update for a single banner.
 
 PUT `/api/v3/websites/banners`
 
-## Query
+## Request Body
 
 ```json
-{
-  "items": [
+[
     {
       "account_id": "acct_1234",
       "auto_accept_on_scroll": false,
@@ -106,32 +85,19 @@ PUT `/api/v3/websites/banners`
       "theme_color": "green",
       "website_id": "website_1234"
     }
-  ]
-}
+]
 ```
 
 ## Response
 
 ```json
-{
-  "results": [
+[
     {
       "id": "ban_1234",
       "website_id": "website_1234",
       "_idx": 1
     }
-  ],
-  "errors": [],
-  "paging": {
-    "count": 1,
-    "current_page": 1,
-    "next_page": null,
-    "previous_page": null,
-    "per_page": 50,
-    "total_count": 1,
-    "total_pages": 1
-  }
-}
+]
 ```
 
 # Example 2
@@ -142,11 +108,10 @@ Request update for multiple banners.
 
 PUT `/api/v3/websites/banners`
 
-## Query
+## Request Body
 
 ```json
-{
-  "items": [
+[
     {
       "account_id": "acct_1234",
       "auto_accept_on_scroll": false,
@@ -175,15 +140,13 @@ PUT `/api/v3/websites/banners`
       "theme_color": "green",
       "website_id": "website_9876"
     }
-  ]
-}
+]
 ```
 
 ## Response
 
 ```json
-{
-  "results": [
+[
     {
       "id": "ban_1234",
       "website_id": "website_1234",
@@ -194,18 +157,7 @@ PUT `/api/v3/websites/banners`
       "website_id": "website_9876",
       "_idx": 1
     }
-  ],
-  "errors": [],
-  "paging": {
-    "count": 1,
-    "current_page": 1,
-    "next_page": null,
-    "previous_page": null,
-    "per_page": 50,
-    "total_count": 1,
-    "total_pages": 1
-  }
-}
+]
 ```
 
 # Example 3
@@ -216,11 +168,10 @@ Request update for multiple banners. One website does not exist.
 
 PUT `/api/v3/websites/banners`
 
-## Query
+## Request Body
 
 ```json
-{
-  "items": [
+[
     {
       "account_id": "acct_1234",
       "auto_accept_on_scroll": false,
@@ -249,35 +200,17 @@ PUT `/api/v3/websites/banners`
       "theme_color": "green",
       "website_id": "website_9876"
     }
-  ]
-}
+]
 ```
 
 ## Response
 
 ```json
-{
-  "results": [
+[
     {
       "id": "ban_1234",
       "website_id": "website_1234",
       "_idx": 1
     }
-  ],
-  "errors": [
-    {
-      "error": "object_not_found",
-      "id": "website_9876"
-    }
-  ],
-  "paging": {
-    "count": 1,
-    "current_page": 1,
-    "next_page": null,
-    "previous_page": null,
-    "per_page": 50,
-    "total_count": 1,
-    "total_pages": 1
-  }
-}
+]
 ```
