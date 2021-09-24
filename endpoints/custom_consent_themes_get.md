@@ -2,11 +2,11 @@
 
 Retrieve all or some of the custom consent themes for a website.  The query has the following JSON shape:
 
-```JSON
+```
 [
   {
     "account_id": "<string>",
-    "website_id" "<string>",
+    "website_id": "<string>",
     "ids": {
       "<string>"
     }

@@ -36,7 +36,7 @@ The response will look like:
   "name": "<string>",
   "url": "<string>",
   "page_views": <integer>,
-  "scan_period": "<string>",
+  "scan_period": "<enum{'weekly', 'monthly', 'trimonthly'}>",
   "report": {
     "id": "<string>",
     "created_at": "<string>"

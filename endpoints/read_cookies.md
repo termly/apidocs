@@ -58,7 +58,7 @@ The results will contain zero or more of the following objects:
 - `de` is the description in German
 - `en_uk` is the description in UK English
 - `en_us` is the description in US English
-- `expire` is the expiry of the cookie
+- `expire` is the expiry of the cookie in seconds
 - `fr` is the description in French
 - `id` is the unique identifier of the cookie
 - `initiator`  is the url that sourced the cookie
@@ -66,7 +66,7 @@ The results will contain zero or more of the following objects:
 - `new` is a flag indicating whether the cookie was found on the most recent scan
 - `party_provider_type`  is this a first-party or third-party cookie
 - `service` is a value indicating the service that soured the cookie
-- `service_policy_link` is a link to the servie policy of the website
+- `service_policy_link` is a link to the service policy of the website
 - `source` is the source of the cookie
 - `tracker_type` is one of `http_cookie`, `html_local_storage`, `html_session_storage`, `server_cookie`, `pixel_tracker`, `indexed_db`
 - `url` is the url of the cookie

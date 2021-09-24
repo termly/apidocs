@@ -16,6 +16,16 @@ Create a new custom consent theme for a website. The request body will be JSON:
 }
 ```
 
+* `id` unique identifier for custom consent theme
+* `website_id` unique identifier for website
+* `account_id` unique identifier for account
+* `name` name of the theme
+* `font_family` font for theme
+* `font_size` size of font (can be described in any CSS compatible why)
+* `color` font color
+* `background` background color
+* `btn_background` button background color
+* `btn_text_color` button text color
 
 The body must have 1 or more of these objects.  Once created, the JSON must be passed as the request body.
 
