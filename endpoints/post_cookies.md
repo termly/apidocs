@@ -99,27 +99,28 @@ POST `/api/v3/websites/cookies`
 
 ```json
 [
-    {
-        "account_id": "acct_1234",
-        "category": null,
-        "country": "United States",
-        "domain": "https://example.com",
-        "de": null,
-        "en_uk": null,
-        "en_us": "Tracks the widget",
-        "expire": "Friday, June 13, 2102",
-        "fr": null,
-        "initiator": null,
-        "name": "ACME Tracker",
-        "new": false,
-        "service": null,
-        "service_policy_link": null,
-        "source": null,
-        "tracker_type": "http_cookie",
-        "url": "https://example.com/cisforcookie",
-        "value": "that's good enough for me",
-        "website_id": "web_1234"
-    }
+  {
+    "account_id": "acct_1234",
+    "category": null,
+    "country": "United States",
+    "domain": "https://example.com",
+    "de": null,
+    "en_uk": null,
+    "en_us": "Tracks the widget",
+    "expire": "Friday, June 13, 2102",
+    "fr": null,
+    "initiator": null,
+    "name": "ACME Tracker",
+    "new": false,
+    "party_provider_type": "third_party",
+    "service": null,
+    "service_policy_link": null,
+    "source": null,
+    "tracker_type": "http_cookie",
+    "url": "https://example.com/cisforcookie",
+    "value": "that's good enough for me",
+    "website_id": "web_1234"
+  }
 ]
 ```
 
@@ -133,7 +134,7 @@ POST `/api/v3/websites/cookies`
         "website_id": "web_1234",
         "_idx": 0
     }
-  ]
+]
 ```
 
 # Example 2
@@ -148,69 +149,72 @@ POST `/api/v3/websites/cookies`
 
 ```json
 [
-    {
-        "account_id": "acct_1234",
-        "category": null,
-        "country": "United States",
-        "domain": "https://example.com",
-        "de": null,
-        "en_uk": null,
-        "en_us": "Tracks the widget",
-        "expire": "Friday, June 13, 2102",
-        "fr": null,
-        "initiator": null,
-        "name": "ACME Tracker",
-        "new": false,
-        "service": null,
-        "service_policy_link": null,
-        "source": null,
-        "tracker_type": "http_cookie",
-        "url": "https://example.com/cisforcookie",
-        "value": "that's good enough for me",
-        "website_id": "web_1234"
-    },
-    {
-        "account_id": "acct_1234",
-        "category": null,
-        "country": "United States",
-        "domain": "https://example.com",
-        "de": null,
-        "en_uk": null,
-        "en_us": "Tracks the widget",
-        "expire": "Friday, June 13, 2102",
-        "fr": null,
-        "initiator": null,
-        "name": "ACME Tracker",
-        "new": false,
-        "service": null,
-        "service_policy_link": null,
-        "source": null,
-        "tracker_type": "http_cookie",
-        "url": "https://example.com/cisforcookie",
-        "value": "that's good enough for me",
-        "website_id": "web_0987"
-    },
-    {
-        "account_id": "acct_4567",
-        "category": null,
-        "country": "United States",
-        "domain": "https://example.com",
-        "de": null,
-        "en_uk": null,
-        "en_us": "Tracks the widget",
-        "expire": "Friday, June 13, 2102",
-        "fr": null,
-        "initiator": null,
-        "name": "ACME Tracker",
-        "new": false,
-        "service": null,
-        "service_policy_link": null,
-        "source": null,
-        "tracker_type": "http_cookie",
-        "url": "https://example.com/cisforcookie",
-        "value": "that's good enough for me",
-        "website_id": "web_4567"
-    }
+  {
+    "account_id": "acct_1234",
+    "category": null,
+    "country": "United States",
+    "domain": "https://example.com",
+    "de": null,
+    "en_uk": null,
+    "en_us": "Tracks the widget",
+    "expire": "Friday, June 13, 2102",
+    "fr": null,
+    "initiator": null,
+    "name": "ACME Tracker",
+    "new": false,
+    "party_provider_type": "third_party",
+    "service": null,
+    "service_policy_link": null,
+    "source": null,
+    "tracker_type": "http_cookie",
+    "url": "https://example.com/cisforcookie",
+    "value": "that's good enough for me",
+    "website_id": "web_1234"
+  },
+  {
+    "account_id": "acct_1234",
+    "category": null,
+    "country": "United States",
+    "domain": "https://example.com",
+    "de": null,
+    "en_uk": null,
+    "en_us": "Tracks the widget",
+    "expire": "Friday, June 13, 2102",
+    "fr": null,
+    "initiator": null,
+    "name": "ACME Tracker",
+    "new": false,
+    "party_provider_type": "third_party",
+    "service": null,
+    "service_policy_link": null,
+    "source": null,
+    "tracker_type": "http_cookie",
+    "url": "https://example.com/cisforcookie",
+    "value": "that's good enough for me",
+    "website_id": "web_0987"
+  },
+  {
+    "account_id": "acct_4567",
+    "category": null,
+    "country": "United States",
+    "domain": "https://example.com",
+    "de": null,
+    "en_uk": null,
+    "en_us": "Tracks the widget",
+    "expire": "Friday, June 13, 2102",
+    "fr": null,
+    "initiator": null,
+    "name": "ACME Tracker",
+    "new": false,
+    "party_provider_type": "third_party",
+    "service": null,
+    "service_policy_link": null,
+    "source": null,
+    "tracker_type": "http_cookie",
+    "url": "https://example.com/cisforcookie",
+    "value": "that's good enough for me",
+    "website_id": "web_4567"
+  }
 ]
 ```
 
@@ -218,24 +222,24 @@ POST `/api/v3/websites/cookies`
 
 ```json
 [
-    {
-        "account_id": "acct_1234",
-        "cookie_id": "ck_1234",
-        "website_id": "web_1234",
-        "_idx": 0
-    },
-    {
-        "account_id": "acct_1234",
-        "cookie_id": "ck_1235",
-        "website_id": "web_0987",
-        "_idx": 1
-    },
-    {
-        "account_id": "acct_4567",
-        "cookie_id": "ck_1236",
-        "website_id": "web_4567",
-        "_idx": 2
-    }
+  {
+    "account_id": "acct_1234",
+    "cookie_id": "ck_1234",
+    "website_id": "web_1234",
+    "_idx": 1
+  },
+  {
+    "account_id": "acct_1234",
+    "cookie_id": "ck_1235",
+    "website_id": "web_0987",
+    "_idx": 2
+  },
+  {
+    "account_id": "acct_4567",
+    "cookie_id": "ck_1236",
+    "website_id": "web_4567",
+    "_idx": 3
+  }
 ]
 ```
 
@@ -251,48 +255,50 @@ POST `/api/v3/websites/cookies`
 
 ```json
 [
-    {
-        "account_id": "acct_1234",
-        "category": null,
-        "country": "United States",
-        "domain": "https://example.com",
-        "de": null,
-        "en_uk": null,
-        "en_us": "Tracks the widget",
-        "expire": "Friday, June 13, 2102",
-        "fr": null,
-        "initiator": null,
-        "name": "ACME Tracker",
-        "new": false,
-        "service": null,
-        "service_policy_link": null,
-        "source": null,
-        "tracker_type": "http_cookie",
-        "url": "https://example.com/cisforcookie",
-        "value": "that's good enough for me",
-        "website_id": "web_1234"
-    },
-    {
-        "account_id": "acct_1234",
-        "category": null,
-        "country": "United States",
-        "domain": "https://example.com",
-        "de": null,
-        "en_uk": null,
-        "en_us": "Tracks the widget",
-        "expire": "Friday, June 13, 2102",
-        "fr": null,
-        "initiator": null,
-        "name": "ACME Tracker",
-        "new": false,
-        "service": null,
-        "service_policy_link": null,
-        "source": null,
-        "tracker_type": "http_cookie",
-        "url": "https://example.com/cisforcookie",
-        "value": "that's good enough for me",
-        "website_id": "web_0987"
-    }
+  {
+    "account_id": "acct_1234",
+    "category": null,
+    "country": "United States",
+    "domain": "https://example.com",
+    "de": null,
+    "en_uk": null,
+    "en_us": "Tracks the widget",
+    "expire": "Friday, June 13, 2102",
+    "fr": null,
+    "initiator": null,
+    "name": "ACME Tracker",
+    "new": false,
+    "party_provider_type": "third_party",
+    "service": null,
+    "service_policy_link": null,
+    "source": null,
+    "tracker_type": "http_cookie",
+    "url": "https://example.com/cisforcookie",
+    "value": "that's good enough for me",
+    "website_id": "web_1234"
+  },
+  {
+    "account_id": "acct_1234",
+    "category": null,
+    "country": "United States",
+    "domain": "https://example.com",
+    "de": null,
+    "en_uk": null,
+    "en_us": "Tracks the widget",
+    "expire": "Friday, June 13, 2102",
+    "fr": null,
+    "initiator": null,
+    "name": "ACME Tracker",
+    "new": false,
+    "party_provider_type": "third_party",
+    "service": null,
+    "service_policy_link": null,
+    "source": null,
+    "tracker_type": "http_cookie",
+    "url": "https://example.com/cisforcookie",
+    "value": "that's good enough for me",
+    "website_id": "web_0987"
+  }
 ]
 ```
 
@@ -300,17 +306,17 @@ POST `/api/v3/websites/cookies`
 
 ```json
 [
-    {
-        "account_id": "acct_1234",
-        "cookie_id": "ck_1234",
-        "website_id": "web_1234",
-        "_idx": 0
-    },
-    {
-        "account_id": "acct_1234",
-        "error": "object_not_found",
-        "id": "web_0987",
-        "_idx": 1
-    }    
+  {
+      "account_id": "acct_1234",
+      "cookie_id": "ck_1234",
+      "website_id": "web_1234",
+      "_idx": 0
+  },
+  {
+      "account_id": "acct_1234",
+      "error": "object_not_found",
+      "id": "web_0987",
+      "_idx": 1
+  }    
 ]
 ```
