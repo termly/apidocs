@@ -2,7 +2,7 @@
 
 This repository has documentation for the various endpoints that make up the Termly API. 
 
-Please see [here](security.md) for how to create the security elements required for each request.
+Please see [here](requests.md) for how to make requests to the Termly API.
 
 
 # General
