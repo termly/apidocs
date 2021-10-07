@@ -1,4 +1,4 @@
-The Termly API requires the requestor to create a signature composing of pieces of the request. This signature ensures that request isn't changed from a `GET` to a `DELETE` if traveling through intermediaries. This signature also ensures that if a full request is logged and those logs are compromised at some later date, the request cannot be simply sent again and cause destructive behavior.
+The Termly API requires the requestor to create a signature composed of pieces of the request. This signature ensures that request isn't changed from a `GET` to a `DELETE` if traveling through intermediaries. This signature also ensures that if a full request is logged and those logs are compromised at some later date, the request cannot be simply sent again and cause destructive behavior.
 
 The signature generation process is the following three steps:
 
@@ -72,7 +72,7 @@ The `9ee59...` string is the hex encoded SHA256 hash of the following JSON:
 [{"account_id":"acct_1234","email":"collaborator@example.com","role":"admin"}]
 ```
 
-Please note that while the following are semantically the same, the would generate very different hashes.
+Please note that while the following are semantically the same, they would generate very different hashes.
 
 ```json
 [{"account_id":"acct_1234","email":"collaborator@example.com","role":"admin"}]

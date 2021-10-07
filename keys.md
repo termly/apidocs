@@ -1,6 +1,6 @@
 Authentication for the Termly API uses 2 keys - a public and private. The public key is sent with each request. The private key is used to generate [signatures](signature.md) that Termly uses to verify the request.
 
-Each public key will have AT MOST one unexpired private key. If your key is compromised, you can immediately expire it and get a new key. If you are doing regularly scheduled key rolling, you can create a new private key for the public key. The old private key will be given an expiration 30 days from the date the new key is created. This expiration can be changed to be shorter or longer. Thirty days is just the default.
+A public key can have 1 or more private keys. And each of these private keys may have an expiration date associated with them. A public key can only have a single private key without an expiration date. If your key is compromised, you can immediately expire it and get a new key. If you are doing regularly scheduled key rolling, you can create a new private key for the public key. The old private key will be given an expiration 30 days from the date the new key is created. This expiration can be changed to be shorter or longer. Thirty days is just the default.
 
 When you have multiple private keys, Termly attempts signature validation with them from newest to oldest.
 
