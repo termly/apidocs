@@ -39,3 +39,8 @@ Please see [query](query.md) and [paging](paging.md) for more information on tho
 
 While similar to a `GET` (they both don't have a payload), a `DELETE` request may only have the `query` query string parameter. `DELETE` does not support paging. It will delete all records matching the `query`.
 
+# Batch request processing
+
+Creating and updating endpoints allow for multiple objects to be sent in. When processing these requests, the API will do partial processing if it can. So if you send in six and two fail validation, we'll continue to process the remaining four. In this situation, we return an HTTP status code of `207` to indicate multiple statuses. You'll need to go through each returned object to see if it was successful or not. If all the objects fail validation, you will receive a status of `400` indicating that the entire batch was bad.
+
+There is one exception to this rule. For authorization, it is all or nothing. For example, you send in six accounts, but your API key only has access to five of them. In this situation, we do not process any of them. The entire request is failed with a `403` status code.
