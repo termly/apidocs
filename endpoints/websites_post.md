@@ -6,11 +6,11 @@ Create new websites in the given account. The request body will be JSON:
 [
   {
     "account_id": "<string>",
-    "name": "<string>",
+    "name": "<string{http(s) scheme required}>",
     "url": "<string>",
     "scan_period": "<enum{'weekly', 'monthly', 'trimonthly'}>",
     "subdomains": [
-      "<string>"
+      "<string{http(s) scheme required}>"
     ],
     "company": {
       "legal_name": "<string>",
@@ -97,7 +97,7 @@ POST https://api.termly.io/v1/websites
     "url": "https://termly.io",
     "scan_period": "trimonthly",
     "subdomains": [
-      "app.termly.io"
+      "http://app.termly.io"
     ],
     "company": {
       "legal_name": "termly",
@@ -131,7 +131,7 @@ POST https://api.termly.io/v1/websites
       "created_at": "2021-09-21 01:58:53.721954 UTC"
     },
     "subdomains": [
-      "app.termly.io"
+      "http://app.termly.io"
     ],
     "cookie_count": 0,
     "cookie_policy_document_id": "doc_123",
@@ -177,7 +177,7 @@ Submit multiple websites one of which has a validation error
     "url": "https://termly.io",
     "scan_period": "trimonthly",
     "subdomains": [
-      "app.termly.io"
+      "http://app.termly.io"
     ],
     "company": {
       "legal_name": "termly",
@@ -197,7 +197,7 @@ Submit multiple websites one of which has a validation error
     "url": "",
     "scan_period": "trimonthly",
     "subdomains": [
-      "app.termly.io"
+      "http://app.termly.io"
     ],
     "company": {
       "legal_name": "termly",
@@ -231,7 +231,7 @@ Submit multiple websites one of which has a validation error
       "created_at": "2021-09-21 01:58:53.721954 UTC"
     },
     "subdomains": [
-      "app.termly.io"
+      "http://app.termly.io"
     ],
     "cookie_count": 0,
     "cookie_policy_document_id": "doc_123",

@@ -8,10 +8,10 @@ Update an existing websites in the given account. The request body will be JSON:
     "account_id": "<string>",
     "id": "<string>",
     "name": "<string>",
-    "url": "<string>",
+    "url": "<string{http(s) scheme required}>",
     "scan_period": "<enum{'weekly', 'monthly', 'trimonthly'}>",
     "subdomains": [
-      "<string>"
+      "<string{http(s) scheme required}>"
     ],
     "company": {
       "legal_name": "<string>",
@@ -99,7 +99,7 @@ PUT https://api.termly.io/v1/websites
     "url": "https://termly.io",
     "scan_period": "trimonthly",
     "subdomains": [
-      "app.termly.io"
+      "http://app.termly.io"
     ],
     "company": {
       "legal_name": "termly",
@@ -133,7 +133,7 @@ PUT https://api.termly.io/v1/websites
       "created_at": "2021-09-21 01:58:53.721954 UTC"
     },
     "subdomains": [
-      "app.termly.io"
+      "http://app.termly.io"
     ],
     "cookie_count": 0,
     "cookie_policy_document_id": "doc_123",
@@ -180,7 +180,7 @@ Submit multiple websites, one of which does not exist.
     "url": "https://termly.io",
     "scan_period": "trimonthly",
     "subdomains": [
-      "app.termly.io"
+      "http://app.termly.io"
     ],
     "company": {
       "legal_name": "termly",
@@ -201,7 +201,7 @@ Submit multiple websites, one of which does not exist.
     "url": "https://termly.io",
     "scan_period": "trimonthly",
     "subdomains": [
-      "app.termly.io"
+      "http://app.termly.io"
     ],
     "company": {
       "legal_name": "termly",
@@ -235,7 +235,7 @@ Submit multiple websites, one of which does not exist.
       "created_at": "2021-09-21 01:58:53.721954 UTC"
     },
     "subdomains": [
-      "app.termly.io"
+      "http://app.termly.io"
     ],
     "cookie_count": 0,
     "cookie_policy_document_id": "doc_123",
