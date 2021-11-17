@@ -1,6 +1,6 @@
 # Termly API Documentation
 
-This repository has documentation for the various endpoints that make up the Termly API. 
+This repository has documentation for the various endpoints that make up the Termly API.
 
 Please see [here](requests.md) for how to make requests to the Termly API.
 
@@ -18,5 +18,6 @@ Attributes that start with `_` are meta attributes that are not related to the a
 * [Cookies](endpoints/cookies.md)
 * [Custom Consent Themes](endpoints/custom_consent_themes.md)
 * [Documents](endpoints/documents.md)
+* [Scan](endpoints/scans.md)
 * [Scan Report](endpoints/scan_report.md)
 * [Websites](endpoints/websites.md)
