@@ -14,9 +14,9 @@ Trigger scan of one or more websites
 
 * `account_id` is the unique identifier of the account which owns the website.
 * `website_id` is the unique identifier of website to scan.
-* `scan_type' indicates what type of scan should be run. If no value is provided the default is `all_pages`.
+* `scan_type` indicates what type of scan should be run. If no value is provided the default is `all_pages`.
   * `one_page` only scan the first page of the website, it will provide faster results but the results may not be complete.
-  * `all_pages` crawl and scan all pages of the website.  slower but will provide a must more complete results.
+  * `all_pages` crawl and scan all pages of the website.  Slower but will provide much more complete results.
 
 At least 1 object is required in the request.
 
