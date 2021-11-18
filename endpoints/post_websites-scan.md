@@ -6,13 +6,17 @@ Trigger scan of one or more websites
 [
 	{
 		"account_id": "<string>",
-		"website_id": "<string>"
+		"website_id": "<string>",
+		"scan_type": "<enum{'one_page', 'all_pages'}>"
 	}
 ]
 ```
 
 * `account_id` is the unique identifier of the account which owns the website.
 * `website_id` is the unique identifier of website to scan.
+* `scan_type' indicates what type of scan should be run. If no value is provided the default is `all_pages`.
+  * `one_page` only scan the first page of the website, it will provide faster results but the results may not be complete.
+  * `all_pages` crawl and scan all pages of the website.  slower but will provide a must more complete results.
 
 At least 1 object is required in the request.
 
@@ -44,7 +48,8 @@ POST https://api.termly.io/v1/websites/scan
 [
 	{
 		"account_id": "acct_1234",
-		"website_id": "web_1234"
+		"website_id": "web_1234",
+		"scan_type": "one_page",
 	}
 ]
 
@@ -63,7 +68,7 @@ POST https://api.termly.io/v1/websites/scan
 ```
 
 # Example 2
-Request for a website that does not exist
+Request for a website that does not exist with the default `scan_type`
 
 ## Request
 ```shell
