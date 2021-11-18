@@ -6,7 +6,8 @@ Retrieve the latest scan for the website. The query has the following shape:
 [
   {
     "account_id": "<string>",
-    "website_id": "<string>"
+    "website_id": "<string>",
+    "id": "<string>"
   }
 ]
 ```
@@ -29,6 +30,7 @@ The results will contain zero or more of the following objects:
 {
   "results": [
     {
+      "id": "<string>",
       "account_id": "<string>",
       "compliant_adequate_countries": "<bool>",
       "compliant_disclose_cookie": "<bool>",
@@ -88,11 +90,12 @@ The results will contain zero or more of the following objects:
 }
 ```
 
+- `id` is the unique identifier of the report
 - `account_id`  is the unique identifier of the account
 - `compliant_adequate_countries` is a flag indicating whether the website is compliant across countries
 - `compliant_disclose_cookie` <TODO>
 - `cookies` is a list of cookie objects, documented below
-- `detected_consent_banner` is a flag indicating whether the website includes a consent banner 
+- `detected_consent_banner` is a flag indicating whether the website includes a consent banner
 - `detected_cookie_category` is a flag indicating whether the website includes a cookie category
 - `detected_cookie_preference` is a flag indicating whether the website includes a cookie preference
 - `pages` is the number of pages scanned
@@ -133,7 +136,7 @@ Request scan_report for a single website.
 
 ## Request
 
-GET `/api/v3/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%0A%5D`
+`GET https://api.termly.io/v1/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%0A%5D`
 
 ## Query
 
@@ -141,7 +144,8 @@ GET `/api/v3/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22
 [
   {
     "account_id": "acct_1234",
-    "website_id": "web_1234"
+    "website_id": "web_1234",
+    "id": "rpt_1234",
   }
 ]
 ```
@@ -152,6 +156,7 @@ GET `/api/v3/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22
 {
   "results": [
     {
+      "id": "rpt_1234",
       "account_id": "acct_1234",
       "compliant_adequate_countries": "false",
       "compliant_disclose_cookie": "true",
@@ -209,7 +214,7 @@ GET `/api/v3/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22
 
 ## Request
 
-GET `/api/v3/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_4567%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_2112%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1029%22%0A%20%20%7D%0A%5D%0A`
+`GET https://api.termly.io/v1/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_4567%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_2112%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1029%22%0A%20%20%7D%0A%5D%0A`
 
 Request scan_report for multiple websites.
 
@@ -219,15 +224,18 @@ Request scan_report for multiple websites.
 [
   {
     "account_id": "acct_1234",
-    "website_id": "web_1234"
+    "website_id": "web_1234",
+    "id": "rpt_1233",
   },
   {
     "account_id": "acct_1234",
-    "website_id": "web_4567"
+    "website_id": "web_4567",
+    "id": "rpt_123",
   },
   {
     "account_id": "acct_2112",
-    "website_id": "web_1029"
+    "website_id": "web_1029",
+    "id": "rpt_1238",
   }
 ]
 ```
@@ -238,6 +246,7 @@ Request scan_report for multiple websites.
 {
   "results": [
     {
+      "id": "rpt_1233",
       "account_id": "acct_1234",
       "compliant_adequate_countries": "false",
       "compliant_disclose_cookie": "true",
@@ -278,6 +287,7 @@ Request scan_report for multiple websites.
       "website_id": "web_1234"
     },
     {
+      "id": "rpt_123",
       "account_id": "acct_1234",
       "compliant_adequate_countries": "false",
       "compliant_disclose_cookie": "true",
@@ -318,6 +328,7 @@ Request scan_report for multiple websites.
       "website_id": "web_4567"
     },
     {
+      "id": "rpt_1238",
       "account_id": "acct_1234",
       "compliant_adequate_countries": "false",
       "compliant_disclose_cookie": "true",
@@ -377,7 +388,7 @@ Request scan_report for multiple websites. One website does not exist.
 
 ## Request
 
-GET `/api/v3/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_4567%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_2112%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_9876%22%0A%20%20%7D%0A%5D`
+`GET https://api.termly.io/v1/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_4567%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_2112%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_9876%22%0A%20%20%7D%0A%5D`
 
 ## Query
 
@@ -385,15 +396,18 @@ GET `/api/v3/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22
 [
   {
     "account_id": "acct_1234",
-    "website_id": "web_1234"
+    "website_id": "web_1234",
+    "id": "rpt_1238"
   },
   {
     "account_id": "acct_1234",
-    "website_id": "web_4567"
+    "website_id": "web_4567",
+    "id": "rpt_138",
   },
   {
     "account_id": "acct_2112",
-    "website_id": "web_9876"
+    "website_id": "web_9876",
+    "id": "rpt_9876"
   }
 ]
 ```
@@ -404,6 +418,7 @@ GET `/api/v3/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22
 {
   "results": [
     {
+      "id": "rpt_1238",
       "account_id": "acct_1234",
       "compliant_adequate_countries": "false",
       "compliant_disclose_cookie": "true",
@@ -444,6 +459,7 @@ GET `/api/v3/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22
       "website_id": "web_1234"
     },
     {
+      "id": "rpt_138",
       "account_id": "acct_1234",
       "compliant_adequate_countries": "false",
       "compliant_disclose_cookie": "true",
@@ -487,7 +503,9 @@ GET `/api/v3/websites/scan_report?%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22
   "errors": [
     {
       "error": "object_not_found",
-      "id": "web_9876"
+      "account_id": "acct_2112",
+      "website_id": "web_9876",
+      "id": "rpt_9876"
     }
   ],
   "paging": {
