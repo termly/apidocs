@@ -55,7 +55,7 @@ Request update for a single banner.
 
 ## Request
 
-PUT `/api/v3/websites/banners`
+PUT `https://api.termly.io/v1/websites/banners`
 
 ## Request Body
 
@@ -96,7 +96,7 @@ Request update for multiple banners.
 
 ## Request
 
-PUT `/api/v3/websites/banners`
+PUT `https://api.termly.io/v1/websites/banners`
 
 ## Request Body
 
@@ -156,7 +156,7 @@ Request update for multiple banners. One website does not exist.
 
 ## Request
 
-PUT `/api/v3/websites/banners`
+PUT `https://api.termly.io/v1/websites/banners`
 
 ## Request Body
 
