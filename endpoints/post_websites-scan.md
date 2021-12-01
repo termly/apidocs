@@ -43,7 +43,7 @@ Request for a single scan
 
 ## Request
 ```shell
-POST https://api.termly.io/v1/websites/scan
+POST https://api.termly.io/v1/websites/trigger_scan
 
 [
 	{
@@ -72,7 +72,7 @@ Request for a website that does not exist with the default `scan_type`
 
 ## Request
 ```shell
-POST https://api.termly.io/v1/websites/scan
+POST https://api.termly.io/v1/websites/trigger_scan
 
 [
 	{
