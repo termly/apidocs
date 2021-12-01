@@ -89,7 +89,7 @@ Creates a single cookie for a single website.
 
 ## Request
 
-PUT `/api/v3/websites/cookies`
+PUT `https://api.termly.io/v1/websites/cookies`
 
 ## Request Body
 
@@ -140,7 +140,7 @@ Creates multiple cookies for multiple websites.
 
 ## Request
 
-PUT `/api/v3/websites/cookies`
+PUT `https://api.termly.io/v1/websites/cookies`
 
 ## Request Body
 
@@ -249,7 +249,7 @@ Creates single cookie with multiple requests due to website not found.
 
 ## Request
 
-PUT `/api/v3/websites/cookies`
+PUT `https://api.termly.io/v1/websites/cookies`
 
 ## Request Body
 

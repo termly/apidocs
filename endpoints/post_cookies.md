@@ -93,7 +93,7 @@ Creates a single cookie for a single website.
 
 ## Request
 
-POST `/api/v3/websites/cookies`
+POST `https://api.termly.io/v1/websites/cookies`
 
 ## Request Body
 
@@ -143,7 +143,7 @@ Creates multiple cookies for multiple websites.
 
 ## Request
 
-POST `/api/v3/websites/cookies`
+POST `https://api.termly.io/v1/websites/cookies`
 
 ## Request Body
 
@@ -226,7 +226,7 @@ Creates single cookie with multiple requests due to website not found.
 
 ## Request
 
-POST `/api/v3/websites/cookies`
+POST `https://api.termly.io/v1/websites/cookies`
 
 ## Request Body
 
