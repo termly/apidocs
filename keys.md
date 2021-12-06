@@ -14,7 +14,7 @@ public_1 | priv_1 | nil
 
 With the prior data, Termly will try to validate requests first with `priv_1`.
 
-It has been a few months, and you've decided to role the key. You go to the key dashboard and create a new private key for `public_1`. You use the 30 days default expiration.
+It has been a few months, and you've decided to roll the key. You go to the key dashboard and create a new private key for `public_1`. You use the 30 days default expiration.
 
 public_key | private_key | expiration
 ---------- | ----------- | ----------
