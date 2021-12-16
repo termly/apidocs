@@ -11,12 +11,10 @@ Updates cookies. The request body has the following shape:
   "de": "<string>",
   "en_uk": "<string>",
   "en_us": "<string>",
-  "lifetime": "<string>",
   "fr": "<string>",
   "id": "<string>",
   "initiator": "<string>",
   "name": "<string>",
-  "new": "<bool>",
   "service": "<string>",
   "service_policy_link": "<string>",
   "source": "<string>",
@@ -35,13 +33,10 @@ Updates cookies. The request body has the following shape:
 - `de` is the description in German
 - `en_uk` is the description in UK English
 - `en_us` is the description in US English
-- `lifetime` is the length of time in seconds before the cookie is deleted from the browser
 - `fr` is the description in French
 - `id` is the unique identifier of the cookie
 - `initiator`  is the url that sourced the cookie
 - `name` is the name of the cookie
-- `new` is a flag indicating whether the cookie was found on the most recent scan
-- `party_provider_type`  is this a first-party or third-party cookie
 - `service` is a value indicating the service that soured the cookie
 - `service_policy_link` is a link to the servie policy of the website
 - `source` is the source of the cookie
@@ -63,12 +58,10 @@ The results will contain zero or more of the following objects:
   "de": "<string>",
   "en_uk": "<string>",
   "en_us": "<string>",
-  "lifetime": "<string>",
   "fr": "<string>",
   "party_provider_type": "<string>",
   "initiator": "<string>",
   "name": "<string>",
-  "new": "<bool>",
   "service": "<string>",
   "service_policy_link": "<string>",
   "source": "<string>",
@@ -85,7 +78,7 @@ If one of the collaborators cannot be updated, the object will be an [error obje
 
 # Example 1
 
-Creates a single cookie for a single website.
+Updates a single cookie for a single website.
 
 ## Request
 
@@ -103,13 +96,10 @@ PUT `https://api.termly.io/v1/websites/cookies`
     "de": null,
     "en_uk": null,
     "en_us": "Tracks the widget",
-    "lifetime": "12345",
     "fr": null,
     "id": "ck_1234",
     "initiator": null,
     "name": "ACME Tracker",
-    "new": false,
-    "party_provider_type": "third_party",
     "service": null,
     "service_policy_link": null,
     "source": null,
@@ -127,7 +117,7 @@ PUT `https://api.termly.io/v1/websites/cookies`
 [
   {
     "account_id": "acct_1234",
-    "cookie_id": "ck_1234",
+    "id": "ck_1234",
     "website_id": "web_1234",
     "_idx": 0
   }
@@ -136,7 +126,7 @@ PUT `https://api.termly.io/v1/websites/cookies`
 
 # Example 2
 
-Creates multiple cookies for multiple websites.
+Update multiple cookies for multiple websites.
 
 ## Request
 
@@ -154,13 +144,10 @@ PUT `https://api.termly.io/v1/websites/cookies`
     "de": null,
     "en_uk": null,
     "en_us": "Tracks the widget",
-    "lifetime": "12345",
     "fr": null,
     "id": "ck_1234",
     "initiator": null,
     "name": "ACME Tracker",
-    "new": false,
-    "party_provider_type": "third_party",
     "service": null,
     "service_policy_link": null,
     "source": null,
@@ -177,13 +164,10 @@ PUT `https://api.termly.io/v1/websites/cookies`
     "de": null,
     "en_uk": null,
     "en_us": "Tracks the widget",
-    "lifetime": "12345",
     "fr": null,
     "id": "ck_5678",
     "initiator": null,
     "name": "ACME Tracker",
-    "new": false,
-    "party_provider_type": "third_party",
     "service": null,
     "service_policy_link": null,
     "source": null,
@@ -200,13 +184,10 @@ PUT `https://api.termly.io/v1/websites/cookies`
     "de": null,
     "en_uk": null,
     "en_us": "Tracks the widget",
-    "lifetime": "12345",
     "fr": null,
     "id": "ck_2112",
     "initiator": null,
     "name": "ACME Tracker",
-    "new": false,
-    "party_provider_type": "third_party",
     "service": null,
     "service_policy_link": null,
     "source": null,
@@ -245,7 +226,7 @@ PUT `https://api.termly.io/v1/websites/cookies`
 
 # Example 3
 
-Creates single cookie with multiple requests due to website not found.
+Updates single cookie with multiple requests due to website not found.
 
 ## Request
 
@@ -263,13 +244,10 @@ PUT `https://api.termly.io/v1/websites/cookies`
     "de": null,
     "en_uk": null,
     "en_us": "Tracks the widget",
-    "lifetime": "12345",
     "fr": null,
     "id": "ck_1234",
     "initiator": null,
     "name": "ACME Tracker",
-    "new": false,
-    "party_provider_type": "third_party",
     "service": null,
     "service_policy_link": null,
     "source": null,
@@ -286,13 +264,10 @@ PUT `https://api.termly.io/v1/websites/cookies`
     "de": null,
     "en_uk": null,
     "en_us": "Tracks the widget",
-    "lifetime": "12345",
     "fr": null,
     "id": "ck_0000",
     "initiator": null,
     "name": "ACME Tracker",
-    "new": false,
-    "party_provider_type": "third_party",
     "service": null,
     "service_policy_link": null,
     "source": null,
@@ -310,7 +285,7 @@ PUT `https://api.termly.io/v1/websites/cookies`
 [
   {
     "account_id": "acct_1234",
-    "cookie_id": "ck_1234",
+    "id": "ck_1234",
     "website_id": "web_1234",
     "_idx": 0
   },
