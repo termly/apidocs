@@ -11,11 +11,9 @@ Creates cookies. The request body has the following shape:
   "de": "<string>",
   "en_uk": "<string>",
   "en_us": "<string>",
-  "lifetime": "<string>",
   "fr": "<string>",
   "initiator": "<string>",
   "name": "<string>",
-  "new": "<bool>",
   "service": "<string>",
   "service_policy_link": "<string>",
   "source": "<string>",
@@ -33,12 +31,9 @@ Creates cookies. The request body has the following shape:
 - `de` is the description in German
 - `en_uk` is the description in UK English
 - `en_us` is the description in US English
-- `lifetime` is the length of time in seconds before the cookie is deleted from the browser
 - `fr` is the description in French
 - `initiator`  is the url that sourced the cookie
 - `name` is the name of the cookie
-- `new` is a flag indicating whether the cookie was found on the most recent scan
-- `party_provider_type`  is this a first-party or third-party cookie
 - `service` is a value indicating the service that soured the cookie
 - `service_policy_link` is a link to the service policy of the website
 - `source` is the source of the cookie
@@ -68,12 +63,9 @@ The results will contain zero or more of the following objects:
   "de": "<string>",
   "en_uk": "<string>",
   "en_us": "<string>",
-  "lifetime": "<string>",
   "fr": "<string>",
-  "party_provider_type": "<string>",
   "initiator": "<string>",
   "name": "<string>",
-  "new": "<bool>",
   "service": "<string>",
   "service_policy_link": "<string>",
   "source": "<string>",
@@ -107,12 +99,9 @@ POST `https://api.termly.io/v1/websites/cookies`
     "de": null,
     "en_uk": null,
     "en_us": "Tracks the widget",
-    "lifetime": "12345",
     "fr": null,
     "initiator": null,
     "name": "ACME Tracker",
-    "new": false,
-    "party_provider_type": "third_party",
     "service": null,
     "service_policy_link": null,
     "source": null,
@@ -130,7 +119,7 @@ POST `https://api.termly.io/v1/websites/cookies`
 [
     {
         "account_id": "acct_1234",
-        "cookie_id": "ck_1234",
+        "id": "ck_1234",
         "website_id": "web_1234",
         "_idx": 0
     }
@@ -154,10 +143,7 @@ POST `https://api.termly.io/v1/websites/cookies`
     "country": "United States",
     "domain": "https://example.com",
     "en_us": "Tracks the widget",
-    "lifetime": "12345",
     "name": "ACME Tracker",
-    "new": false,
-    "party_provider_type": "third_party",
     "tracker_type": "http_cookie",
     "url": "https://example.com/cisforcookie",
     "value": "that's good enough for me",
@@ -168,11 +154,8 @@ POST `https://api.termly.io/v1/websites/cookies`
     "country": "United States",
     "domain": "https://example.com",
     "en_us": "Tracks the widget",
-    "lifetime": "12345",
     "fr": null,
     "name": "ACME Tracker",
-    "new": false,
-    "party_provider_type": "third_party",
     "tracker_type": "http_cookie",
     "url": "https://example.com/cisforcookie",
     "value": "that's good enough for me",
@@ -183,10 +166,7 @@ POST `https://api.termly.io/v1/websites/cookies`
     "country": "United States",
     "domain": "https://example.com",
     "en_us": "Tracks the widget",
-    "lifetime": "12345",
     "name": "ACME Tracker",
-    "new": false,
-    "party_provider_type": "third_party",
     "tracker_type": "http_cookie",
     "url": "https://example.com/cisforcookie",
     "value": "that's good enough for me",
@@ -201,19 +181,19 @@ POST `https://api.termly.io/v1/websites/cookies`
 [
   {
     "account_id": "acct_1234",
-    "cookie_id": "ck_1234",
+    "id": "ck_1234",
     "website_id": "web_1234",
     "_idx": 1
   },
   {
     "account_id": "acct_1234",
-    "cookie_id": "ck_1235",
+    "id": "ck_1235",
     "website_id": "web_0987",
     "_idx": 2
   },
   {
     "account_id": "acct_4567",
-    "cookie_id": "ck_1236",
+    "id": "ck_1236",
     "website_id": "web_4567",
     "_idx": 3
   }
@@ -240,12 +220,9 @@ POST `https://api.termly.io/v1/websites/cookies`
     "de": null,
     "en_uk": null,
     "en_us": "Tracks the widget",
-    "lifetime": "12345",
     "fr": null,
     "initiator": null,
     "name": "ACME Tracker",
-    "new": false,
-    "party_provider_type": "third_party",
     "service": null,
     "service_policy_link": null,
     "source": null,
@@ -262,12 +239,9 @@ POST `https://api.termly.io/v1/websites/cookies`
     "de": null,
     "en_uk": null,
     "en_us": "Tracks the widget",
-    "lifetime": "12345",
     "fr": null,
     "initiator": null,
     "name": "ACME Tracker",
-    "new": false,
-    "party_provider_type": "third_party",
     "service": null,
     "service_policy_link": null,
     "source": null,
@@ -285,7 +259,7 @@ POST `https://api.termly.io/v1/websites/cookies`
 [
   {
       "account_id": "acct_1234",
-      "cookie_id": "ck_1234",
+      "id": "ck_1234",
       "website_id": "web_1234",
       "_idx": 0
   },
