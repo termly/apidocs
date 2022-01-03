@@ -41,7 +41,7 @@ The response will look like:
 * `account_id` unique identifier of the account that owns the website
 * `website_id` unique identifier of the website that owns the document
 * `id` unique identifier of the document
-* `document` base 64 encoded HTML document
+* `document` html document
 
 `errors` will have 0 or more of the [error object](../error_object.md#get-errors).
 
@@ -55,7 +55,7 @@ Request the preview of all documents for a given website
 
 ```
 GET https://api.termly.io/v1/websites/documents/preview?query=%5B%7B%22account_id%22%3A%20%22acct_1234%22%2C%22website_id%22%3A%20%22web_123%22%7D%5D
-``` 
+```
 
 ## Query
 
@@ -76,8 +76,16 @@ GET https://api.termly.io/v1/websites/documents/preview?query=%5B%7B%22account_i
     {
       "account_id": "acct_123",
       "website_id": "web_123",
-      "ids": ["doc_123"],
-      "document": "aefweafho..."
+      "ids": "doc_123",
+      "name": "cookie policy",
+      "document": "<html>...</html>"
+    },
+    {
+      "account_id": "acct_123",
+      "website_id": "web_123",
+      "ids": "doc_125",
+      "name": "privacy policy",
+      "document": "<html>...</html>"
     }
   ],
   "errors": [],
@@ -101,7 +109,7 @@ Multiple accounts and documents in each account and one document cannot be found
 
 ```
 GET https://api.termly.io/v1/websites/documents/preview?query=%5B%20%7B%20%22account_id%22%3A%20%22acct_123%22%2C%20%22ids%22%3A%20%5B%22web_123%22%5D%7D%2C%20%7B%22account_id%22%3A%20%22acct_1234%22%2C%20%22ids%22%3A%20%5B%22web_13%22%2C%20%22web_14%22%5D%7D%5D
-``` 
+```
 
 ## Query
 
@@ -130,18 +138,20 @@ GET https://api.termly.io/v1/websites/documents/preview?query=%5B%20%7B%20%22acc
       "account_id": "acct_123",
       "website_id": "web_123",
       "id": "doc_123",
-      "document": "aefweaddfho..."
+      "name": "cookie policy",
+      "document": "<html>...</html>"
     },
     {
       "account_id": "acct_1234",
       "website_id": "web_1234",
       "id": "doc_14",
-      "document": "aefweafhfasdfso..."
+      "name": "cookie policy",
+      "document": "<html>...</html>"
     }
   ],
   "errors": [
     {
-      "error": "object_not_found",
+      "error": "document_not_found",
       "account_id": "acct_1234",
       "website_id": "web_1234",
       "id": "doc_13"
