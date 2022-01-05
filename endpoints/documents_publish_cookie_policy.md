@@ -9,10 +9,7 @@ When information in the cookie policy is changed it needs to be republished.  In
 [
   {
     "account_id": "<string>",
-    "website_id": "<string>",
-    "ids": [
-      "<string>"
-    ]
+    "website_id": "<string>"
   }
 ]
 ```
