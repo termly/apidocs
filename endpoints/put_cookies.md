@@ -26,7 +26,6 @@ Updates cookies. The request body has the following shape:
 ```
 
 - `account_id` is the unique identifier of the account
-- `id` is the unique identifier of the cookie
 - `category` is the cookie category
 - `country` is the country that sourced the cookie, based on a geoip lookup
 - `domain` is the domain of the cookie
@@ -74,7 +73,6 @@ The results will contain zero or more of the following objects:
 ```
 
 If one of the collaborators cannot be updated, the object will be an [error object](../error_object.md). If the error is a validation error, there will be a field called [validation errors](../validation_error_object.md)
-```
 
 # Example 1
 
