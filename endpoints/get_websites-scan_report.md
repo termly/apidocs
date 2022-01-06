@@ -1,3 +1,5 @@
+### :warning::warning::warning: This endpoint is not yet implemented. :warning::warning::warning:
+
 # Overview
 
 Retrieve the latest scan for the website. The query has the following shape:
