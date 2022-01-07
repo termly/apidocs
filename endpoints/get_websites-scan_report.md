@@ -32,8 +32,6 @@ The results will contain zero or more of the following objects:
     {
       "id": "<string>",
       "account_id": "<string>",
-      "compliant_adequate_countries": "<bool>",
-      "compliant_disclose_cookie": "<bool>",
       "cookies": [
         {
           "category": "<string>",
@@ -58,9 +56,6 @@ The results will contain zero or more of the following objects:
           "website_id": "<string>"
         }
       ],
-      "detected_consent_banner": "<bool>",
-      "detected_cookie_category": "<bool>",
-      "detected_cookie_preference": "<bool>",
       "pages": "<string>",
       "scan_failure_message": "<string>",
       "scan_type": "<string>",
@@ -92,12 +87,7 @@ The results will contain zero or more of the following objects:
 
 - `id` is the unique identifier of the report
 - `account_id`  is the unique identifier of the account
-- `compliant_adequate_countries` is a flag indicating whether the website is compliant across countries
-- `compliant_disclose_cookie` <TODO>
 - `cookies` is a list of cookie objects, documented below
-- `detected_consent_banner` is a flag indicating whether the website includes a consent banner
-- `detected_cookie_category` is a flag indicating whether the website includes a cookie category
-- `detected_cookie_preference` is a flag indicating whether the website includes a cookie preference
 - `pages` is the number of pages scanned
 - `scan_failure_message` is a description of the failure if the scan failed
 - `scan_type` is the type of scan, either `all_pages` or `one_page`
