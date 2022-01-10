@@ -6,7 +6,6 @@ Retrieve all or some of the websites in an account for the specified query.  The
 [
   {
     "account_id": "<string>",
-    "website_id": "<string>",
     "ids": [
       "<string>"
     ]
