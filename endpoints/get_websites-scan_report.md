@@ -82,10 +82,8 @@ The results will contain zero or more of the following objects:
     }
   ],
   "scrolling": {
-    "next_page": null,
-    "previous_page": null,
-    "group_size": 25,
-    "total_count": 1
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
@@ -95,7 +93,7 @@ The results will contain zero or more of the following objects:
 - `cookies` is a list of cookie objects, documented below
 - `pages` is the number of pages scanned
 - `scan_failure_message` is a description of the failure if the scan failed
-- `scan_type` is the type of scan, either `all_pages` or `one_page`
+- `scan_type` is the type of scan, either `all_groups` or `one_group`
 - `scanned_domains` is a list of strings, each string represents a domain that was scanned
 - `status` is the status of the scan, one of `scanning`, `scan_finish`, or `scan_fault`
 - `website_id` is the unique identifier of the website
@@ -184,7 +182,7 @@ Request scan_report for a single website.
       "detected_cookie_preference": true,
       "pages": "1",
       "scan_failure_message": null,
-      "scan_type": "single_page",
+      "scan_type": "single_group",
       "scanned_domains": [
         "example.com"
       ],
@@ -194,10 +192,8 @@ Request scan_report for a single website.
   ],
   "errors": [],
   "scrolling": {
-    "next_page": null,
-    "previous_page": null,
-    "group_size": 25,
-    "total_count": 1
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
@@ -271,7 +267,7 @@ Request scan_report for multiple websites.
       "detected_cookie_preference": true,
       "pages": "1",
       "scan_failure_message": null,
-      "scan_type": "single_page",
+      "scan_type": "single_group",
       "scanned_domains": [
         "example.com"
       ],
@@ -312,7 +308,7 @@ Request scan_report for multiple websites.
       "detected_cookie_preference": true,
       "pages": "1",
       "scan_failure_message": null,
-      "scan_type": "single_page",
+      "scan_type": "single_group",
       "scanned_domains": [
         "example.com"
       ],
@@ -353,7 +349,7 @@ Request scan_report for multiple websites.
       "detected_cookie_preference": true,
       "pages": "1",
       "scan_failure_message": null,
-      "scan_type": "single_page",
+      "scan_type": "single_group",
       "scanned_domains": [
         "example.com"
       ],
@@ -363,10 +359,8 @@ Request scan_report for multiple websites.
   ],
   "errors": [],
   "scrolling": {
-    "next_page": null,
-    "previous_page": null,
-    "group_size": 25,
-    "total_count": 1
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
@@ -440,7 +434,7 @@ Request scan_report for multiple websites. One website does not exist.
       "detected_cookie_preference": true,
       "pages": "1",
       "scan_failure_message": null,
-      "scan_type": "single_page",
+      "scan_type": "single_group",
       "scanned_domains": [
         "example.com"
       ],
@@ -481,7 +475,7 @@ Request scan_report for multiple websites. One website does not exist.
       "detected_cookie_preference": true,
       "pages": "1",
       "scan_failure_message": null,
-      "scan_type": "single_page",
+      "scan_type": "single_group",
       "scanned_domains": [
         "example.com"
       ],
@@ -498,10 +492,8 @@ Request scan_report for multiple websites. One website does not exist.
     }
   ],
   "scrolling": {
-    "next_page": null,
-    "previous_page": null,
-    "group_size": 25,
-    "total_count": 1
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```

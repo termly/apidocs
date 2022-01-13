@@ -97,10 +97,8 @@ GET https://api.termly.io/v1/websites/documents/preview?query=%5B%7B%22account_i
   ],
   "errors": [],
   "scrolling": {
-    "next_page": null,
-    "previous_page": null,
-    "group_size": 25,
-    "total_count": 1
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
@@ -162,10 +160,8 @@ GET https://api.termly.io/v1/websites/documents/preview?query=%5B%20%7B%20%22acc
     }
   ],
   "scrolling": {
-    "next_page": null,
-    "previous_page": null,
-    "group_size": 25,
-    "total_count": 1
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```

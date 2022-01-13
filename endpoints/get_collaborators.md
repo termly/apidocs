@@ -117,10 +117,8 @@ GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acc
 	],
 	"errors": [],
 	"scrolling": {
-      "next_page": null,
-      "previous_page": null,
-      "group_size": 25,
-      "total_count": 1
+      "next_group": null,
+      "previous_group": null
 	}
 }
 
@@ -181,10 +179,8 @@ GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acc
 	],
 	"errors": [],
 	"scrolling": {
-      "next_page": null,
-      "previous_page": null,
-      "group_size": 25,
-      "total_count": 1
+      "next_group": null,
+      "previous_group": null
 	}
 }
 
@@ -236,10 +232,8 @@ GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acc
 		}
 	],
 	"scrolling": {
-      "next_page": null,
-      "previous_page": null,
-      "group_size": 25,
-      "total_count": 1
+      "next_group": null,
+      "previous_group": null
 	}
 }
 

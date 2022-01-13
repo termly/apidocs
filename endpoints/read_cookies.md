@@ -131,10 +131,8 @@ Get one cookie.
   ],
   "errors": [],
   "scrolling": {
-    "next_page": null,
-    "previous_page": null,
-    "group_size": 25,
-    "total_count": 1
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
@@ -216,10 +214,8 @@ Get multiple cookies.
   ],
   "errors": [],
   "scrolling": {
-    "next_page": null,
-    "previous_page": null,
-    "group_size": 25,
-    "total_count": 1
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
@@ -283,10 +279,8 @@ Get multiple cookies, one is not found.
     }
   ],
   "scrolling": {
-    "next_page": null,
-    "previous_page": null,
-    "group_size": 25,
-    "total_count": 1
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```

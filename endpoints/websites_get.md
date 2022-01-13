@@ -168,10 +168,8 @@ GET https://api.termly.io/v1/websites?query=%5B%7B%22account_id%22%3A%20%22acct_
   ],
   "errors": [],
   "scrolling": {
-    "next_page": null,
-    "previous_page": null,
-    "group_size": 25,
-    "total_count": 1
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
@@ -284,10 +282,8 @@ GET https://api.termly.io/v1/websites?query=%5B%20%7B%20%22account_id%22%3A%20%2
     }
   ],
   "scrolling": {
-    "next_page": null,
-    "previous_page": null,
-    "group_size": 25,
-    "total_count": 1
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
@@ -321,10 +317,8 @@ GET https://api.termly.io/v1/websites?query=%5B%7B%22account_id%22%3A%22acct_123
   "results": [],
   "errors": [],
   "scrolling": {
-    "next_page": null,
-    "previous_page": null,
-    "group_size": 25,
-    "total_count": 1
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```

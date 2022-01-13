@@ -4,7 +4,7 @@ Retrieve all or some of the custom consent themes for a website.  The query has 
 
 ## Request
 
-```
+```JSON
 [
   {
     "account_id": "<string>",
@@ -110,10 +110,8 @@ GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_
   ],
   "errors": [],
   "scrolling": {
-    "next_page": null,
-    "previous_page": null,
-    "group_size": 25,
-    "total_count": 1
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
@@ -154,10 +152,8 @@ GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_
     }
   ],
   "scrolling": {
-    "next_page": null,
-    "previous_page": null,
-    "group_size": 25,
-    "total_count": 1
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```

@@ -11,14 +11,10 @@ The response will contain data that allows scrolling through the results. The JS
 
 ```JSON
 {
-  "next_page": "<string>",
-  "previous_page": "<string>",
-  "group_size": <integer>,
-  "total_count": <integer>,
+  "next_group": "<string>",
+  "previous_group": "<string>"
 }
 ```
 
-* `next_page` url to next page in the set (null if there is not a next page)
-* `previous` url to previous page in the set (null if there is not a previous page)
-* `group_size` maximum number of items per page
-* `total_count` total number of items found
+* `next_group` url to next page in the set (null if there is not a next page)
+* `previous_group` url to previous page in the set (null if there is not a previous page)
