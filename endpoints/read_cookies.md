@@ -2,6 +2,8 @@
 
 Retrieve cookies. The query has the following shape:
 
+## Request
+
 ```json
 [
   {
@@ -13,13 +15,19 @@ Retrieve cookies. The query has the following shape:
 
 At least 1 object with the field account_id and website_id is required. Once the query is constructed, pass the URL encoded value in the query string parameter `query`.
 
+## Scrolling
+
+All GET requests are subject to scrolling, please refer to [Result Scrolling](../results_scrolling.md) for details, and the [Scrolling Parameters Object](../scrolling_parameters_object.md) for configuring the parameters.
+
+# Response
+
 The response has the following shape:
 
 ```json
 {
 	"results": [],
 	"errors": [],
-	"paging": {}
+	"scrolling": {}
 }
 ```
 
@@ -122,14 +130,11 @@ Get one cookie.
     }
   ],
   "errors": [],
-  "paging": {
-    "count": 1,
-    "current_page": 1,
+  "scrolling": {
     "next_page": null,
     "previous_page": null,
-    "per_page": 50,
-    "total_count": 1,
-    "total_pages": 1
+    "group_size": 25,
+    "total_count": 1
   }
 }
 ```
@@ -210,14 +215,11 @@ Get multiple cookies.
     }
   ],
   "errors": [],
-  "paging": {
-    "count": 2,
-    "current_page": 1,
+  "scrolling": {
     "next_page": null,
     "previous_page": null,
-    "per_page": 50,
-    "total_count": 2,
-    "total_pages": 1
+    "group_size": 25,
+    "total_count": 1
   }
 }
 ```
@@ -280,14 +282,11 @@ Get multiple cookies, one is not found.
       "_idx": 1
     }
   ],
-	"paging": {
-    "count": 1,
-    "current_page": 1,
+  "scrolling": {
     "next_page": null,
     "previous_page": null,
-    "per_page": 50,
-    "total_count": 1,
-    "total_pages": 1
+    "group_size": 25,
+    "total_count": 1
   }
 }
 ```

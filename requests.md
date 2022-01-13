@@ -31,13 +31,13 @@ Authorization: TermlyV1, PublicKey=<partner public key>, Signature=<calculated s
 
 # GET requests
 
-In addition to the 2 headers described above, a `GET` can be made with a `query` or `paging` query string parameter. These 2 keys are mutually exclusive. A `GET` request will be rejected if both are found.
+In addition to the 2 headers described above, a `GET` can be made with a `query` or `scrolling` query string parameter. These 2 keys are mutually exclusive. A `GET` request will be rejected if both are found.
 
-Please see [query](query.md) and [paging](paging.md) for more information on those 2 parameters.
+Please see [query](query.md) and [scrolling](results_scrolling.md) for more information on those 2 parameters.
 
 # DELETE requests
 
-While similar to a `GET` (they both don't have a payload), a `DELETE` request may only have the `query` query string parameter. `DELETE` does not support paging. It will delete all records matching the `query`.
+While similar to a `GET` (they both don't have a payload), a `DELETE` request may only have the `query` query string parameter. `DELETE` does not support scrolling. It will delete all records matching the `query`.
 
 # Batch request processing
 

@@ -2,6 +2,8 @@
 
 Retrieve all or some of the custom consent themes for a website.  The query has the following JSON shape:
 
+## Request
+
 ```
 [
   {
@@ -16,13 +18,19 @@ Retrieve all or some of the custom consent themes for a website.  The query has 
 
 At least 1 object with an `account_id` and a `website_id` must be provided.  If you would like to retrieve all of the custom consent themes in a website omit the `ids` parameter.  if `ids` is sent it must have 1 or more items. Once constructed the object must be URL encoded and be the value for the `query` parameter.
 
+## Scrolling
+
+All GET requests are subject to scrolling, please refer to [Result Scrolling](../results_scrolling.md) for details, and the [Scrolling Parameters Object](../scrolling_parameters_object.md) for configuring the parameters.
+
+## Response
+
 The response will look like:
 
 ```JSON
 {
   "results": [],
   "errors": [],
-  "paging": {}
+  "scrolling": {}
 }
 ```
 
@@ -57,7 +65,7 @@ The response will look like:
 
 `errors` will have 0 or more of the [error object](../error_object.md#get-errors).
 
-`paging` is an object that indicates if there are more results to retrieve. Please see [paging](../paging_object.md)
+`scrolling` is an object that indicates if there are more results to retrieve. Please see [scrolling](../results_scrolling.md)
 
 
 # Example 1
@@ -101,15 +109,13 @@ GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_
     }
   ],
   "errors": [],
-  "paging": {
-    "count": 1,
-    "current_page": 1,
+  "scrolling": {
     "next_page": null,
     "previous_page": null,
-    "per_page": 25,
-    "total_count": 1,
-    "total_pages": 1
+    "group_size": 25,
+    "total_count": 1
   }
+}
 ```
 
 # Example 2
@@ -138,7 +144,7 @@ GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_
 
 ```JSON
 {
-  "results": [ ],
+  "results": [],
   "errors": [
     {
       "error": "object_not_found",
@@ -147,13 +153,11 @@ GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_
       "id": "theme_1234"
     }
   ],
-  "paging": {
-    "count": 0,
-    "current_page": 0,
+  "scrolling": {
     "next_page": null,
     "previous_page": null,
-    "per_page": 25,
-    "total_count": 0,
-    "total_pages": 0
+    "group_size": 25,
+    "total_count": 1
   }
+}
 ```

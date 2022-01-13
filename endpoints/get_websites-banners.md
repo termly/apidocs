@@ -2,6 +2,8 @@
 
 Retrieve all banners for the specified query. The query has the following shape:
 
+## Request
+
 ```json
 [
   {
@@ -13,13 +15,19 @@ Retrieve all banners for the specified query. The query has the following shape:
 
 At least 1 object with the field account_id and website_id is required. Once the query is constructed, pass the URL encoded value in the query string parameter `query`.
 
+## Scrolling
+
+All GET requests are subject to scrolling, please refer to [Result Scrolling](../results_scrolling.md) for details, and the [Scrolling Parameters Object](../scrolling_parameters_object.md) for configuring the parameters.
+
+## Response
+
 The response has the following shape:
 
 ```json
 {
 	"results": [],
 	"errors": [],
-	"paging": {}
+	"scrolling": {}
 }
 ```
 
@@ -50,14 +58,11 @@ The results will contain zero or more of the following objects:
       "website_id": "<string>"
     }
   ],
-  "paging": {
-    "count": <integer>,
-    "current_page": <integer>,
-    "next_page": "<string>",
-    "previous_page": "<string>",
-    "per_page": <integer>,
-    "total_count": <integer>,
-    "total_pages": <integer>
+  "scrolling": {
+    "next_page": null,
+    "previous_page": null,
+    "group_size": 25,
+    "total_count": 1
   }
 }
 ```
@@ -115,14 +120,11 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
     }
   ],
   "errors": [],
-  "paging": {
-    "count": 1,
-    "current_page": 1,
+  "scrolling": {
     "next_page": null,
     "previous_page": null,
-    "per_page": 25,
-    "total_count": 1,
-    "total_pages": 1
+    "group_size": 25,
+    "total_count": 1
   }
 }
 ```
@@ -203,14 +205,11 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
     }
   ],
   "errors": [],
-  "paging": {
-    "count": 3,
-    "current_page": 1,
+  "scrolling": {
     "next_page": null,
     "previous_page": null,
-    "per_page": 25,
-    "total_count": 3,
-    "total_pages": 1
+    "group_size": 25,
+    "total_count": 1
   }
 }
 ```
@@ -284,14 +283,11 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
       "id": "web_2020"
     }  
   ],
-  "paging": {
-    "count": 2,
-    "current_page": 1,
+  "scrolling": {
     "next_page": null,
     "previous_page": null,
-    "per_page": 25,
-    "total_count": 2,
-    "total_pages": 1
+    "group_size": 25,
+    "total_count": 1
   }
 }
 ```
