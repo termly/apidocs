@@ -59,10 +59,8 @@ The results will contain zero or more of the following objects:
     }
   ],
   "scrolling": {
-    "next_page": null,
-    "previous_page": null,
-    "group_size": 25,
-    "total_count": 1
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
@@ -206,8 +204,8 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
   ],
   "errors": [],
   "scrolling": {
-    "next_page": null,
-    "previous_page": null
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
@@ -282,10 +280,8 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
     }  
   ],
   "scrolling": {
-    "next_page": null,
-    "previous_page": null,
-    "group_size": 25,
-    "total_count": 1
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
