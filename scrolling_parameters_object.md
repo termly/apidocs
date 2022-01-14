@@ -27,7 +27,7 @@ To set the group size parameters include the object in your request:
 [
   {
     "scrolling": {
-      "group_size": 30
+      "group_size": 20
     },
     "account_id": "<string>",
     "website_id": "<string>",
