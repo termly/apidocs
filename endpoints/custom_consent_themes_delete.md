@@ -1,5 +1,7 @@
 # Overview
 
+:warning: Endpoint is not yet implemented. Coming soon.
+
 Delete an existing custom consent theme. The query has the following JSON shape:
 
 

@@ -1,3 +1,5 @@
+:warning: Endpoint is not yet implemented. Coming soon.
+
 # Overview
 
 Updates the banner for a website. The body has the following shape:
