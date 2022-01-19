@@ -2,6 +2,8 @@
 
 Retrieve all or some of the collaborators for the specified query. The query has the following JSON shape:
 
+## Request
+
 ```json
 [
 	{
@@ -16,13 +18,19 @@ Retrieve all or some of the collaborators for the specified query. The query has
 
 At least 1 object with the field `account_id` is required. If you wish to retrieve all collaborators for an account, omit the `ids` field. Once the query is constructed, it is passed in the query string parameter `query`. It must be URL encoded.
 
+## Scrolling
+
+All GET requests are subject to scrolling, please refer to [Result Scrolling](../results_scrolling.md) for details, and the [Scrolling Parameters Object](../scrolling_parameters_object.md) for configuring the parameters.
+
+## Response
+
 The response has the following shape:
 
 ```json
 {
 	"results": [],
 	"errors": [],
-	"paging": {}
+	"scrolling": {}
 }
 
 ```
@@ -58,7 +66,7 @@ The response has the following shape:
 
 `errors` will have 0 or more of the [error object](../error_object.md).
 
-`paging` is an object that indicates if there are more results to retrieve. Please see [paging](../paging_object.md)
+`scrolling` is an object that indicates if there are more results to retrieve. Please see [scrolling](../results_scrolling.md)
 
 # Example 1
 Request for a single account and all collaborators.
@@ -108,14 +116,9 @@ GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acc
 		}
 	],
 	"errors": [],
-	"paging": {
-		"count": 2,
-		"current_page": 1,
-		"next_page": null,
-		"prev_page": null,
-		"per_page": 25,
-		"total_count": 2,
-		"total_pages": 1
+	"scrolling": {
+      "next_group": null,
+      "previous_group": null
 	}
 }
 
@@ -175,14 +178,9 @@ GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acc
 		}
 	],
 	"errors": [],
-	"paging": {
-		"count": 2,
-		"current_page": 1,
-		"next_page": null,
-		"prev_page": null,
-		"per_page": 25,
-		"total_count": 2,
-		"total_pages": 1
+	"scrolling": {
+      "next_group": null,
+      "previous_group": null
 	}
 }
 
@@ -233,14 +231,9 @@ GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acc
 			"id": "col_34"
 		}
 	],
-	"paging": {
-		"count": 1,
-		"current_page": 1,
-		"next_page": null,
-		"prev_page": null,
-		"per_page": 25,
-		"total_count": 1,
-		"total_pages": 1
+	"scrolling": {
+      "next_group": null,
+      "previous_group": null
 	}
 }
 

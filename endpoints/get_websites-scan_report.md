@@ -2,6 +2,8 @@
 
 Retrieve the latest scan for the website. The query has the following shape:
 
+## Request
+
 ```json
 [
   {
@@ -14,13 +16,19 @@ Retrieve the latest scan for the website. The query has the following shape:
 
 At least 1 object with the field account_id and website_id is required. Once the query is constructed, pass the URL encoded value in the query string parameter `query`.
 
+## Scrolling
+
+All GET requests are subject to scrolling, please refer to [Result Scrolling](../results_scrolling.md) for details, and the [Scrolling Parameters Object](../scrolling_parameters_object.md) for configuring the parameters.
+
+## Response
+
 The response has the following shape:
 
 ```json
 {
 	"results": [],
 	"errors": [],
-	"paging": {}
+	"scrolling": {}
 }
 ```
 
@@ -73,14 +81,9 @@ The results will contain zero or more of the following objects:
       "website_id": "<string>"
     }
   ],
-  "paging": {
-    "count": <integer>,
-    "current_page": <integer>,
-    "next_page": "<string>",
-    "previous_page": "<string>",
-    "per_page": <integer>,
-    "total_count": <integer>,
-    "total_pages": <integer>
+  "scrolling": {
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
@@ -188,14 +191,9 @@ Request scan_report for a single website.
     }
   ],
   "errors": [],
-  "paging": {
-    "count": 1,
-    "current_page": 1,
-    "next_page": null,
-    "previous_page": null,
-    "per_page": 50,
-    "total_count": 1,
-    "total_pages": 1
+  "scrolling": {
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
@@ -360,14 +358,9 @@ Request scan_report for multiple websites.
     }
   ],
   "errors": [],
-  "paging": {
-    "count": 1,
-    "current_page": 1,
-    "next_page": null,
-    "previous_page": null,
-    "per_page": 50,
-    "total_count": 1,
-    "total_pages": 1
+  "scrolling": {
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
@@ -498,14 +491,9 @@ Request scan_report for multiple websites. One website does not exist.
       "id": "rpt_9876"
     }
   ],
-  "paging": {
-    "count": 1,
-    "current_page": 1,
-    "next_page": null,
-    "previous_page": null,
-    "per_page": 50,
-    "total_count": 1,
-    "total_pages": 1
+  "scrolling": {
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```

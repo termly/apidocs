@@ -23,8 +23,7 @@ The response has the following shape:
 ```json
 {
 	"results": [],
-	"errors": [],
-	"paging": {}
+	"errors": []
 }
 ```
 
@@ -70,16 +69,7 @@ Delete one cookie.
         "_idx": 1
       }    
     ],
-	"errors": [],
-	"paging": {
-      "count": 1,
-      "current_page": 1,
-      "next_page": null,
-      "previous_page": null,
-      "per_page": 50,
-      "total_count": 1,
-      "total_pages": 1
-    }
+	"errors": []
 }
 ```
 
@@ -126,16 +116,7 @@ Delete multiple cookies.
         "_idx": 1
       }    
     ],
-	"errors": [],
-	"paging": {
-      "count": 2,
-      "current_page": 1,
-      "next_page": null,
-      "previous_page": null,
-      "per_page": 50,
-      "total_count": 2,
-      "total_pages": 1
-    }
+	"errors": []
 }
 ```
 
@@ -181,15 +162,6 @@ Delete multiple cookies with one not found.
         "error": "object_not_found",
         "_idx": 1
       }
-    ],
-	"paging": {
-      "count": 1,
-      "current_page": 1,
-      "next_page": null,
-      "previous_page": null,
-      "per_page": 50,
-      "total_count": 1,
-      "total_pages": 1
-    }
+    ]
 }
 ```

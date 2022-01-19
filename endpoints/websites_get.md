@@ -2,6 +2,8 @@
 
 Retrieve all or some of the websites in an account for the specified query.  The query has the following JSON shape:
 
+## Request
+
 ```JSON
 [
   {
@@ -16,13 +18,19 @@ Retrieve all or some of the websites in an account for the specified query.  The
 
 At least 1 object with an `account_id` must be provided.  If you would like to retrieve all of the websites in an account omit the `ids` parameter.  If `ids` is sent it must have 1 or more items. Once constructed the object must be URL encoded and be the value for the `query` parameter.
 
+## Scrolling
+
+All GET requests are subject to scrolling, please refer to [Result Scrolling](../results_scrolling.md) for details, and the [Scrolling Parameters Object](../scrolling_parameters_object.md) for configuring the parameters.
+
+## Response
+
 The response will look like:
 
 ```JSON
 {
   "results": [],
   "errors": [],
-  "paging": {}
+  "scrolling": {}
 }
 ```
 
@@ -96,7 +104,7 @@ The response will look like:
 
 `errors` will have 0 or more of the [error object](../error_object.md#get-errors).
 
-`paging` is an object that indicates if there are more results to retrieve. Please see [paging](../paging_object.md)
+`scrolling` is an object that indicates if there are more results to retrieve. Please see [scrolling](../results_scrolling.md)
 
 # Example 1
 
@@ -159,14 +167,9 @@ GET https://api.termly.io/v1/websites?query=%5B%7B%22account_id%22%3A%20%22acct_
     }
   ],
   "errors": [],
-  "paging": {
-    "count": 1,
-    "current_page": 1,
-    "next_page": null,
-    "previous_page": null,
-    "per_page": 25,
-    "total_count": 1,
-    "total_pages": 1
+  "scrolling": {
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
@@ -278,14 +281,9 @@ GET https://api.termly.io/v1/websites?query=%5B%20%7B%20%22account_id%22%3A%20%2
       "id": "web_13"
     }
   ],
-  "paging": {
-    "count": 1,
-    "current_page": 1,
-    "next_page": null,
-    "previous_page": null,
-    "per_page": 25,
-    "total_count": 1,
-    "total_pages": 1
+  "scrolling": {
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
@@ -318,14 +316,9 @@ GET https://api.termly.io/v1/websites?query=%5B%7B%22account_id%22%3A%22acct_123
 {
   "results": [],
   "errors": [],
-  "paging": {
-    "count": 1,
-    "current_page": 1,
-    "next_page": null,
-    "previous_page": null,
-    "per_page": 25,
-    "total_count": 1,
-    "total_pages": 1
+  "scrolling": {
+    "next_group": null,
+    "previous_group": null
   }
 }
 ```
