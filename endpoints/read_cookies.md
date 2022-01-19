@@ -1,3 +1,5 @@
+:warning: Endpoint is not yet implemented. Coming soon.
+
 # Overview
 
 Retrieve cookies. The query has the following shape:
