@@ -1,3 +1,5 @@
+:warning: Endpoint is not yet implemented. Coming soon.
+
 # Overview
 
 Retrieve all banners for the specified query. The query has the following shape:
@@ -27,7 +29,7 @@ The response has the following shape:
 {
 	"results": [],
 	"errors": [],
-	"paging": {}
+	"scrolling": {}
 }
 ```
 

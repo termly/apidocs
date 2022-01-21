@@ -1,3 +1,5 @@
+:warning: Endpoint is not yet implemented. Coming soon.
+
 # Overview
 
 Retrieve all or some of the collaborators for the specified query. The query has the following JSON shape:
@@ -30,7 +32,7 @@ The response has the following shape:
 {
 	"results": [],
 	"errors": [],
-	"paging": {}
+	"scrolling": {}
 }
 
 ```

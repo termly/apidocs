@@ -30,7 +30,7 @@ The response will look like:
 {
   "results": [],
   "errors": [],
-  "paging": {}
+  "scrolling": {}
 }
 ```
 
