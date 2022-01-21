@@ -1,10 +1,10 @@
 # Overview
 
-For GET requests responses may be [returned in groups](./results_scrolling.md).
+For GET requests responses may be [returned in groups](./results_paging.md).
 
 ## Custom group sizes
 
-It is possible to customize the scrolling parameters for each query. If you want to customize the settings, include the following object in your request:
+It is possible to customize the paging parameters for each query. If you want to customize the settings, include the following object in your request:
 
 ```JSON
 {
@@ -26,7 +26,7 @@ To set the group size parameters include the object in your request:
 ```JSON
 [
   {
-    "scrolling": {
+    "paging": {
       "group_size": 20
     },
     "account_id": "<string>",

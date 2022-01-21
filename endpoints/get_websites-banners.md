@@ -15,9 +15,9 @@ Retrieve all banners for the specified query. The query has the following shape:
 
 At least 1 object with the field account_id and website_id is required. Once the query is constructed, pass the URL encoded value in the query string parameter `query`.
 
-## Scrolling
+## Paging
 
-All GET requests are subject to scrolling, please refer to [Result Scrolling](../results_scrolling.md) for details, and the [Scrolling Parameters Object](../scrolling_parameters_object.md) for configuring the parameters.
+All GET requests are subject to paging, please refer to [Result Paging](../results_paging.md) for details, and the [Paging Parameters Object](../paging_parameters_object.md) for configuring the parameters.
 
 ## Response
 
@@ -27,7 +27,7 @@ The response has the following shape:
 {
 	"results": [],
 	"errors": [],
-	"scrolling": {}
+	"paging": {}
 }
 ```
 
@@ -58,9 +58,9 @@ The results will contain zero or more of the following objects:
       "website_id": "<string>"
     }
   ],
-  "scrolling": {
-    "next_group": null,
-    "previous_group": null
+  "paging": {
+    "next_results": null,
+    "previous_results": null
   }
 }
 ```
@@ -118,9 +118,9 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
     }
   ],
   "errors": [],
-  "scrolling": {
-    "next_page": null,
-    "previous_page": null
+  "paging": {
+    "next_results": null,
+    "previous_results": null
   }
 }
 ```
@@ -201,9 +201,9 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
     }
   ],
   "errors": [],
-  "scrolling": {
-    "next_group": null,
-    "previous_group": null
+  "paging": {
+    "next_results": null,
+    "previous_results": null
   }
 }
 ```
@@ -277,9 +277,9 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
       "id": "web_2020"
     }  
   ],
-  "scrolling": {
-    "next_group": null,
-    "previous_group": null
+  "paging": {
+    "next_results": null,
+    "previous_results": null
   }
 }
 ```

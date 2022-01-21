@@ -7,14 +7,14 @@ Result sets with more than 25 results will be automatically partitioned into gro
 - The group size is limited to a maximum of 25;
 - The group size is limited to a minimum of 1;
 
-The response will contain data that allows scrolling through the results. The JSON shape is:
+The response will contain data that allows paging through the results. The JSON shape is:
 
 ```JSON
 {
-  "next_group": "<string>",
-  "previous_group": "<string>"
+  "next_results": "<string>",
+  "previous_results": "<string>"
 }
 ```
 
-* `next_group` url to next page in the set (null if there is not a next page)
-* `previous_group` url to previous page in the set (null if there is not a previous page)
+* `next_results` url to next page in the set (null if there is not a next page)
+* `previous_results` url to previous page in the set (null if there is not a previous page)

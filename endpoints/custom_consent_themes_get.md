@@ -18,9 +18,9 @@ Retrieve all or some of the custom consent themes for a website.  The query has 
 
 At least 1 object with an `account_id` and a `website_id` must be provided.  If you would like to retrieve all of the custom consent themes in a website omit the `ids` parameter.  if `ids` is sent it must have 1 or more items. Once constructed the object must be URL encoded and be the value for the `query` parameter.
 
-## Scrolling
+## Paging
 
-All GET requests are subject to scrolling, please refer to [Result Scrolling](../results_scrolling.md) for details, and the [Scrolling Parameters Object](../scrolling_parameters_object.md) for configuring the parameters.
+All GET requests are subject to paing, please refer to [Result Paging](../results_paging.md) for details, and the [Paging Parameters Object](../paging_parameters_object.md) for configuring the parameters.
 
 ## Response
 
@@ -30,7 +30,7 @@ The response will look like:
 {
   "results": [],
   "errors": [],
-  "scrolling": {}
+  "paging": {}
 }
 ```
 
@@ -65,7 +65,7 @@ The response will look like:
 
 `errors` will have 0 or more of the [error object](../error_object.md#get-errors).
 
-`scrolling` is an object that indicates if there are more results to retrieve. Please see [scrolling](../results_scrolling.md)
+`paging` is an object that indicates if there are more results to retrieve. Please see [paging](../results_paging.md)
 
 
 # Example 1
@@ -109,9 +109,9 @@ GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_
     }
   ],
   "errors": [],
-  "scrolling": {
-    "next_group": null,
-    "previous_group": null
+  "paging": {
+    "next_results": null,
+    "previous_results": null
   }
 }
 ```
@@ -151,9 +151,9 @@ GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_
       "id": "theme_1234"
     }
   ],
-  "scrolling": {
-    "next_group": null,
-    "previous_group": null
+  "paging": {
+    "next_results": null,
+    "previous_results": null
   }
 }
 ```

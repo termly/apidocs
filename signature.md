@@ -18,7 +18,7 @@ If you were concatenating a string:
 HTTP Method + '\n' +
 Host + '\n' + 
 Path + '\n' +
-[query value|scrolling value|blank string] + '\n' +
+[query value|paging value|blank string] + '\n' +
 X-Termly-Timestamp value + '\n' + 
 HexEncode(SHA256(RequestBody))
 ```
@@ -43,7 +43,7 @@ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 Here is an example of a GET that retrieves the next page of collaborators:
 
 ```
-GET https://api.termly.io/v1/collaborators?scrolling=A5cgPfPunjxXFyicGz9H9ZkUwtLtD6nsgi6DPVGMs1CiA4qWHBKzoQ
+GET https://api.termly.io/v1/collaborators?paging=A5cgPfPunjxXFyicGz9H9ZkUwtLtD6nsgi6DPVGMs1CiA4qWHBKzoQ
 ```
 
 ```
