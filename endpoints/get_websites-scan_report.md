@@ -16,9 +16,9 @@ Retrieve the latest scan for the website. The query has the following shape:
 
 At least 1 object with the field account_id and website_id is required. Once the query is constructed, pass the URL encoded value in the query string parameter `query`.
 
-## Scrolling
+## Paging
 
-All GET requests are subject to scrolling, please refer to [Result Scrolling](../results_scrolling.md) for details, and the [Scrolling Parameters Object](../scrolling_parameters_object.md) for configuring the parameters.
+All GET requests are subject to paging, please refer to [Result Paging](../results_paging.md) for details, and the [Paging Parameters Object](../paging_parameters_object.md) for configuring the parameters.
 
 ## Response
 
@@ -81,9 +81,9 @@ The results will contain zero or more of the following objects:
       "website_id": "<string>"
     }
   ],
-  "scrolling": {
-    "next_group": null,
-    "previous_group": null
+  "paging": {
+    "next_results": null,
+    "previous_results": null
   }
 }
 ```
@@ -191,9 +191,9 @@ Request scan_report for a single website.
     }
   ],
   "errors": [],
-  "scrolling": {
-    "next_group": null,
-    "previous_group": null
+  "paging": {
+    "next_results": null,
+    "previous_results": null
   }
 }
 ```
@@ -358,9 +358,9 @@ Request scan_report for multiple websites.
     }
   ],
   "errors": [],
-  "scrolling": {
-    "next_group": null,
-    "previous_group": null
+  "paging": {
+    "next_results": null,
+    "previous_results": null
   }
 }
 ```
@@ -491,9 +491,9 @@ Request scan_report for multiple websites. One website does not exist.
       "id": "rpt_9876"
     }
   ],
-  "scrolling": {
-    "next_group": null,
-    "previous_group": null
+  "paging": {
+    "next_results": null,
+    "previous_results": null
   }
 }
 ```

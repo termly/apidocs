@@ -33,7 +33,7 @@ Authorization: TermlyV1, PublicKey=<partner public key>, Signature=<calculated s
 
 In addition to the 2 headers described above, a `GET` can be made with a `query` or `scrolling` query string parameter. These 2 keys are mutually exclusive. A `GET` request will be rejected if both are found.
 
-Please see [query](query.md) and [scrolling](results_scrolling.md) for more information on those 2 parameters.
+Please see [query](query.md) and [paging](results_paging.md) for more information on those 2 parameters.
 
 # DELETE requests
 
