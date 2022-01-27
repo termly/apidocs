@@ -22,7 +22,7 @@ At least 1 object with an `account_id` and a `website_id` must be provided.  If 
 
 ## Paging
 
-All GET requests are subject to paing, please refer to [Result Paging](../results_paging.md) for details, and the [Paging Parameters Object](../paging_parameters_object.md) for configuring the parameters.
+All GET requests are subject to paging, please refer to [Result Paging](../results_paging.md) for details, and the [Paging Parameters Object](../paging_parameters_object.md) for configuring the parameters.
 
 ## Response
 
