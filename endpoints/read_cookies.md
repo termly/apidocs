@@ -11,7 +11,7 @@ Retrieve cookies. The query has the following shape:
   {
     "account_id": "<string>",
     "website_id": "<string>"
-  } 
+  }
 ]
 ```
 
@@ -29,7 +29,7 @@ The response has the following shape:
 {
 	"results": [],
 	"errors": [],
-	"scrolling": {}
+	"paging": {}
 }
 ```
 
@@ -98,7 +98,7 @@ Get one cookie.
   {
     "account_id": "acct_1234",
     "website_id": "web_1234"
-  } 
+  }
 ]
 ```
 
@@ -154,11 +154,11 @@ Get multiple cookies.
   {
     "account_id": "acct_1234",
     "website_id": "web_1234"
-  }, 
+  },
   {
     "account_id": "acct_1234",
     "website_id": "web_5678"
-  } 
+  }
 ]
 ```
 
@@ -237,11 +237,11 @@ Get multiple cookies, one is not found.
   {
     "account_id": "acct_1234",
     "website_id": "web_1234"
-  }, 
+  },
   {
     "account_id": "acct_1234",
     "website_id": "web_5678"
-  } 
+  }
 ]
 ```
 

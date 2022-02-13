@@ -29,7 +29,7 @@ The response has the following shape:
 {
 	"results": [],
 	"errors": [],
-	"scrolling": {}
+	"paging": {}
 }
 ```
 
@@ -277,7 +277,7 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
       "account_id": "acct_1234",
       "error": "object_not_found",
       "id": "web_2020"
-    }  
+    }
   ],
   "paging": {
     "next_results": null,
