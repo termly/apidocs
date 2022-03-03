@@ -14,8 +14,8 @@ It is possible to customize the paging parameters for each query. If you want to
 
 This will return groups of the specified size. Please note the following rules:
 
-- If not specified, the group size will be 25;
-- The group size is limited to a maximum of 25;
+- If not specified, the group size will be 20;
+- The group size is limited to a maximum of 20;
 - The group size is limited to a minimum of 1;
 - If a number outside this range is specified the default will apply;
 
