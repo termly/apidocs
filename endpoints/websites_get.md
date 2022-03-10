@@ -43,7 +43,7 @@ The response will look like:
   "name": "<string>",
   "url": "<string>",
   "page_views": <integer>,
-  "scan_period": "<enum{'weekly', 'monthly', 'trimonthly'}>",
+  "scan_period": "<enum{'disabled', 'weekly', 'monthly', 'trimonthly'}>",
   "report": {
     "id": "<string>",
     "created_at": "<string>"
@@ -85,7 +85,7 @@ The response will look like:
 * `subdomains` an array of subdomains that the scanner will scan as well
   * items are strings
 * `cookie_count` total number of cookies found
-* `cookie_policy_document_id` unique identifier of the cookie policy document 
+* `cookie_policy_document_id` unique identifier of the cookie policy document
 * `company` object containing all the company related information
   * `legal_name` legal name of the company
   * `email` public contact email for the company
@@ -114,7 +114,7 @@ Request all websites for a given account
 
 ```
 GET https://api.termly.io/v1/websites?query=%5B%7B%22account_id%22%3A%20%22acct_1234%22%7D%5D
-``` 
+```
 
 ## Query
 
@@ -182,7 +182,7 @@ Multiple accounts and websites in each account and one website cannot be found
 
 ```
 GET https://api.termly.io/v1/websites?query=%5B%20%7B%20%22account_id%22%3A%20%22acct_123%22%2C%20%22ids%22%3A%20%5B%22web_123%22%5D%7D%2C%20%7B%22account_id%22%3A%20%22acct_1234%22%2C%20%22ids%22%3A%20%5B%22web_13%22%2C%20%22web_14%22%5D%7D%5D
-``` 
+```
 
 ## Query
 
@@ -297,7 +297,7 @@ Request wit `ids` parameter but value is empty array
 
 ```
 GET https://api.termly.io/v1/websites?query=%5B%7B%22account_id%22%3A%22acct_123%22%2C%22ids%22%3A%5B%5D%7D%5D
-``` 
+```
 
 ## Query
 

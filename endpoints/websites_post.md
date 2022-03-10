@@ -8,7 +8,7 @@ Create new websites in the given account. The request body will be JSON:
     "account_id": "<string>",
     "name": "<string{http(s) scheme required}>",
     "url": "<string>",
-    "scan_period": "<enum{'weekly', 'monthly', 'trimonthly'}>",
+    "scan_period": "<enum{'disabled', 'weekly', 'monthly', 'trimonthly'}>",
     "subdomains": [
       "<string{http(s) scheme required}>"
     ],
@@ -40,7 +40,7 @@ The response is an array of success or error response objects with this shape:
     "url": "<string>",
     "uuid": "<string>",
     "page_views": <integer>,
-    "scan_period": "<enum{'weekly', 'monthly', 'trimonthly'}>",
+    "scan_period": "<enum{'disabled', 'weekly', 'monthly', 'trimonthly'}>",
     "report": {
       "id": "<string>",
       "created_at": "<string>"
