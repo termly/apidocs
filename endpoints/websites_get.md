@@ -79,7 +79,7 @@ The response will look like:
 * `url` url of the website including http protocol
 * `page_views` number of page views that this site has had with the termly banner installed
 * `scan_period` how often the website will be scanned (on of `weekly`, `monthly`, `trimonthly`)
-* `report` object describing the latest scan results
+* `report` object describing the latest successful scan result
   * `id` unique identifier for the report
   * `created_at` timestamp of when the report was created
 * `subdomains` an array of subdomains that the scanner will scan as well

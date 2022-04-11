@@ -14,7 +14,7 @@ Retrieve the latest scan for the website. The query has the following shape:
 ]
 ```
 
-At least 1 object with the field account_id and website_id is required. Once the query is constructed, pass the URL encoded value in the query string parameter `query`.
+At least 1 object with the field account_id and website_id is required. The `id` field is optional.  If it is given that report will be returned, if it is not given then the website `current_report` will be returned (latest successful scan). Once the query is constructed, pass the URL encoded value in the query string parameter `query`.
 
 ## Paging
 
