@@ -9,12 +9,13 @@ Retrieve the latest scan for the website. The query has the following shape:
   {
     "account_id": "<string>",
     "website_id": "<string>",
-    "id": "<string>"
+    "id": "<string>",
+    "latest_scan": "<boolean>",
   }
 ]
 ```
 
-At least 1 object with the field account_id and website_id is required. The `id` field is optional. If it is given, then that report will be returned; otherwise, the website's current_report will be returned (the latest successful scan). Once the query is constructed, pass the URL encoded value in the query string parameter `query`.
+At least 1 object with the field account_id and website_id is required. The `id` field is optional. If it is given, then that report will be returned. If the `id` field is not given and `latest_scan` is not given (or is `false`) the website's current report will be returned (the latest successful scan). If the `id` parameter is not given and `latest_scan` is set to `true` then the latest scan will be returned (even if it is a failed scan). Once the query is constructed, pass the URL encoded value in the query string parameter `query`.
 
 ## Paging
 
