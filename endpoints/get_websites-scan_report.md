@@ -29,7 +29,7 @@ The response has the following shape:
 {
 	"results": [],
 	"errors": [],
-	"scrolling": {}
+	"paging": {}
 }
 ```
 
