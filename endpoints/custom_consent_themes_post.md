@@ -8,7 +8,6 @@ Create a new custom consent theme for a website. The request body will be JSON:
 {
   "account_id": "<string>",
   "website_id": "<string>",
-  "name": "<string>",
   "font_family": "<string>",
   "font_size": "<string>",
   "color": "<string>",
@@ -21,7 +20,6 @@ Create a new custom consent theme for a website. The request body will be JSON:
 * `id` unique identifier for custom consent theme
 * `website_id` unique identifier for website
 * `account_id` unique identifier for account
-* `name` name of the theme
 * `font_family` font for theme
 * `font_size` size of font (can be described in any CSS compatible why)
 * `color` font color
@@ -46,7 +44,6 @@ Each object can represent either a success or a failure. A success response is a
   "account_id": "<string>",
   "website_id": "<string>",
   "id": "<string>",
-  "name": "<string>",
   "font_family": "<string>",
   "font_size": "<string>",
   "color": "<string>",
@@ -75,7 +72,6 @@ POST https://api.termly.io/v1/websites/custom_consent_themes
   {
     "website_id": "web_123",
     "account_id": "acct_123",
-    "name": "my theme",
     "font_family": "Times New Roman",
     "font_size": "4",
     "color": "#000000",
@@ -93,7 +89,6 @@ POST https://api.termly.io/v1/websites/custom_consent_themes
   {
     "website_id": "web_123",
     "account_id": "acct_123",
-    "name": "my theme",
     "id": "cct_123",
     "font_family": "Times New Roman",
     "font_size": "4",
@@ -123,7 +118,6 @@ POST https://api.termly.io/v1/websites/custom_consent_themes
   {
     "website_id": "web_123",
     "account_id": "acct_123",
-    "name": "my theme",
     "font_family": "Times New Roman",
     "font_size": "4",
     "color": "#000000",
@@ -134,14 +128,13 @@ POST https://api.termly.io/v1/websites/custom_consent_themes
   {
     "website_id": "web_124",
     "account_id": "acct_23",
-    "name": "my theme for website",
     "font_family": "Times New Roman",
     "font_size": "5pt",
     "color": "#000001",
     "background": "#000001",
     "btn_background": "#000001",
     "btn_text_color": "#000001"
-  }  
+  }
 ]
 ```
 
@@ -153,7 +146,6 @@ POST https://api.termly.io/v1/websites/custom_consent_themes
     "website_id": "web_123",
     "account_id": "acct_123",
     "id": "cct_123",
-    "name": "my theme",
     "font_family": "Times New Roman",
     "font_size": "4",
     "color": "#000000",
@@ -165,8 +157,7 @@ POST https://api.termly.io/v1/websites/custom_consent_themes
   {
     "website_id": "web_124",
     "account_id": "acct_23",
-    "id": "cct_124",    
-    "name": "my theme for website",
+    "id": "cct_124",
     "font_family": "Times New Roman",
     "font_size": "5pt",
     "color": "#000001",
@@ -174,6 +165,6 @@ POST https://api.termly.io/v1/websites/custom_consent_themes
     "btn_background": "#000001",
     "btn_text_color": "#000001",
     "_idx": 1
-  }  
+  }
 ]
 ```

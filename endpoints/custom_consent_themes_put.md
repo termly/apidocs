@@ -9,7 +9,6 @@ Update existing custom consent themes. The request body will have this shape:
   "account_id": "<string>",
   "website_id": "<string>",
   "id": "<string>",
-  "name": "<string>",
   "font_family": "<string>",
   "font_size": "<string>",
   "color": "<string>",
@@ -37,7 +36,6 @@ Each object can represent either a success or a failure. A success response is a
   "account_id": "<string>",
   "website_id": "<string>",
   "id": "<string>",
-  "name": "<string>",
   "font_family": "<string>",
   "font_size": "<string>",
   "color": "<string>",
@@ -68,7 +66,6 @@ PUT https://api.termly.io/v1/websites/custom_consent_theme
   {
     "website_id": "web_123",
     "account_id": "acct_123",
-    "name": "my theme",
     "id": "cct_123",
     "font_family": "Times New Roman",
     "font_size": "4",
@@ -80,7 +77,6 @@ PUT https://api.termly.io/v1/websites/custom_consent_theme
   {
     "website_id": "web_125",
     "account_id": "acct_123",
-    "name": "my theme",
     "id": "cct_122",
     "font_family": "Times New Roman",
     "font_size": "4",
@@ -99,7 +95,6 @@ PUT https://api.termly.io/v1/websites/custom_consent_theme
   {
     "website_id": "web_123",
     "account_id": "acct_123",
-    "name": "my theme",
     "id": "cct_123",
     "font_family": "Times New Roman",
     "font_size": "4",
@@ -112,7 +107,6 @@ PUT https://api.termly.io/v1/websites/custom_consent_theme
   {
     "website_id": "web_125",
     "account_id": "acct_123",
-    "name": "my theme",
     "id": "cct_122",
     "font_family": "Times New Roman",
     "font_size": "4",
@@ -136,7 +130,6 @@ Multiple request one of which references a nonexistent account.
   {
     "website_id": "web_123",
     "account_id": "acct_123",
-    "name": "my theme",
     "id": "cct_123",
     "font_family": "Times New Roman",
     "font_size": "4",
@@ -148,7 +141,6 @@ Multiple request one of which references a nonexistent account.
   {
     "website_id": "web_125",
     "account_id": "acct_12323",
-    "name": "my theme",
     "id": "cct_122",
     "font_family": "Times New Roman",
     "font_size": "4",
@@ -167,7 +159,6 @@ Multiple request one of which references a nonexistent account.
   {
     "website_id": "web_123",
     "account_id": "acct_123",
-    "name": "my theme",
     "id": "cct_123",
     "font_family": "Times New Roman",
     "font_size": "4",

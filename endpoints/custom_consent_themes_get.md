@@ -43,7 +43,6 @@ The response will look like:
   "account_id": "<string>",
   "website_id": "<string>",
   "id": "<string>",
-  "name": "<string>",
   "font_family": "<string>",
   "font_size": "<string>",
   "color": "<string>",
@@ -56,7 +55,6 @@ The response will look like:
 * `id` unique identifier for custom consent theme
 * `website_id` unique identifier for website
 * `account_id` unique identifier for account
-* `name` name of the theme
 * `font_family` font for theme
 * `font_size` size of font (can be described in any CSS compatible why)
 * `color` font color
@@ -101,7 +99,6 @@ GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_
       "id": "cct_123",
       "website_id": "web_123",
       "account_id": "acct_123",
-      "name": "my theme",
       "font_family": "Times New Roman",
       "font_size": "4",
       "color": "#000000",
