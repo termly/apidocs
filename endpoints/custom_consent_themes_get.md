@@ -85,7 +85,7 @@ GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_
   {
     "account_id": "acct_123",
     "website_id": "web_123",
-    "ids": ["theme_123"]
+    "ids": ["cct_123"]
   }
 ]
 ```
