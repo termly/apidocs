@@ -49,7 +49,7 @@ The results will contain zero or more of the following objects:
       "personalized_content": "<bool>",
       "running_targeted_advertising": "<bool>",
       "share_data_to_3rd_party": "<bool>",
-      "selected_languages": ["<enum{'en', 'el', 'hu', 'pt', 'sv', 'it', 'es', 'en-gb', 'da', 'fi', 'nl', 'fr', 'de', 'pl'}>"],
+      "selected_languages": ["<enum{'el', 'hu', 'pt', 'sv', 'it', 'es', 'en-gb', 'da', 'fi', 'nl', 'fr', 'de', 'pl'}>"],
       "regions": {
         "<enum{'global', 'us', 'california', 'eu'}>": {
           "enable_banner": "<bool>",
@@ -82,7 +82,8 @@ The results will contain zero or more of the following objects:
 > * `display_style` of `tooltip` allows `position` `bottom_left`, `bottom_right`, `top_left` and `top_right`
 > * `display_style` of `modal` ignores the `position` field
 
-
+> **Note**
+> US english `en` is required and will be selected by default even if `selected_languages` is set to an empty array
 
 - `id` is the unique identifier of the banner
 - `account_id` is the unique identifier of the account
