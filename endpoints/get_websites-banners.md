@@ -39,18 +39,27 @@ The results will contain zero or more of the following objects:
 {
   "results": [
     {
-      "account_id": "<string>",
-      "auto_accept_on_scroll": "<bool>",
-      "display_consent_banner_by_region": "<bool>",
-      "display_style": "<enum{'banner', 'tooltip', 'modal'}>",
       "id": "<string>",
-      "personalized_content": "<bool>",
+      "account_id": "<string>",
+      "website_id": "<string>",
+      "theme_id": "<string>",
       "position": "<enum{'bottom', 'bottom_left', 'bottom_right', 'top', 'top_left', 'top_right'}>",
+      "default_theme": "<enum{'blue', 'light', 'green', 'red', 'black', 'navy_blue'}>",
+      "display_style": "<enum{'banner', 'tooltip', 'modal'}>",
+      "personalized_content": "<bool>",
       "running_targeted_advertising": "<bool>",
       "share_data_to_3rd_party": "<bool>",
-      "show_cookie_preference": "<bool>",
-      "theme_color": "<string>",
-      "website_id": "<string>"
+      "selected_languages": ["<enum{'el', 'hu', 'pt', 'sv', 'it', 'es', 'en-gb', 'da', 'fi', 'nl', 'fr', 'de', 'pl'}>"],
+      "regions": {
+        "<enum{'global', 'us', 'california', 'eu'}>": {
+          "enable_banner": "<bool>",
+          "enable_decline_button": "<bool>",
+          "enable_cookie_preference_button": "<bool>",
+          "consent_mode": "<enum{'opt_in', 'opt_out'}>",
+          "enable_consent_by_scroll": "<bool>",
+          "enable_google_consent_mode": "<bool>"
+        }
+      }
     }
   ],
   "errors": [
@@ -67,18 +76,36 @@ The results will contain zero or more of the following objects:
 }
 ```
 
-- `account_id` is the unique identifier of the account
-- `auto_accept_on_scroll` is a user scrolling accepted as consent?
-- `display_consent_banner_by_region` are there User region-specific settings?
-- `display_style` is one of `banner`, `tooltip`, `modal`.
+> **Note**
+> The value of `display_style` affects what is allowed in `position`
+> * `display_style` of `banner` allows `position` `bottom` and `top`
+> * `display_style` of `tooltip` allows `position` `bottom_left`, `bottom_right`, `top_left` and `top_right`
+> * `display_style` of `modal` ignores the `position` field
+
+> **Note**
+> US english `en` is required and will be selected by default even if `selected_languages` is set to an empty array
+
 - `id` is the unique identifier of the banner
+- `account_id` is the unique identifier of the account
+- `website_id`is the unique identifier of the website
+- `theme_id` is the unique identifier for the custom theme, if `theme_id` is nil then `default_theme` is used
+- `display_style` is style of the banner*
+- `position` is the position of the Banner*
+- `default_theme` is the name of the default theme to be used
 - `personalized_content` does the website have content personalized for the user?
-- `position` is the position of the Banner
 - `running_targeted_advertising` are there targeted advertisements on the website?
-- `share_data_to_3rd_party` does the Website share data with third parties?
-- `show_cookie_preference` show the Cookie Preference Button in the banner?
-- `theme_color` is the color of the theme
-- `website_id` is the unique identifier of the website
+- `share_data_to_3rd_party`does the Website share data with third parties?
+- `selected_languages` languages the banner will auto display in based on region
+- `regions` region specific settings
+  - `<region name>` name of the region for the specific settings
+    - `enable_banner` is the banner enabled?
+    - `enable_decline_button` is the user allowed to decline consent?
+    - `enable_cookie_preference_button` show the Cookie Preference Button in the banner?
+    - `consent_mode` doe the user need to opt in or opt out of consent?
+    - `enable_consent_by_scroll` is a user scrolling accepted as consent?
+    - `enable_google_consent_mode` is google consent mode enabled?
+
+
 
 # Example 1
 
@@ -105,18 +132,51 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
 {
   "results": [
     {
+      "id":  "ban_1234",
       "account_id": "acct_1234",
-      "auto_accept_on_scroll": true,
-      "display_consent_banner_by_region": true,
-      "display_style": "banner",
-      "id": "ban_1234",
-      "personalized_content": true,
+      "website_id": "web_1234",
+      "theme_id": "theme_1234",
       "position": "bottom",
-      "running_targeted_advertising": true,
+      "default_theme": "navy_blue",
+      "display_style": "banner",
+      "personalized_content": true,
+      "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
-      "show_cookie_preference": true,
-      "theme_color": "blue",
-      "website_id": "web_1234"
+      "selected_languages": ["en", "pl"],
+      "regions": {
+        "global": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "us": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "california": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "eu": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        }
+      }
     }
   ],
   "errors": [],
@@ -160,46 +220,145 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
 {
   "results": [
     {
-      "account_id": "acct_1234",
-      "auto_accept_on_scroll": false,
-      "display_consent_banner_by_region": true,
-      "display_style": "banner",
       "id": "ban_1234",
-      "personalized_content": true,
+      "account_id": "acct_1234",
+      "website_id": "web_1234",
+      "theme_id": "theme_1234",
       "position": "bottom",
-      "running_targeted_advertising": true,
+      "default_theme": "navy_blue",
+      "display_style": "banner",
+      "personalized_content": true,
+      "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
-      "show_cookie_preference": true,
-      "theme_color": "blue",
-      "website_id": "web_1234"
+      "selected_languages": ["en", "pl"],
+      "regions": {
+        "global": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "us": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "california": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "eu": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        }
+      }
     },
     {
-      "account_id": "acct_1234",
-      "auto_accept_on_scroll": true,
-      "display_consent_banner_by_region": true,
-      "display_style": "banner",
       "id": "ban_5678",
-      "personalized_content": true,
+      "account_id": "acct_1234",
+      "website_id": "web_5678",
+      "theme_id": "theme_5678",
       "position": "bottom",
-      "running_targeted_advertising": true,
+      "default_theme": "navy_blue",
+      "display_style": "banner",
+      "personalized_content": true,
+      "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
-      "show_cookie_preference": true,
-      "theme_color": "blue",
-      "website_id": "web_5678"
+      "selected_languages": ["en", "pl"],
+      "regions": {
+        "global": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "us": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "california": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "eu": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        }
+      }
     },
     {
-      "account_id": "acct_1234",
-      "auto_accept_on_scroll": false,
-      "display_consent_banner_by_region": true,
-      "display_style": "banner",
       "id": "ban_2112",
-      "personalized_content": true,
+      "account_id": "acct_1234",
+      "website_id": "web_2112",
+      "theme_id": "theme_2112",
       "position": "bottom",
-      "running_targeted_advertising": true,
+      "default_theme": "navy_blue",
+      "display_style": "banner",
+      "personalized_content": true,
+      "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
-      "show_cookie_preference": true,
-      "theme_color": "blue",
-      "website_id": "web_2112"
+      "selected_languages": ["en", "pl"],
+      "regions": {
+        "global": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "us": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "california": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "eu": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        }
+      }
     }
   ],
   "errors": [],
@@ -244,32 +403,98 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
 {
   "results": [
     {
-      "account_id": "acct_1234",
-      "auto_accept_on_scroll": false,
-      "display_consent_banner_by_region": true,
-      "display_style": "banner",
       "id": "ban_1234",
-      "personalized_content": true,
+      "account_id": "acct_1234",
+      "website_id": "web_1234",
+      "theme_id": "theme_1234",
       "position": "bottom",
-      "running_targeted_advertising": true,
+      "default_theme": "navy_blue",
+      "display_style": "banner",
+      "personalized_content": true,
+      "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
-      "show_cookie_preference": true,
-      "theme_color": "blue",
-      "website_id": "web_1234"
+      "selected_languages": ["en", "pl"],
+      "regions": {
+        "global": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "us": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "california": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "eu": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        }
+      }
     },
     {
-      "account_id": "acct_1234",
-      "auto_accept_on_scroll": true,
-      "display_consent_banner_by_region": true,
-      "display_style": "banner",
       "id": "ban_5678",
-      "personalized_content": true,
+      "account_id": "acct_1234",
+      "website_id": "web_5678",
+      "theme_id": "theme_5678",
       "position": "bottom",
-      "running_targeted_advertising": true,
+      "default_theme": "navy_blue",
+      "display_style": "banner",
+      "personalized_content": true,
+      "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
-      "show_cookie_preference": true,
-      "theme_color": "blue",
-      "website_id": "web_5678"
+      "selected_languages": ["en", "pl"],
+      "regions": {
+        "global": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "us": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "california": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        },
+        "eu": {
+          "enable_banner": true,
+          "enable_decline_button": false,
+          "enable_cookie_preference_button": true,
+          "consent_mode": "opt_out",
+          "enable_consent_by_scroll": true,
+          "enable_google_consent_mode": false
+        }
+      }
     }
   ],
   "errors": [
@@ -277,7 +502,7 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
       "account_id": "acct_1234",
       "error": "object_not_found",
       "id": "web_2020"
-    }  
+    }
   ],
   "paging": {
     "next_results": null,
