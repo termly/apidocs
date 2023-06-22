@@ -10,12 +10,14 @@ Retrieve all banners for the specified query. The query has the following shape:
 [
   {
     "account_id": "<string>",
-    "website_id": "<string>"
+    "ids": [
+      "<string>"
+    ]
   }
 ]
 ```
 
-At least 1 object with the field account_id and website_id is required. Once the query is constructed, pass the URL encoded value in the query string parameter `query`.
+At least 1 object with an `account_id` must be provided.  If you would like to retrieve all of the banners for the account omit the `ids` parameter.  if `ids` is sent it must have 1 or more items. Once constructed the object must be URL encoded and be the value for the `query` parameter.
 
 ## Paging
 
@@ -41,7 +43,6 @@ The results will contain zero or more of the following objects:
     {
       "id": "<string>",
       "account_id": "<string>",
-      "website_id": "<string>",
       "theme_id": "<string>",
       "position": "<enum{'bottom', 'bottom_left', 'bottom_right', 'top', 'top_left', 'top_right'}>",
       "default_theme": "<enum{'blue', 'light', 'green', 'red', 'black', 'navy_blue'}>",
@@ -66,7 +67,6 @@ The results will contain zero or more of the following objects:
     {
       "error": "<string>",
       "account_id": "<string>",
-      "website_id": "<string>"
     }
   ],
   "paging": {
@@ -85,9 +85,8 @@ The results will contain zero or more of the following objects:
 > **Note**
 > US english `en` is required and will be selected by default even if `selected_languages` is set to an empty array
 
-- `id` is the unique identifier of the banner
+- `id` is the unique identifier of the website (the website will always and only have 1 banner so use the website id)
 - `account_id` is the unique identifier of the account
-- `website_id`is the unique identifier of the website
 - `theme_id` is the unique identifier for the custom theme, if `theme_id` is nil then `default_theme` is used
 - `display_style` is style of the banner*
 - `position` is the position of the Banner*
@@ -113,7 +112,7 @@ Request banner for a single website.
 
 ## Request
 
-GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%0A%5D%0A`
+GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22ids%22%3A%20%5B%22web_1234%22%5D%0A%20%20%7D%0A%5D`
 
 ## Query
 
@@ -121,7 +120,7 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
 [
   {
     "account_id": "acct_1234",
-    "website_id": "web_1234"
+    "ids": ["web_1234"]
   }
 ]
 ```
@@ -132,9 +131,8 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
 {
   "results": [
     {
-      "id":  "ban_1234",
+      "id": "web_1234",
       "account_id": "acct_1234",
-      "website_id": "web_1234",
       "theme_id": "theme_1234",
       "position": "bottom",
       "default_theme": "navy_blue",
@@ -193,7 +191,7 @@ Request banners for multiple websites on the same account.
 
 ## Request
 
-GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_5678%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_2112%22%0A%20%20%7D%0A%5D`
+GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%7D%0A%5D`
 
 ## Query
 
@@ -201,15 +199,12 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
 [
   {
     "account_id": "acct_1234",
-    "website_id": "web_1234"
   },
   {
     "account_id": "acct_1234",
-    "website_id": "web_5678"
   },
   {
     "account_id": "acct_1234",
-    "website_id": "web_2112"
   }
 ]
 ```
@@ -220,9 +215,8 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
 {
   "results": [
     {
-      "id": "ban_1234",
+      "id": "web_1234",
       "account_id": "acct_1234",
-      "website_id": "web_1234",
       "theme_id": "theme_1234",
       "position": "bottom",
       "default_theme": "navy_blue",
@@ -267,9 +261,8 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
       }
     },
     {
-      "id": "ban_5678",
+      "id": "web_5678",
       "account_id": "acct_1234",
-      "website_id": "web_5678",
       "theme_id": "theme_5678",
       "position": "bottom",
       "default_theme": "navy_blue",
@@ -314,9 +307,8 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
       }
     },
     {
-      "id": "ban_2112",
+      "id": "web_2112",
       "account_id": "acct_1234",
-      "website_id": "web_2112",
       "theme_id": "theme_2112",
       "position": "bottom",
       "default_theme": "navy_blue",
@@ -376,7 +368,7 @@ Request banners for multiple websites. One website does not exist.
 
 ## Request
 
-GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_5678%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_2020%22%0A%20%20%7D%0A%5D`
+GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%7D%0A%5D
 
 ## Query
 
@@ -384,15 +376,12 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
 [
   {
     "account_id": "acct_1234",
-    "website_id": "web_1234"
   },
   {
     "account_id": "acct_1234",
-    "website_id": "web_5678"
   },
   {
     "account_id": "acct_1234",
-    "website_id": "web_2020"
   }
 ]
 ```
@@ -403,9 +392,8 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
 {
   "results": [
     {
-      "id": "ban_1234",
+      "id": "web_1234",
       "account_id": "acct_1234",
-      "website_id": "web_1234",
       "theme_id": "theme_1234",
       "position": "bottom",
       "default_theme": "navy_blue",
@@ -450,9 +438,8 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
       }
     },
     {
-      "id": "ban_5678",
+      "id": "web_5678",
       "account_id": "acct_1234",
-      "website_id": "web_5678",
       "theme_id": "theme_5678",
       "position": "bottom",
       "default_theme": "navy_blue",

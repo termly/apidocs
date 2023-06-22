@@ -10,7 +10,6 @@ Updates the banner for a website. The body has the following shape:
     {
       "id": "<string>",
       "account_id": "<string>",
-      "website_id": "<string>",
       "theme_id": "<string>",
       "position": "<enum{'bottom', 'bottom_left', 'bottom_right', 'top', 'top_left', 'top_right'}>",
       "default_theme": "<enum{'blue', 'light', 'green', 'red', 'black', 'navy_blue'}>",
@@ -34,9 +33,8 @@ Updates the banner for a website. The body has the following shape:
 }
 ```
 
-- `id` is the unique identifier of the banner
+- `id` is the unique identifier of the website (the website will always and only have 1 banner so use the website id)
 - `account_id` is the unique identifier of the account
-- `website_id`is the unique identifier of the website
 - `theme_id` is the unique identifier for the custom theme, if `theme_id` is nil then `default_theme` is used
 - `display_style` is style of the banner*
 - `position` is the position of the Banner*
@@ -80,9 +78,8 @@ PUT `https://api.termly.io/v1/websites/banners`
 ```json
 [
     {
-      "id":  "ban_1234",
+      "id":  "web_1234",
       "account_id": "acct_1234",
-      "website_id": "web_1234",
       "theme_id": "theme_1234",
       "position": "bottom",
       "default_theme": "navy_blue",
@@ -134,8 +131,7 @@ PUT `https://api.termly.io/v1/websites/banners`
 ```json
 [
     {
-      "id": "ban_1234",
-      "website_id": "website_1234",
+      "id": "website_1234",
       "account_id": "acct_1234",
       "_idx": 1
     }
@@ -155,9 +151,8 @@ PUT `https://api.termly.io/v1/websites/banners`
 ```json
 [
     {
-      "id":  "ban_1234",
+      "id": "web_1234",
       "account_id": "acct_1234",
-      "website_id": "web_1234",
       "theme_id": "theme_1234",
       "position": "bottom",
       "default_theme": "navy_blue",
@@ -202,9 +197,8 @@ PUT `https://api.termly.io/v1/websites/banners`
       }
     },
     {
-      "id":  "ban_1234",
+      "id":  "web_1234",
       "account_id": "acct_1234",
-      "website_id": "web_1234",
       "theme_id": "theme_1234",
       "position": "bottom",
       "default_theme": "navy_blue",
@@ -256,14 +250,12 @@ PUT `https://api.termly.io/v1/websites/banners`
 ```json
 [
     {
-      "id": "ban_1234",
-      "website_id": "website_1234",
+      "id": "web_1234",
       "account_id": "acct_1234",
       "_idx": 1
     },
     {
-      "id": "ban_2112",
-      "website_id": "website_9876",
+      "id": "web_9876",
       "account_id": "acct_1234",
       "_idx": 2
     }
@@ -283,9 +275,8 @@ PUT `https://api.termly.io/v1/websites/banners`
 ```json
 [
     {
-      "id":  "ban_1234",
+      "id":  "web_1234",
       "account_id": "acct_1234",
-      "website_id": "web_1234",
       "theme_id": "theme_1234",
       "position": "bottom",
       "default_theme": "navy_blue",
@@ -337,8 +328,7 @@ PUT `https://api.termly.io/v1/websites/banners`
 ```json
 [
     {
-      "id": "ban_1234",
-      "website_id": "website_1234",
+      "id": "web_1234",
       "account_id": "acct_1234",
       "_idx": 1
     }
