@@ -1,5 +1,3 @@
-:warning: Endpoint is not yet implemented. Coming soon.
-
 # Overview
 
 Create one or more collaborators. The following is the JSON that is posted.

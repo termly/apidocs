@@ -1,5 +1,3 @@
-:warning: Endpoint is not yet implemented. Coming soon.
-
 # Overview
 
 Delete 1 or more collaborators. The query has the following JSON shape:
