@@ -59,6 +59,7 @@ The results will contain zero or more of the following objects:
           "consent_mode": "<enum{'opt_in', 'opt_out'}>",
           "enable_consent_by_scroll": "<bool>",
           "enable_google_consent_mode": "<bool>"
+          "enable_tcf": "<bool>"
         }
       }
     }
@@ -103,6 +104,7 @@ The results will contain zero or more of the following objects:
     - `consent_mode` doe the user need to opt in or opt out of consent?
     - `enable_consent_by_scroll` is a user scrolling accepted as consent?
     - `enable_google_consent_mode` is google consent mode enabled?
+    - `enable_tcf` is AIB TCF enabled? NOTE: This can only be set in the EU region.
 
 
 
@@ -172,7 +174,8 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
           "enable_cookie_preference_button": true,
           "consent_mode": "opt_out",
           "enable_consent_by_scroll": true,
-          "enable_google_consent_mode": false
+          "enable_google_consent_mode": false,
+          "enable_tcf": false
         }
       }
     }
@@ -256,7 +259,8 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
           "enable_cookie_preference_button": true,
           "consent_mode": "opt_out",
           "enable_consent_by_scroll": true,
-          "enable_google_consent_mode": false
+          "enable_google_consent_mode": false,
+          "enable_tcf": true
         }
       }
     },
@@ -302,7 +306,8 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
           "enable_cookie_preference_button": true,
           "consent_mode": "opt_out",
           "enable_consent_by_scroll": true,
-          "enable_google_consent_mode": false
+          "enable_google_consent_mode": false,
+          "enable_tcf": false
         }
       }
     },
@@ -348,7 +353,8 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
           "enable_cookie_preference_button": true,
           "consent_mode": "opt_out",
           "enable_consent_by_scroll": true,
-          "enable_google_consent_mode": false
+          "enable_google_consent_mode": false,
+          "enable_tcf": false
         }
       }
     }
@@ -433,7 +439,8 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
           "enable_cookie_preference_button": true,
           "consent_mode": "opt_out",
           "enable_consent_by_scroll": true,
-          "enable_google_consent_mode": false
+          "enable_google_consent_mode": false,
+          "enable_tcf": false
         }
       }
     },
@@ -479,7 +486,8 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
           "enable_cookie_preference_button": true,
           "consent_mode": "opt_out",
           "enable_consent_by_scroll": true,
-          "enable_google_consent_mode": false
+          "enable_google_consent_mode": false,
+          "enable_tcf": false
         }
       }
     }

@@ -25,7 +25,8 @@ Updates the banner for a website. The body has the following shape:
           "enable_cookie_preference_button": "<bool>",
           "consent_mode": "<enum{'opt_in', 'opt_out'}>",
           "enable_consent_by_scroll": "<bool>",
-          "enable_google_consent_mode": "<bool>"
+          "enable_google_consent_mode": "<bool>",
+          "enable_tcf": "<bool>"
         }
       }
     }
@@ -51,6 +52,7 @@ Updates the banner for a website. The body has the following shape:
     - `consent_mode` doe the user need to opt in or opt out of consent?
     - `enable_consent_by_scroll` is a user scrolling accepted as consent?
     - `enable_google_consent_mode` is google consent mode enabled?
+    - `enable_tcf` is AIB TCF enabled? NOTE: This can only be set in the EU region.
 
 
 The response has the following shape:
@@ -119,7 +121,8 @@ PUT `https://api.termly.io/v1/websites/banners`
           "enable_cookie_preference_button": true,
           "consent_mode": "opt_out",
           "enable_consent_by_scroll": true,
-          "enable_google_consent_mode": false
+          "enable_google_consent_mode": false,
+          "enable_tcf": false
         }
       }
     }
@@ -192,7 +195,8 @@ PUT `https://api.termly.io/v1/websites/banners`
           "enable_cookie_preference_button": true,
           "consent_mode": "opt_out",
           "enable_consent_by_scroll": true,
-          "enable_google_consent_mode": false
+          "enable_google_consent_mode": false,
+          "enable_tcf": true
         }
       }
     },
@@ -238,7 +242,8 @@ PUT `https://api.termly.io/v1/websites/banners`
           "enable_cookie_preference_button": true,
           "consent_mode": "opt_out",
           "enable_consent_by_scroll": true,
-          "enable_google_consent_mode": false
+          "enable_google_consent_mode": false,
+          "enable_tcf": false
         }
       }
     }
@@ -316,7 +321,8 @@ PUT `https://api.termly.io/v1/websites/banners`
           "enable_cookie_preference_button": true,
           "consent_mode": "opt_out",
           "enable_consent_by_scroll": true,
-          "enable_google_consent_mode": false
+          "enable_google_consent_mode": false,
+          "enable_tcf": false
         }
       }
     }
