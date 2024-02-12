@@ -7,6 +7,12 @@ All requests to `api.termly.io` must include the following two HTTP headers:
 1. `X-Termly-Timestamp`
 2. `Authorization`
 
+### Example Authentication
+
+See [examples](/auth-examples/) of how to authenticate a request in different environments:
+- [Node.js](/auth-examples/nodejs/)
+- More coming coon
+
 ## `X-Termly-Timestamp`
 
 The value of `X-Termly-Timestamp` is a UTC timestamp with the following format (same as [GNU date](https://man7.org/linux/man-pages/man1/date.1.html)) `%Y%m%dT%H%M%SZ`.
