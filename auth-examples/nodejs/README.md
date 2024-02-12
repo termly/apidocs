@@ -13,7 +13,7 @@ Follow these steps to get the example up and running on your local machine.
 npm install
 ```
 
-1. **Set up environment variables:**
+2. **Set up environment variables:**
 
 Copy the .env.example file to a new file named .env and update it with your API credentials:
 
