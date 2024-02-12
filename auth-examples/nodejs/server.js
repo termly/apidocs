@@ -16,7 +16,7 @@ app.get('/test-auth', async (req, res) => {
         const authHeader = createAuthHeader(apiKey, privateKey, termlyTimestamp, 'GET', '', '/v1/authn', '');
         console.log(`Authorization Header: ${authHeader}`);
 
-        const response = await axios.get('https://api.usw2.staging.trmly.net/v1/authn', {
+        const response = await axios.get('https://api.termly.io/v1/authn', {
             headers: {
                 'Authorization': authHeader,
                 'X-Termly-Timestamp': termlyTimestamp
