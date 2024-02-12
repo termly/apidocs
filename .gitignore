@@ -1,3 +1,11 @@
 .idea/
 
 .DS_Store
+
+.env
+node_modules/
+npm-debug.log
+*.log
+*.lock
+*.swp
+.vscode/
