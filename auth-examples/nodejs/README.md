@@ -14,12 +14,13 @@ npm install
 ```
 
 1. **Set up environment variables:**
+
 Copy the .env.example file to a new file named .env and update it with your API credentials:
 
 ``` bash
 cp .env.example .env
 ```
-Then, open .env and replace YOUR_PUBLIC_KEY and YOUR_PRIVATE_KEY with your actual API public and private keys.
+Then, open .env and replace `YOUR_PUBLIC_KEY` and `YOUR_PRIVATE_KEY` with your actual API public and private keys.
 
 ## Running the Example
 To run the example, execute:
