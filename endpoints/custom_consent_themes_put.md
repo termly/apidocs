@@ -1,5 +1,3 @@
-:warning: Endpoint is not yet implemented. Coming soon.
-
 # Overview
 
 Update existing custom consent themes. The request body will have this shape:
