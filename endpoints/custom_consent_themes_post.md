@@ -1,5 +1,3 @@
-:warning: Endpoint is not yet implemented. Coming soon.
-
 # Overview
 
 Create a new custom consent theme for a website. The request body will be JSON:
