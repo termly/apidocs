@@ -1,5 +1,3 @@
-:warning: Endpoint is not yet implemented. Coming soon.
-
 # Overview
 
 Retrieve all or some of the custom consent themes for a website.  The query has the following JSON shape:
