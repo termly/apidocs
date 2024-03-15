@@ -68,6 +68,7 @@ The response is an array of success or error response objects
       "banner": "<string>",
       "cookie_preference_button": "<string>"
     },
+    "api_key": "<string>",
     "_idx": "<string>"
   }
 ]
@@ -154,6 +155,7 @@ PUT https://api.termly.io/v1/websites
       "banner": "<Javascript code>",
       "cookie_preference_button": "<Javascript code>"
     },
+    "api_key": "abcdefg",
     "_idx": 0
   }
 ]
@@ -256,6 +258,7 @@ Submit multiple websites, one of which does not exist.
       "banner": "<Javascript code>",
       "cookie_preference_button": "<Javascript code>"
     },
+    "api_key": "abcdefg",
     "_idx": 0
   },
   {
