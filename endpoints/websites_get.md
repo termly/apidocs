@@ -69,7 +69,8 @@ The response will look like:
   "code_snippet": {
     "banner": "<string>",
     "cookie_preference_button": "<string>"
-  }
+  },
+  "api_key": "<string>"
 }
 ```
 
@@ -100,6 +101,7 @@ The response will look like:
 * `code_snippet` object that contains JavaScript snippets to install termly on the website
     * `banner` JavaScript snippet to install the banner on the website
     * `cookie_preference_button` JavaScript snippet to install the preferences button on the website
+* `api_key` WordPress API key of the website
 
 
 `errors` will have 0 or more of the [error object](../error_object.md#get-errors).
@@ -163,7 +165,8 @@ GET https://api.termly.io/v1/websites?query=%5B%7B%22account_id%22%3A%20%22acct_
       "code_snippet": {
         "banner": "<Javascript code>",
         "cookie_preference_button": "<Javascript code>"
-      }
+      },
+      "api_key": "abcdefg"
     }
   ],
   "errors": [],
@@ -237,7 +240,8 @@ GET https://api.termly.io/v1/websites?query=%5B%20%7B%20%22account_id%22%3A%20%2
       "code_snippet": {
         "banner": "<Javascript code>",
         "cookie_preference_button": "<Javascript code>"
-      }
+      },
+      "api_key": "abcdefg"
     },
     {
       "account_id": "acct_1234",
@@ -271,7 +275,8 @@ GET https://api.termly.io/v1/websites?query=%5B%20%7B%20%22account_id%22%3A%20%2
       "code_snippet": {
         "banner": "<Javascript code>",
         "cookie_preference_button": "<Javascript code>"
-      }
+      },
+      "api_key": "hijklmnop"
     }
   ],
   "errors": [

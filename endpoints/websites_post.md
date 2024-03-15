@@ -67,6 +67,7 @@ The response is an array of success or error response objects with this shape:
       "banner": "<string>",
       "cookie_preference_button": "<string>"
     },
+    "api_key": "<string>",
     "_idx": <integer>
   }
 ]
@@ -152,6 +153,7 @@ POST https://api.termly.io/v1/websites
       "banner": "<Javascript code>",
       "cookie_preference_button": "<Javascript code>"
     },
+    "api_key": "abcdefg",
     "_idx": 0
   }
 ]
@@ -252,6 +254,7 @@ Submit multiple websites one of which has a validation error
       "banner": "<Javascript code>",
       "cookie_preference_button": "<Javascript code>"
     },
+    "api_key": "abcdefg",
     "_idx": 0
   },
   {
