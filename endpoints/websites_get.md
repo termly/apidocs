@@ -100,6 +100,7 @@ The response will look like:
 * `consent_count` number of users who have consented to cookies
 * `code_snippet` object that contains JavaScript snippets to install termly on the website
     * `banner` JavaScript snippet to install the banner on the website
+      * Note: The auto blocker is enabled by default with `autoBlock=on` in the snippet. It may be manually disabled by changing the snippet to `autoBlock=off`
     * `cookie_preference_button` JavaScript snippet to install the preferences button on the website
 * `api_key` WordPress API key of the website
 
