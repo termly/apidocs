@@ -49,7 +49,7 @@ function createDerivedSecretKey(privateKey, termlyTimestamp) {
 function createAuthHeader(apiKey, privateKey, termlyTimestamp, method, body, path, query) {
     body = body || '';
     const derivedSecretKey = createDerivedSecretKey(privateKey, termlyTimestamp);
-    const host = 'api.usw2.staging.trmly.net';
+    const host = 'api.termly.io';
     const canonicalRequest = createCanonicalRequest(method, host, path, query, termlyTimestamp, body);
     const signature = crypto.createHmac('sha256', derivedSecretKey).update(canonicalRequest).digest('hex');
 
