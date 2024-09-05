@@ -1,6 +1,6 @@
 # Overview
 
-Preview the documents for a website. If all the documents for the website should be retrieved then do not send the `ids` parameter. Localization is supported via the `lang` parameter, which will retrieve the documents in that locale, if any. The request body takes this shape:
+Preview the documents for a website. If all the documents for the website should be retrieved then do not send the `ids` parameter. Localization is supported via the `lang` parameter, which will retrieve the documents in that locale, if any. If no `lang` is provided, the request will default to American English `"en"`. The request body takes this shape:
 
 ## Request
 
