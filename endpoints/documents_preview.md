@@ -1,6 +1,6 @@
 # Overview
 
-Preview the documents for a website. If all the documents for the website should be retrieved then do not send the `ids` parameter. The request body takes this shape:
+Preview the documents for a website. If all the documents for the website should be retrieved then do not send the `ids` parameter. Localization is supported via the `lang` parameter, which will retrieve the documents in that locale, if any. The request body takes this shape:
 
 ## Request
 
@@ -11,7 +11,8 @@ Preview the documents for a website. If all the documents for the website should
     "website_id": "<string>",
     "ids": [
       "<string>"
-    ]
+    ],
+    "lang": "<string>"
   }
 ]
 ```
@@ -159,6 +160,56 @@ GET https://api.termly.io/v1/websites/documents/preview?query=%5B%20%7B%20%22acc
       "id": "doc_13"
     }
   ],
+  "paging": {
+    "next_results": null,
+    "previous_results": null
+  }
+}
+```
+
+# Example 3
+
+Request the French-localized preview of all documents for a given website
+
+## Request
+
+```
+GET https://api.termly.io/v1/websites/documents/preview?query=%5B%7B%22account_id%22%3A%20%22acct_1234%22%2C%22website_id%22%3A%20%22web_123%22%2C%22lang%22%3A%20%22fr%22%7D%5D
+```
+
+## Query
+
+```JSON
+[
+  {
+    "account_id": "acct_1234",
+    "website_id": "web_123",
+    "lang": "fr"
+  }
+]
+```
+
+## Response
+
+```JSON
+{
+  "results": [
+    {
+      "account_id": "acct_123",
+      "website_id": "web_123",
+      "ids": "doc_123",
+      "name": "les cookie policy, hon hon hon",
+      "document": "<html>...</html>"
+    },
+    {
+      "account_id": "acct_123",
+      "website_id": "web_123",
+      "ids": "doc_125",
+      "name": "privacy policy",
+      "document": "<html>...</html>"
+    }
+  ],
+  "errors": [],
   "paging": {
     "next_results": null,
     "previous_results": null
