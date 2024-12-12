@@ -95,6 +95,7 @@ The results will contain zero or more of the following objects:
 
 > [!Note]
 > The value of `display_style` affects what is allowed in `position`
+>
 > * `display_style` of `banner` allows `position` `bottom` and `top`
 > * `display_style` of `tooltip` allows `position` `bottom_left`, `bottom_right`, `top_left` and `top_right`
 > * `display_style` of `modal` ignores the `position` field
@@ -102,39 +103,39 @@ The results will contain zero or more of the following objects:
 > [!Note]
 > US english `en` is required and will be selected by default even if `selected_languages` is set to an empty array
 
-- `id` is the unique identifier of the website (the website will always and only have 1 banner so use the website id)
-- `account_id` is the unique identifier of the account
-- `website_id` is the unique identifier of the website
-- `theme_id` is the unique identifier for the custom theme, if `theme_id` is nil then `default_theme` is used
-- `position` is the position of the Banner*
-- `default_theme` is the name of the default theme to be used
-- `display_style` is style of the banner*
-- `personalized_content` does the website have content personalized for the user?
-- `running_targeted_advertising` are there targeted advertisements on the website?
-- `share_data_to_3rd_party`does the Website share data with third parties?
-- `selected_languages` languages the banner will auto display in based on region
-- `regions` region specific settings
-  - `<region name>` name of the region for the specific settings
-    - `enable_banner` is the banner enabled?
-    - `enable_decline_button` is the user allowed to decline consent?
-    - `enable_cookie_preference_button` show the Cookie Preference Button in the banner?
-    - `consent_mode` does the user need to opt in or opt out of consent?
-    - `enable_consent_by_scroll` is a user scrolling accepted as consent?
-    - `enable_google_consent_mode` is google consent mode enabled?
-    - `google_consent_mode_settings` is an object containing the google consent mode settings
-      - `ad_personalization` Sets consent for personalized advertising.
-      - `ad_storage` Enables storage (such as cookies) related to advertising.
-      - `ad_user_data` Sets consent for sending user data related to advertising to Google.
-      - `ads_data_redaction` To further redact your ads data when ad_storage is denied, set ads_data_redaction to true.
-      - `analytics_storage` Enables storage (such as cookies) related to analytics e.g. visit duration.
-      - `enable_wait_for_update` Should wait_for_update be enabled
-      - `functionality_storage` Enables storage that supports the functionality of the website or app e.g. language settings.
-      - `personalization_storage` Enables storage related to personalization e.g. video recommendations
-      - `security_storage` Enables storage related to security such as authentication functionality, fraud prevention, and other user protection.
-      - `social_storage` Enables storage related to social
-      - `url_passthrough` Pass through ad click, client ID, and session ID information in URLs
-      - `wait_for_update` How long (in milliseconds) to wait before data is sent
-    - `enable_tcf` is IAB TCF enabled? NOTE: This can only be set in the EU region.
+* `id` is the unique identifier of the website (the website will always and only have 1 banner so use the website id)
+* `account_id` is the unique identifier of the account
+* `website_id` is the unique identifier of the website
+* `theme_id` is the unique identifier for the custom theme, if `theme_id` is nil then `default_theme` is used
+* `position` is the position of the Banner*
+* `default_theme` is the name of the default theme to be used
+* `display_style` is style of the banner*
+* `personalized_content` does the website have content personalized for the user?
+* `running_targeted_advertising` are there targeted advertisements on the website?
+* `share_data_to_3rd_party`does the Website share data with third parties?
+* `selected_languages` languages the banner will auto display in based on region
+* `regions` region specific settings
+  * `<region name>` name of the region for the specific settings
+    * `enable_banner` is the banner enabled?
+    * `enable_decline_button` is the user allowed to decline consent?
+    * `enable_cookie_preference_button` show the Cookie Preference Button in the banner?
+    * `consent_mode` does the user need to opt in or opt out of consent?
+    * `enable_consent_by_scroll` is a user scrolling accepted as consent?
+    * `enable_google_consent_mode` is google consent mode enabled?
+    * `google_consent_mode_settings` is an object containing the google consent mode settings
+      * `ad_personalization` Sets consent for personalized advertising.
+      * `ad_storage` Enables storage (such as cookies) related to advertising.
+      * `ad_user_data` Sets consent for sending user data related to advertising to Google.
+      * `ads_data_redaction` To further redact your ads data when ad_storage is denied, set ads_data_redaction to true.
+      * `analytics_storage` Enables storage (such as cookies) related to analytics e.g. visit duration.
+      * `enable_wait_for_update` Should wait_for_update be enabled
+      * `functionality_storage` Enables storage that supports the functionality of the website or app e.g. language settings.
+      * `personalization_storage` Enables storage related to personalization e.g. video recommendations
+      * `security_storage` Enables storage related to security such as authentication functionality, fraud prevention, and other user protection.
+      * `social_storage` Enables storage related to social
+      * `url_passthrough` Pass through ad click, client ID, and session ID information in URLs
+      * `wait_for_update` How long (in milliseconds) to wait before data is sent
+    * `enable_tcf` is IAB TCF enabled? NOTE: This can only be set in the EU region.
 
 # Example 1
 
@@ -163,7 +164,7 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
     {
       "id": "web_1234",
       "account_id": "acct_1234",
-      "theme_id": "theme_1234",
+      "theme_id": "cct_1234",
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
@@ -304,7 +305,7 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
     {
       "id": "web_1234",
       "account_id": "acct_1234",
-      "theme_id": "theme_1234",
+      "theme_id": "cct_1234",
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
@@ -407,7 +408,7 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
     {
       "id": "web_5678",
       "account_id": "acct_1234",
-      "theme_id": "theme_5678",
+      "theme_id": "cct_5678",
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
@@ -510,7 +511,7 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
     {
       "id": "web_2112",
       "account_id": "acct_1234",
-      "theme_id": "theme_2112",
+      "theme_id": "cct_2112",
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
@@ -619,14 +620,13 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
 }
 ```
 
-
 # Example 3
 
 Request banners for multiple websites. One website does not exist.
 
 ## Request
 
-GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%7D%0A%5D
+GET `<https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%7D%0A%5D>
 
 ## Query
 
@@ -652,7 +652,7 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
     {
       "id": "web_1234",
       "account_id": "acct_1234",
-      "theme_id": "theme_1234",
+      "theme_id": "cct_1234",
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
@@ -755,7 +755,7 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
     {
       "id": "web_5678",
       "account_id": "acct_1234",
-      "theme_id": "theme_5678",
+      "theme_id": "cct_5678",
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",

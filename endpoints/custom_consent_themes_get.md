@@ -60,11 +60,9 @@ The response will look like:
 * `btn_background` button background color
 * `btn_text_color` button text color
 
-
 `errors` will have 0 or more of the [error object](../error_object.md#get-errors).
 
 `paging` is an object that indicates if there are more results to retrieve. Please see [paging](../results_paging.md)
-
 
 # Example 1
 
@@ -73,7 +71,7 @@ Request all custom themes for a given website.
 ## Request
 
 ```
-GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_id%22%3A%20%22acct_123%22%2C%22website_id%22%3A%20%22web_123%22%2C%20%22ids%22%3A%20%5B%22theme_123%22%5D%7D%5D
+GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_id%22%3A%20%22acct_123%22%2C%22website_id%22%3A%20%22web_123%22%2C%20%22ids%22%3A%20%5B%22cct_123%22%5D%7D%5D
 ```
 
 ## Query
@@ -120,7 +118,7 @@ Request a specific custom theme that does not exist
 ## Request
 
 ```
-GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_id%22%3A%20%22acct_123%22%2C%22website_id%22%3A%20%22web_123%22%2C%20%22ids%22%3A%20%5B%22theme_1234%22%5D%7D%5D
+GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_id%22%3A%20%22acct_123%22%2C%22website_id%22%3A%20%22web_123%22%2C%20%22ids%22%3A%20%5B%22cct_1234%22%5D%7D%5D
 ```
 
 ## Query
@@ -130,7 +128,7 @@ GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_
   {
     "account_id": "acct_123",
     "website_id": "web_123",
-    "ids": ["theme_1234"]
+    "ids": ["cct_1234"]
   }
 ]
 ```
@@ -145,7 +143,7 @@ GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_
       "error": "object_not_found",
       "account_id": "acct_1234",
       "website_id": "web_123",
-      "id": "theme_1234"
+      "id": "cct_1234"
     }
   ],
   "paging": {
