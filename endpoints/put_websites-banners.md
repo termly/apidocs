@@ -107,7 +107,7 @@ PUT `https://api.termly.io/v1/websites/banners`
     {
       "id":  "web_1234",
       "account_id": "acct_1234",
-      "theme_id": "theme_1234",
+      "theme_id": "cct_1234",
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
@@ -239,7 +239,7 @@ PUT `https://api.termly.io/v1/websites/banners`
     {
       "id": "web_1234",
       "account_id": "acct_1234",
-      "theme_id": "theme_1234",
+      "theme_id": "cct_1234",
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
@@ -342,7 +342,7 @@ PUT `https://api.termly.io/v1/websites/banners`
     {
       "id":  "web_1234",
       "account_id": "acct_1234",
-      "theme_id": "theme_1234",
+      "theme_id": "cct_1234",
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
@@ -477,7 +477,7 @@ PUT `https://api.termly.io/v1/websites/banners`
     {
       "id":  "web_1234",
       "account_id": "acct_1234",
-      "theme_id": "theme_1234",
+      "theme_id": "cct_1234",
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",

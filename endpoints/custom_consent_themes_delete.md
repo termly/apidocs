@@ -2,7 +2,6 @@
 
 Delete an existing custom consent theme. The query has the following JSON shape:
 
-
 ```JSON
 [
   {
@@ -24,7 +23,7 @@ Multiple deletion requests
 ## Request
 
 ```
-DELETE https://api.termly.io/v1/website?query=%5B%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_124%22%2C%22id%22%3A%22theme_123%22%7D%2C%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_123%22%2C%22id%22%3A%22theme_12%22%7D%5D
+DELETE https://api.termly.io/v1/websites/custom_consent_themes?query=%5B%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_124%22%2C%22id%22%3A%22cct_123%22%7D%2C%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_123%22%2C%22id%22%3A%22cct_12%22%7D%5D
 ```
 
 ## Query
@@ -34,16 +33,15 @@ DELETE https://api.termly.io/v1/website?query=%5B%7B%22account_id%22%3A%22acct_1
   {
     "account_id": "acct_123",
     "website_id": "web_124",
-    "id": "theme_123"
+    "id": "cct_123"
   },
   {
     "account_id": "acct_123",
     "website_id": "web_123",
-    "id": "theme_12"
+    "id": "cct_12"
   }
 ]
 ```
-
 
 ## Response
 
@@ -52,13 +50,13 @@ DELETE https://api.termly.io/v1/website?query=%5B%7B%22account_id%22%3A%22acct_1
   {
     "account_id": "acct_123",
     "website_id": "web_124",
-    "id": "theme_123"
+    "id": "cct_123"
     "_idx": 0
   },
   {
     "account_id": "acct_123",
     "website_id": "web_123",
-    "id": "theme_12"
+    "id": "cct_12"
     "_idx": 1
   }
 ]
@@ -71,7 +69,7 @@ Multiple requests with one failure
 ## Request
 
 ```
-DELETE https://api.termly.io/v1/website?query=%5B%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_124%22%2C%22id%22%3A%22theme_123%22%7D%2C%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_123%22%2C%22id%22%3A%22theme_12%22%7D%2C%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_123%22%2C%22id%22%3A%22theme_123%22%7D%5D
+DELETE https://api.termly.io/v1/websites/custom_consent_themes?query=%5B%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_124%22%2C%22id%22%3A%22cct_123%22%7D%2C%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_123%22%2C%22id%22%3A%22cct_12%22%7D%2C%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_123%22%2C%22id%22%3A%22cct_123%22%7D%5D
 ```
 
 ## Query
@@ -81,21 +79,20 @@ DELETE https://api.termly.io/v1/website?query=%5B%7B%22account_id%22%3A%22acct_1
   {
     "account_id": "acct_123",
     "website_id": "web_124",
-    "id": "theme_123"
+    "id": "cct_123"
   },
   {
     "account_id": "acct_123",
     "website_id": "web_123",
-    "id": "theme_12"
+    "id": "cct_12"
   },
   {
     "account_id": "acct_123",
     "website_id": "web_123",
-    "id": "theme_123"
+    "id": "cct_123"
   }
 ]
 ```
-
 
 ## Response
 
@@ -104,13 +101,13 @@ DELETE https://api.termly.io/v1/website?query=%5B%7B%22account_id%22%3A%22acct_1
   {
     "account_id": "acct_123",
     "website_id": "web_124",
-    "id": "theme_123"
+    "id": "cct_123"
     "_idx": 0,
   },
   {
     "account_id": "acct_123",
     "website_id": "web_123",
-    "id": "theme_12",
+    "id": "cct_12",
     "_idx": 1
   },
   {
