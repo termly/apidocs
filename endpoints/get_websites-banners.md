@@ -53,6 +53,10 @@ The results will contain zero or more of the following objects:
       "running_targeted_advertising": "<bool>",
       "share_data_to_3rd_party": "<bool>",
       "selected_languages": ["<enum{'el', 'hu', 'pt', 'sv', 'it', 'es', 'en-gb', 'da', 'fi', 'nl', 'fr', 'de', 'pl'}>"],
+      "policy_settings": {
+        "enable_privacy_policy_url": "<bool>",
+        "privacy_policy_url": "<string>"
+      },
       "regions": {
         "<enum{'global', 'us', 'california', 'eu'}>": {
           "enable_banner": "<bool>",
@@ -101,6 +105,9 @@ The results will contain zero or more of the following objects:
 > * `display_style` of `modal` ignores the `position` field
 
 > [!Note]
+> The `policy_settings` object is optional. If used, the value of `enable_privacy_policy_url` must be set to `true` to use `privacy_policy_url`
+
+> [!Note]
 > US english `en` is required and will be selected by default even if `selected_languages` is set to an empty array
 
 * `id` is the unique identifier of the website (the website will always and only have 1 banner so use the website id)
@@ -114,6 +121,9 @@ The results will contain zero or more of the following objects:
 * `running_targeted_advertising` are there targeted advertisements on the website?
 * `share_data_to_3rd_party`does the Website share data with third parties?
 * `selected_languages` languages the banner will auto display in based on region
+* `policy_settings` privacy policy settings
+  * `enable_privacy_policy_url` is the privacy policy URL enabled?
+  * `privacy_policy_url` is the privacy policy URL
 * `regions` region specific settings
   * `<region name>` name of the region for the specific settings
     * `enable_banner` is the banner enabled?
@@ -172,6 +182,10 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
       "selected_languages": ["en", "pl"],
+      "policy_settings": {
+        "enable_privacy_policy_url": true,
+        "privacy_policy_url": "https://www.example.com/privacy-policy"
+      },
       "regions": {
         "global": {
           "enable_banner": true,
@@ -313,6 +327,10 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
       "selected_languages": ["en", "pl"],
+      "policy_settings": {
+        "enable_privacy_policy_url": true,
+        "privacy_policy_url": "https://www.example.com/privacy-policy"
+      },
       "regions": {
         "global": {
           "enable_banner": true,
@@ -416,6 +434,10 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
       "selected_languages": ["en", "pl"],
+      "policy_settings": {
+        "enable_privacy_policy_url": true,
+        "privacy_policy_url": "https://www.anotherexample.com/privacy-policy"
+      },
       "regions": {
         "global": {
           "enable_banner": true,
@@ -519,6 +541,10 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
       "selected_languages": ["en", "pl"],
+      "policy_settings": {
+        "enable_privacy_policy_url": true,
+        "privacy_policy_url": "https://www.yetanotherexample.com/privacy-policy"
+      },
       "regions": {
         "global": {
           "enable_banner": true,
@@ -660,6 +686,10 @@ GET `<https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%2
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
       "selected_languages": ["en", "pl"],
+      "policy_settings": {
+        "enable_privacy_policy_url": true,
+        "privacy_policy_url": "https://www.example.com/privacy-policy"
+      },
       "regions": {
         "global": {
           "enable_banner": true,
@@ -763,6 +793,10 @@ GET `<https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%2
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
       "selected_languages": ["en", "pl"],
+      "policy_settings": {
+        "enable_privacy_policy_url": true,
+        "privacy_policy_url": "https://www.anotherexample.com/privacy-policy"
+      },
       "regions": {
         "global": {
           "enable_banner": true,
