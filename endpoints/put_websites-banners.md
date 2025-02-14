@@ -11,7 +11,8 @@ Updates the banner for a website. The body has the following shape:
     "theme_id": "<string>",
     "position": "<enum{'bottom', 'bottom_left', 'bottom_right', 'top', 'top_left', 'top_right'}>",
     "default_theme": "<enum{'blue', 'light', 'green', 'red', 'black', 'navy_blue'}>",
-    "display_style": "<enum{'banner', 'tooltip', 'modal'}>",
+    "display_style": "<enum{'stretch', 'banner', 'tooltip', 'modal'}>",
+    "size": "<enum{'standard', 'compact'}>",
     "personalized_content": "<bool>",
     "running_targeted_advertising": "<bool>",
     "share_data_to_3rd_party": "<bool>",
@@ -50,6 +51,7 @@ Updates the banner for a website. The body has the following shape:
 - `website_id` is the unique identifier of the website
 - `theme_id` is the unique identifier for the custom theme, if `theme_id` is nil then `default_theme` is used
 - `display_style` is style of the banner*
+- `size` is the size of the banner*
 - `position` is the position of the Banner*
 - `default_theme` is the name of the default theme to be used
 - `personalized_content` does the website have content personalized for the user?
@@ -111,6 +113,7 @@ PUT `https://api.termly.io/v1/websites/banners`
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
+      "size": "standard",
       "personalized_content": true,
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
@@ -243,6 +246,7 @@ PUT `https://api.termly.io/v1/websites/banners`
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
+      "size": "standard",
       "personalized_content": true,
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
@@ -346,6 +350,7 @@ PUT `https://api.termly.io/v1/websites/banners`
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
+      "size": "compact",
       "personalized_content": true,
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
@@ -481,6 +486,7 @@ PUT `https://api.termly.io/v1/websites/banners`
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
+      "size": "standard",
       "personalized_content": true,
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
