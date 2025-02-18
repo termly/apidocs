@@ -48,7 +48,8 @@ The results will contain zero or more of the following objects:
       "theme_id": "<string>",
       "position": "<enum{'bottom', 'bottom_left', 'bottom_right', 'top', 'top_left', 'top_right'}>",
       "default_theme": "<enum{'blue', 'light', 'green', 'red', 'black', 'navy_blue'}>",
-      "display_style": "<enum{'banner', 'tooltip', 'modal'}>",
+      "display_style": "<enum{'stretch', 'banner', 'tooltip', 'modal'}>",
+      "size": "<enum{'standard', 'compact'}>",
       "personalized_content": "<bool>",
       "running_targeted_advertising": "<bool>",
       "share_data_to_3rd_party": "<bool>",
@@ -96,9 +97,13 @@ The results will contain zero or more of the following objects:
 > [!Note]
 > The value of `display_style` affects what is allowed in `position`
 >
+> * `display_style` of `stretch` allows `position` `bottom` and `top`
 > * `display_style` of `banner` allows `position` `bottom` and `top`
 > * `display_style` of `tooltip` allows `position` `bottom_left`, `bottom_right`, `top_left` and `top_right`
 > * `display_style` of `modal` ignores the `position` field
+
+> [!Note]
+> The `size` value may be used with any `display_style`
 
 > [!Note]
 > US english `en` is required and will be selected by default even if `selected_languages` is set to an empty array
@@ -110,6 +115,7 @@ The results will contain zero or more of the following objects:
 * `position` is the position of the Banner*
 * `default_theme` is the name of the default theme to be used
 * `display_style` is style of the banner*
+* `size` is the size of the banner*
 * `personalized_content` does the website have content personalized for the user?
 * `running_targeted_advertising` are there targeted advertisements on the website?
 * `share_data_to_3rd_party`does the Website share data with third parties?
@@ -168,6 +174,7 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
+      "size": "standard",
       "personalized_content": true,
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
@@ -309,6 +316,7 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
+      "size": "standard",
       "personalized_content": true,
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
@@ -412,6 +420,7 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
+      "size": "compact",
       "personalized_content": true,
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
@@ -515,6 +524,7 @@ GET `https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%20
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
+      "size": "compact",
       "personalized_content": true,
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
@@ -656,6 +666,7 @@ GET `<https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%2
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
+      "size": "standard",
       "personalized_content": true,
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
@@ -759,6 +770,7 @@ GET `<https://api.termly.io/v1/websites/banners?query=%5B%0A%20%20%7B%0A%20%20%2
       "position": "bottom",
       "default_theme": "navy_blue",
       "display_style": "banner",
+      "size": "compact",
       "personalized_content": true,
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
