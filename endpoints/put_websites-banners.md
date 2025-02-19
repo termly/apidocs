@@ -17,6 +17,10 @@ Updates the banner for a website. The body has the following shape:
     "running_targeted_advertising": "<bool>",
     "share_data_to_3rd_party": "<bool>",
     "selected_languages": ["<enum{'el', 'hu', 'pt', 'sv', 'it', 'es', 'en-gb', 'da', 'fi', 'nl', 'fr', 'de', 'pl'}>"],
+    "policy_settings": {
+      "enable_privacy_policy_url": "<bool>",
+      "privacy_policy_url": "<string>"
+    },
     "regions": {
       "<enum{'global', 'us', 'california', 'eu'}>": {
         "enable_banner": "<bool>",
@@ -58,6 +62,9 @@ Updates the banner for a website. The body has the following shape:
 - `running_targeted_advertising` are there targeted advertisements on the website?
 - `share_data_to_3rd_party`does the Website share data with third parties?
 - `selected_languages` languages the banner will auto display in based on region
+- `policy_settings` privacy policy settings
+  - `enable_privacy_policy_url` is the privacy policy URL enabled?
+  - `privacy_policy_url` is the privacy policy URL
 - `regions` region specific settings
   - `<region name>` name of the region for the specific settings
     - `enable_banner` is the banner enabled?
@@ -118,6 +125,10 @@ PUT `https://api.termly.io/v1/websites/banners`
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
       "selected_languages": ["en", "pl"],
+      "policy_settings": {
+        "enable_privacy_policy_url": true,
+        "privacy_policy_url": "https://www.example.com/privacy-policy"
+      },
       "regions": {
         "global": {
           "enable_banner": true,
@@ -251,6 +262,10 @@ PUT `https://api.termly.io/v1/websites/banners`
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
       "selected_languages": ["en", "pl"],
+      "policy_settings": {
+        "enable_privacy_policy_url": true,
+        "privacy_policy_url": "https://www.example.com/privacy-policy"
+      },
       "regions": {
         "global": {
           "enable_banner": true,
@@ -355,6 +370,10 @@ PUT `https://api.termly.io/v1/websites/banners`
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
       "selected_languages": ["en", "pl"],
+      "policy_settings": {
+        "enable_privacy_policy_url": true,
+        "privacy_policy_url": "https://www.anotherexample.com/privacy-policy"
+      },
       "regions": {
         "global": {
           "enable_banner": true,
@@ -491,6 +510,10 @@ PUT `https://api.termly.io/v1/websites/banners`
       "running_targeted_advertising": false,
       "share_data_to_3rd_party": true,
       "selected_languages": ["en", "pl"],
+      "policy_settings": {
+        "enable_privacy_policy_url": true,
+        "privacy_policy_url": "https://www.example.com/privacy-policy"
+      },
       "regions": {
         "global": {
           "enable_banner": true,
