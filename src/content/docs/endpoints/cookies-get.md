@@ -3,8 +3,6 @@ title: Cookies
 description: A guide on how to use the Cookies endpoint
 ---
 
-⚠️ Endpoint is not yet implemented. Coming soon.
-
 ## GET
 
 Retrieve cookies. The query has the following shape:
@@ -34,7 +32,7 @@ The response has the following shape:
 {
 	"results": [],
 	"errors": [],
-	"scrolling": {}
+	"paging": {}
 }
 ```
 

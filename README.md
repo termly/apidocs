@@ -1,43 +1,77 @@
-# Starlight Starter Kit
+# Termly Public API Documentation
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+Source for the public Termly API documentation, published at **[docs.termly.io](https://docs.termly.io)**.
 
-## 🚀 Project Structure
+This is the partner-facing reference for the Termly Public API — authentication, request
+signing, and every supported endpoint. It is a [Starlight](https://starlight.astro.build)
+site built with [Astro](https://astro.build).
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+## Repository layout
 
 ```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   ├── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+src/
+├── assets/               # logo and images
+├── content/
+│   └── docs/
+│       ├── index.mdx     # landing page
+│       ├── introduction/ # authentication, making a request
+│       ├── quickstart/   # worked examples
+│       ├── endpoints/    # one page per endpoint + verb
+│       └── other/        # signature, query, paging, error objects
+└── content.config.ts
+astro.config.mjs          # site config and sidebar
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+Every `.md` / `.mdx` file under `src/content/docs/` becomes a route based on its path —
+`src/content/docs/endpoints/websites-get.md` is served at `/endpoints/websites-get/`.
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+## Local development
 
-Static assets, like favicons, can be placed in the `public/` directory.
+Requires Node.js 20+.
 
-## 🧞 Commands
+```bash
+npm install
+npm run dev      # http://localhost:4321
+```
 
-All commands are run from the root of the project, from a terminal:
+| Command | Action |
+| :------ | :----- |
+| `npm install` | Install dependencies |
+| `npm run dev` | Start the local dev server on port 4321 |
+| `npm run build` | Build the production site to `./dist/` |
+| `npm run preview` | Preview the production build locally |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Adding a page
 
-## 👀 Want to learn more?
+1. Add a `.md` file in the appropriate `src/content/docs/` subdirectory.
+2. Give it frontmatter with a `title` and `description`:
 
-Check out [Starlight’s docs](https://starlight.astro.build/), or read [the Astro documentation](https://docs.astro.build)
+   ```yaml
+   ---
+   title: Websites
+   description: A guide on how to use the Websites endpoint
+   ---
+   ```
+
+3. Add it to the `sidebar` array in `astro.config.mjs` — pages are **not** picked up
+   automatically. Use the slug without the `src/content/docs/` prefix or file extension,
+   e.g. `endpoints/websites-get`.
+4. Run `npm run build` before opening a PR. The build catches broken internal links and
+   invalid frontmatter.
+
+## Deployment
+
+Merges to the default branch publish automatically to
+[docs.termly.io](https://docs.termly.io) via Netlify. Every pull request gets its own
+Netlify deploy preview, linked in a comment on the PR — always check the preview before
+merging.
+
+Termly staff: the Netlify project, DNS, and rollback procedure are documented in the
+[Public API Docs — Netlify](https://termly.slite.com/app/docs/Bf2lxbjz-XOxfU) runbook
+in Slite.
+
+## Contributing
+
+The documentation must describe the API as it actually behaves. When an endpoint changes,
+update these docs in the same cycle — partners integrate directly against what is
+published here.

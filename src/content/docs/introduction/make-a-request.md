@@ -32,14 +32,26 @@ The value for ```Authorization``` must be:
 
 ## GET requests
 
-In addition to the 2 headers described above, a ```GET``` request can be made with a ```query``` or ```scrolling``` query string parameter. These 2 keys are mutually exclusive. A ```GET``` request will be rejected if both are found.
+In addition to the 2 headers described above, a ```GET``` request can be made with a ```query``` or ```paging``` query string parameter. These 2 keys are mutually exclusive. A ```GET``` request will be rejected if both are found. A request using ```query``` may also include a ```limit``` parameter to set the page size.
 
 - [Click here to read about ```query```](/other/query)
 - [Click here to read about ```paging```](/other/results-paging)
 
 ## DELETE requests
 
-While similar to a ```GET``` (they both don't have a payload), a ```DELETE``` request may only have the ```query``` query string parameter. ```DELETE``` does not support scrolling. It will delete all records matching the query.
+While similar to a ```GET``` (they both don't have a payload), a ```DELETE``` request may only have the ```query``` query string parameter. ```DELETE``` does not support paging. It will delete all records matching the query.
+
+## Response status codes
+
+Every request returns one of the following status codes:
+
+| Code | Meaning |
+| ------ | --------- |
+| `200` | The request succeeded for every object in the batch. |
+| `207` | The request succeeded for at least one object in the batch, but not all. See [Batch request processing](#batch-request-processing). |
+| `400` | The request failed for every object in the batch. |
+| `403` | Authorization failed. No objects were processed. See [Batch request processing](#batch-request-processing). |
+| `500` | The API encountered an internal error. Contact [support@termly.io](mailto:support@termly.io). |
 
 ## Batch request processing
 
