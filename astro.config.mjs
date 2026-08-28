@@ -12,9 +12,9 @@ export default defineConfig({
 				alt: 'Termly API Docs',
 				replacesTitle: true,
 			},
-			social: {
-				github: 'https://github.com/termly/termly-api-docs',
-			},
+			social: [
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/termly/public-api-docs' },
+			],
 			sidebar: [
 				{
 					label: 'Authentication',
