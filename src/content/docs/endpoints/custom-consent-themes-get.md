@@ -31,7 +31,7 @@ The response will look like:
 {
   "results": [],
   "errors": [],
-  "scrolling": {}
+  "paging": {}
 }
 ```
 

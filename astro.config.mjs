@@ -3,22 +3,18 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
+	site: 'https://docs.termly.io',
 	integrations: [
 		starlight({
-			title: '',
+			title: 'Termly API Docs',
 			logo: {
 				src: './src/assets/logo.svg',
-				alt: 'Termly API Docs'
+				alt: 'Termly API Docs',
+				replacesTitle: true,
 			},
 			social: {
-				github: 'https://github.com/termly/apidocs',
+				github: 'https://github.com/termly/termly-api-docs',
 			},
-			head: [
-				{
-					tag: 'title',
-					content: 'Termly API Docs',
-				},
-			],
 			sidebar: [
 				{
 					label: 'Authentication',
@@ -99,6 +95,19 @@ export default defineConfig({
 								{ label: 'DELETE', slug: 'endpoints/websites-delete' },
 							]
 						},
+					],
+				},
+				{
+					label: 'Reference',
+					items: [
+						{ label: 'Query', slug: 'other/query' },
+						{ label: 'Results Paging', slug: 'other/results-paging' },
+						{ label: 'Public Key', slug: 'other/public-key' },
+						{ label: 'Signature', slug: 'other/signature' },
+						{ label: 'Collaborator Roles', slug: 'other/collaborator-roles' },
+						{ label: 'Request Errors', slug: 'other/request-errors' },
+						{ label: 'Error Object', slug: 'other/error-object' },
+						{ label: 'Validation Error Object', slug: 'other/validation-error-object' },
 					],
 				},
 			],
