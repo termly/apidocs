@@ -6,7 +6,7 @@ description: A guide on how to use the Websites endpoint
 
 Delete an existing website from an account. The query has the following JSON shape:
 
-```JSON
+```json
 [
   {
     "account_id": "<string>",
@@ -25,13 +25,13 @@ Multiple deletion requests
 
 ## Request
 
-```
+```http
 DELETE https://api.termly.io/v1/websites?query=%5B%20%7B%22account_id%22%3A%20%22acct_123%22%2C%20%22id%22%3A%20%22web_1%22%7D%2C%20%7B%22account_id%22%3A%20%22acct_123%22%2C%20%22id%22%3A%20%22web_123%22%7D%5D
 ```
 
 ## Query
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -46,7 +46,7 @@ DELETE https://api.termly.io/v1/websites?query=%5B%20%7B%22account_id%22%3A%20%2
 
 ## Response
 
-```JSON
+```json
 [
   {
     "_idx": 0,
@@ -66,13 +66,13 @@ Multiple successful deletion requests from different accounts
 
 ## Request
 
-```
+```http
 DELETE https://api.termly.io/v1/websites?query=%5B%7B%20%22account_id%22%3A%20%22acct_1234%22%2C%22id%22%3A%20%22web_1234%22%7D%2C%7B%20%22account_id%22%3A%20%22acct_123%22%2C%20%22id%22%3A%20%22web_123%22%7D%5D
 ```
 
 ## Query
 
-```JSON
+```json
 [
   {
     "account_id": "acct_1234",
@@ -87,7 +87,7 @@ DELETE https://api.termly.io/v1/websites?query=%5B%7B%20%22account_id%22%3A%20%2
 
 ## Response
 
-```JSON
+```json
 [
   {
     "account_id": "acct_1234",
@@ -101,4 +101,3 @@ DELETE https://api.termly.io/v1/websites?query=%5B%7B%20%22account_id%22%3A%20%2
   }
 ]
 ```
-

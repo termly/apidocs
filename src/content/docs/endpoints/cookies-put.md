@@ -85,7 +85,9 @@ Updates a single cookie for a single website.
 
 ## Request
 
-PUT `https://api.termly.io/v1/websites/cookies`
+```http
+PUT https://api.termly.io/v1/websites/cookies
+```
 
 ## Request Body
 
@@ -133,7 +135,9 @@ Update multiple cookies for multiple websites.
 
 ## Request
 
-PUT `https://api.termly.io/v1/websites/cookies`
+```http
+PUT https://api.termly.io/v1/websites/cookies
+```
 
 ## Request Body
 
@@ -233,7 +237,9 @@ Updates single cookie with multiple requests due to website not found.
 
 ## Request
 
-PUT `https://api.termly.io/v1/websites/cookies`
+```http
+PUT https://api.termly.io/v1/websites/cookies
+```
 
 ## Request Body
 

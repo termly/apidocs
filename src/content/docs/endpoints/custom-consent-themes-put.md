@@ -7,7 +7,7 @@ description: A guide on how to use the Custom Consent Themes endpoint
 
 Update existing custom consent themes. The request body will have this shape:
 
-```JSON
+```json
 {
   "account_id": "<string>",
   "website_id": "<string>",
@@ -25,7 +25,7 @@ The body must have 1 or more of these objects. Any attributes not passed in will
 
 The response is an array of successful response objects or a [failure object](../../other/error-object):
 
-```JSON
+```json
 [
   {}
 ]
@@ -33,8 +33,7 @@ The response is an array of successful response objects or a [failure object](..
 
 Each object can represent either a success or a failure. A success response is a JSON object like this:
 
-
-```JSON
+```json
 {
   "account_id": "<string>",
   "website_id": "<string>",
@@ -58,13 +57,13 @@ Update multiple themes in different websites.
 
 ## Request
 
-```
+```http
 PUT https://api.termly.io/v1/websites/custom_consent_themes
 ```
 
 ## Request Body
 
-```JSON
+```json
 [
   {
     "website_id": "web_123",
@@ -93,7 +92,7 @@ PUT https://api.termly.io/v1/websites/custom_consent_themes
 
 ## Response
 
-```JSON
+```json
 [
   {
     "website_id": "web_123",
@@ -128,7 +127,7 @@ Multiple request one of which references a nonexistent account.
 
 ## Request Body
 
-```JSON
+```json
 [
   {
     "website_id": "web_123",
@@ -157,7 +156,7 @@ Multiple request one of which references a nonexistent account.
 
 ## Response
 
-```JSON
+```json
 [
   {
     "website_id": "web_123",

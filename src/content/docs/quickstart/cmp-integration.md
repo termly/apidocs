@@ -3,7 +3,7 @@ title: Quickstart - Integrating Termly CMP
 description: A guide on how to integrate Termly as a CMP
 ---
 
-This quickstart guide is designed for Termly Integration Partners (e.g. website builders) who are aiming to integrate Termly into their platform as a Consent Management Platform (CMP) solution for their own users. 
+This quickstart guide is designed for Termly Integration Partners (e.g. website builders) who are aiming to integrate Termly into their platform as a Consent Management Platform (CMP) solution for their own users.
 
 Below we outline (1) a step-by-step process for a basic integration and (2) advice for more advanced customization scenarios.
 
@@ -19,7 +19,7 @@ Create a new website in your partner account, providing necessary details like t
 
 ### **2. Initiate Website Scan**
 
-Start a website scan to identify cookies, trackers, and other elements requiring consent. 
+Start a website scan to identify cookies, trackers, and other elements requiring consent.
 
 **Documentation:** [Scan API](/endpoints/trigger-scan)
 
@@ -45,14 +45,13 @@ Banner appearance and behavior can be modified to suit each website's needs. Som
 
 **Documentation:** [Banner Settings](/endpoints/banners-put), [Theming](/endpoints/custom-consent-themes-get)
 
-
 #### Custom Consent Themes
 
 To customize banner colors, fonts, and button styles, use the Custom Consent Themes endpoints. The complete flow is:
 
 **1. Check if a theme already exists** with a GET request before creating a new one:
 
-```
+```http
 GET https://api.termly.io/v1/websites/custom_consent_themes?query=<url_encoded_json>
 ```
 
@@ -69,7 +68,7 @@ Where the query JSON (URL-encoded) is:
 
 *If no theme exists*, create one with POST:
 
-```
+```http
 POST https://api.termly.io/v1/websites/custom_consent_themes
 ```
 
@@ -92,7 +91,7 @@ The response includes the theme `id` (e.g. `cct_xxxx`) — save this for step 3.
 
 *If a theme already exists*, update it with PUT using the `id` from the GET response:
 
-```
+```http
 PUT https://api.termly.io/v1/websites/custom_consent_themes
 ```
 
@@ -110,7 +109,7 @@ PUT https://api.termly.io/v1/websites/custom_consent_themes
 
 **3. Apply the theme to the banner** — this is a required step to make the theme visible to site visitors:
 
-```
+```http
 PUT https://api.termly.io/v1/websites/banners
 ```
 
@@ -136,7 +135,7 @@ For a complete working code example, see the [Node.js Authentication Example](/q
 
 ### **User Collaboration**
 
-Integration Partners may want their users to get access to the Termly Dashboard for full customization of their CMP solution, or in order to generate legal policies. 
+Integration Partners may want their users to get access to the Termly Dashboard for full customization of their CMP solution, or in order to generate legal policies.
 
 The collaborators API can be used to invite a user to access a specific site via an invite URL, which they can use to log in to the Termly Dashboard.
 
@@ -144,7 +143,7 @@ The collaborators API can be used to invite a user to access a specific site via
 
 ### **Script Blocking Management**
 
-In order for the CMP to be effective at respecting a site visitor’s consent preferences, a [script blocking method](https://support.termly.io/en/articles/7904702-how-to-block-third-party-cookies) must be employed. 
+In order for the CMP to be effective at respecting a site visitor’s consent preferences, a [script blocking method](https://support.termly.io/en/articles/7904702-how-to-block-third-party-cookies) must be employed.
 
 To streamline this process, Integration Partners may want to generate a [custom blocking map](https://support.termly.io/en/articles/7904650-implementing-a-custom-blocking-map-to-change-auto-blocker-s-blocking-behavior) across the sites that they manage. This allows for consistent blocking behavior across many websites, which can be useful in the case where the same service is employed across them all (e.g. a third party booking service).
 

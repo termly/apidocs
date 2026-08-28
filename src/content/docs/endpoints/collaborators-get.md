@@ -11,12 +11,12 @@ Retrieve all or some of the collaborators for the specified query. The query has
 
 ```json
 [
-	{
-		"account_id": "<string>",
-		"ids": [
-			"<string>"
-		]
-	}
+  {
+    "account_id": "<string>",
+    "ids": [
+      "<string>"
+    ]
+  }
 ]
 
 ```
@@ -33,9 +33,9 @@ The response has the following shape:
 
 ```json
 {
-	"results": [],
-	"errors": [],
-	"paging": {}
+  "results": [],
+  "errors": [],
+  "paging": {}
 }
 
 ```
@@ -44,17 +44,17 @@ The response has the following shape:
 
 ```json
 {
-	"id": "<string>",
-	"account_id": "<string>",
-	"email": "<string>",
-	"first_name": "<string|null>",
-	"last_name": "<string|null>",
-	"invitation_url": "<string|null>",
-	"invitation_status": "<enum{'pending', 'accepted'}>",
-	"role": "<enum{'admin', 'editor'}>",
-	"website_ids": [
-		"<string>"
-	]
+  "id": "<string>",
+  "account_id": "<string>",
+  "email": "<string>",
+  "first_name": "<string|null>",
+  "last_name": "<string|null>",
+  "invitation_url": "<string|null>",
+  "invitation_status": "<enum{'pending', 'accepted'}>",
+  "role": "<enum{'admin', 'editor'}>",
+  "website_ids": [
+    "<string>"
+  ]
 }
 
 ```
@@ -74,172 +74,184 @@ The response has the following shape:
 `paging` is an object that indicates if there are more results to retrieve. Please see [paging](../../other/results-paging)
 
 # Example 1
+
 Request for a single account and all collaborators.
 
 ## Request
-```shell
+
+```http
 GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acct_1234%22%7D%5D
 
 ```
 
 ## Query
+
 ```json
 [
-	{
-		"account_id": "acct_1234"
-	}
+  {
+    "account_id": "acct_1234"
+  }
 ]
 
 ```
 
 ## Response
+
 ```json
 {
-	"results": [
-		{
-			"id": "col_1",
-			"account_id": "acct_1234",
-			"email": "collaborator1@example.com",
-			"first_name": "Collaborator",
-			"last_name": "One",
-			"role": "admin",
-			"invitation_url": null,
-			"invitation_status": "accepted"
-		},
-		{
-			"id": "col_2",
-			"account_id": "acct_1234",
-			"email": "collaborator2@example.com",
-			"role": "editor",
-			"website_ids": [
-				"web_12",
-				"web_24",
-				"web_36"
-			],
-			"invitation_url": "https://app.termly.io/invitation",
-			"invitation_status": "pending"
-		}
-	],
-	"errors": [],
-	"paging": {
-		"next_results": null,
-		"previous_results": null
-	}
+  "results": [
+    {
+      "id": "col_1",
+      "account_id": "acct_1234",
+      "email": "collaborator1@example.com",
+      "first_name": "Collaborator",
+      "last_name": "One",
+      "role": "admin",
+      "invitation_url": null,
+      "invitation_status": "accepted"
+    },
+    {
+      "id": "col_2",
+      "account_id": "acct_1234",
+      "email": "collaborator2@example.com",
+      "role": "editor",
+      "website_ids": [
+        "web_12",
+        "web_24",
+        "web_36"
+      ],
+      "invitation_url": "https://app.termly.io/invitation",
+      "invitation_status": "pending"
+    }
+  ],
+  "errors": [],
+  "paging": {
+    "next_results": null,
+    "previous_results": null
+  }
 }
 
 ```
 
 # Example 2
+
 Request for a single account and specific collaborators.
 
 ## Request
-```shell
+
+```http
 GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acct_1234%22%2C%22ids%22%3A%5B%22col_12%22%2C%22col_34%22%5D%7D%5D
 
 ```
 
 ## Query
+
 ```json
 [
-	{
-		"account_id": "acct_1234",
-		"ids": [
-			"col_12",
-			"col_34"
-		]
-	}
+  {
+    "account_id": "acct_1234",
+    "ids": [
+      "col_12",
+      "col_34"
+    ]
+  }
 ]
 
 ```
 
 ## Response
+
 ```json
 {
-	"results": [
-		{
-			"id": "col_12",
-			"account_id": "acct_1234",
-			"email": "collaborator1@example.com",
-			"first_name": "Collaborator",
-			"last_name": "One",
-			"role": "admin",
-			"invitation_url": null,
-			"invitation_status": "accepted"
-		},
-		{
-			"id": "col_34",
-			"account_id": "acct_1234",
-			"email": "collaborator2@example.com",
-			"first_name": "Collaborator",
-			"last_name": "Two",
-			"role": "editor",
-			"website_ids": [
-				"web_12",
-				"web_24",
-				"web_36"
-			],
-			"invitation_url": "https://app.termly.io/invitation",
-			"invitation_status": "pending"
-		}
-	],
-	"errors": [],
-	"paging": {
-		"next_results": null,
-		"previous_results": null
-	}
+  "results": [
+    {
+      "id": "col_12",
+      "account_id": "acct_1234",
+      "email": "collaborator1@example.com",
+      "first_name": "Collaborator",
+      "last_name": "One",
+      "role": "admin",
+      "invitation_url": null,
+      "invitation_status": "accepted"
+    },
+    {
+      "id": "col_34",
+      "account_id": "acct_1234",
+      "email": "collaborator2@example.com",
+      "first_name": "Collaborator",
+      "last_name": "Two",
+      "role": "editor",
+      "website_ids": [
+        "web_12",
+        "web_24",
+        "web_36"
+      ],
+      "invitation_url": "https://app.termly.io/invitation",
+      "invitation_status": "pending"
+    }
+  ],
+  "errors": [],
+  "paging": {
+    "next_results": null,
+    "previous_results": null
+  }
 }
 
 ```
 
 # Example 3
+
 Request for a single account and 2 collaborators. One of the collaborators does not exist.
 
 ## Request
-```shell
+
+```http
 GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acct_1234%22%2C%22ids%22%3A%5B%22col_12%22%2C%22col_34%22%5D%7D%5D
 
 ```
 
 ## Query
+
 ```json
 [
-	{
-		"account_id": "acct_1234",
-		"ids": [
-			"col_12",
-			"col_34"
-		]
-	}
+  {
+    "account_id": "acct_1234",
+    "ids": [
+      "col_12",
+      "col_34"
+    ]
+  }
 ]
 
 ```
 
 ## Response
+
 ```json
 {
-	"results": [
-		{
-			"id": "col_12",
-			"account_id": "acct_1234",
-			"email": "collaborator1@example.com",
-			"first_name": "Collaborator",
-			"last_name": "One",
-			"role": "admin",
-			"invitation_url": null,
-			"invitation_status": "accepted"
-		}
-	],
-	"errors": [
-		{
-			"error": "object_not_found",
-			"account_id": "acct_1234",
-			"id": "col_34"
-		}
-	],
-	"paging": {
-		"next_results": null,
-		"previous_results": null
-	}
+  "results": [
+    {
+      "id": "col_12",
+      "account_id": "acct_1234",
+      "email": "collaborator1@example.com",
+      "first_name": "Collaborator",
+      "last_name": "One",
+      "role": "admin",
+      "invitation_url": null,
+      "invitation_status": "accepted"
+    }
+  ],
+  "errors": [
+    {
+      "error": "object_not_found",
+      "account_id": "acct_1234",
+      "id": "col_34"
+    }
+  ],
+  "paging": {
+    "next_results": null,
+    "previous_results": null
+  }
 }
 
 ```

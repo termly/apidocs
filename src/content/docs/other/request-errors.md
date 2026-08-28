@@ -7,7 +7,7 @@ description: Request errors raised when the entire request is in error or unreco
 
 Request errors are raised when the entire request is in error or unrecoverable. The JSON is formed as shown:
 
-```JSON
+```json
 {
   "error": "<string>"
 }
@@ -19,7 +19,7 @@ Request errors are raised when the entire request is in error or unrecoverable. 
 
 Returned when the bulk request has to many request objects. The current limit is 5 requests for POST/PUT/DELETE and 10 for GET.  
 
-```JSON
+```json
 {
   "error": "too_many_items"
 }
@@ -29,7 +29,7 @@ Returned when the bulk request has to many request objects. The current limit is
 
 THe API key that was given does not exist or has been disabled.  
 
-```JSON
+```json
 {
   "error": "unauthorized"
 }
@@ -39,7 +39,7 @@ THe API key that was given does not exist or has been disabled.
 
 The API key does not have the correct role to complete one or more of the requested actions. Even if some of the requests would have been successful if one of the requests is not authorized the entire request will fail.
 
-```JSON
+```json
 {
   "error": "forbidden"
 }
@@ -49,7 +49,7 @@ The API key does not have the correct role to complete one or more of the reques
 
 The API request encountered an unexpected and un recoverable error
 
-```JSON
+```json
 {
   "error": "server_error"
 }

@@ -1,5 +1,5 @@
-
 ---
+
 title: Signature
 description: A guide on how to use the signature to authenticate requests to the Termly API
 ---
@@ -20,7 +20,7 @@ If the request does not have a body, use an empty string.
 
 If you were concatenating a string:
 
-```
+```text
 HTTP Method + '\n' +
 Host + '\n' + 
 Path + '\n' +
@@ -33,11 +33,11 @@ HexEncode(SHA256(RequestBody))
 
 Here is an example of a GET that retrieves all collaborators for an account:
 
-```
+```http
 GET https://api.termly.io/v1/collaborators?query=%5B%7B%22account_id%22%3A%22acct_1234%22%7D%5D
 ```
 
-```
+```text
 GET
 api.termly.io
 /v1/collaborators
@@ -48,11 +48,11 @@ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 
 Here is an example of a GET that retrieves the next page of collaborators:
 
-```
+```http
 GET https://api.termly.io/v1/collaborators?paging=A5cgPfPunjxXFyicGz9H9ZkUwtLtD6nsgi6DPVGMs1CiA4qWHBKzoQ
 ```
 
-```
+```text
 GET
 api.termly.io
 /v1/collaborators
@@ -63,7 +63,7 @@ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 
 ## Example PUT/POST
 
-```
+```text
 POST
 api.termly.io
 /v1/collaborators
@@ -100,7 +100,7 @@ It is required that the request payload does not change when put on the transpor
 
 Signing the canonical request is done with a derived key to provide a bit more protection. The following are signatures for a semantically equivalent GET requests using a different derived key each time:
 
-```
+```text
 689353c26ac70969c2e6f9f51244c231589e5215cf57f6e79c08d70966e86463
 c8d3f86abfc0e66e035bb2663a14bb1c12302ae9c78b669406875b0ca66c20c1
 ff1d91f9781ba30c8980d1212947859f3ad53c2bdf9cc7b8026d7c4b2cbdaec3
@@ -108,7 +108,7 @@ ff1d91f9781ba30c8980d1212947859f3ad53c2bdf9cc7b8026d7c4b2cbdaec3
 
 The derived key is created with the following steps:
 
-```
+```text
 secret = <partner private key>
 secret = HMAC-SHA256(secret, <X-Termly-Timestamp value>)
 secret = HMAC-SHA256(secret, 'default')
@@ -121,12 +121,12 @@ The 'default' and 'termly' strings are for future expansion.
 
 Creating the final signature is done with the following:
 
-```
+```text
 signature = HMAC-SHA256(secret, <Canonical Request String value>)
 ```
 
 Once the signature is calculated, add the following header to your HTTP request:
 
-```
+```text
 Authorization: TermlyV1, PublicKey=<partner public key>, Signature=<signature>
 ```

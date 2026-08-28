@@ -7,7 +7,7 @@ description: A guide on how to use the Custom Consent Themes endpoint
 
 Create a new custom consent theme for a website. The request body will be JSON:
 
-```JSON
+```json
 {
   "account_id": "<string>",
   "website_id": "<string>",
@@ -34,7 +34,7 @@ The body must have 1 or more of these objects.  Once created, the JSON must be p
 
 The response is an array of successful response objects or a [failure object](../../other/error-object):
 
-```JSON
+```json
 [
   {}
 ]
@@ -42,7 +42,7 @@ The response is an array of successful response objects or a [failure object](..
 
 Each object can represent either a success or a failure. A success response is a JSON object like this:
 
-```JSON
+```json
 {
   "account_id": "<string>",
   "website_id": "<string>",
@@ -64,13 +64,13 @@ If the entire request is in error or invalid the result JSON will be [request er
 
 ## Request
 
-```
+```http
 POST https://api.termly.io/v1/websites/custom_consent_themes
 ```
 
 ## Body
 
-```JSON
+```json
 [
   {
     "website_id": "web_123",
@@ -87,7 +87,7 @@ POST https://api.termly.io/v1/websites/custom_consent_themes
 
 ## Response
 
-```JSON
+```json
 [
   {
     "website_id": "web_123",
@@ -110,13 +110,13 @@ Request for 2 different accounts
 
 ## Request
 
-```
+```http
 POST https://api.termly.io/v1/websites/custom_consent_themes
 ```
 
 ## Body
 
-```JSON
+```json
 [
   {
     "website_id": "web_123",
@@ -143,7 +143,7 @@ POST https://api.termly.io/v1/websites/custom_consent_themes
 
 ## Response
 
-```JSON
+```json
 [
   {
     "website_id": "web_123",

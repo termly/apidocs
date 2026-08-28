@@ -9,14 +9,14 @@ Update one or more collaborators. The following is the JSON that is posted.
 
 ```json
 [
-	{
-		"account_id": "<string>",
-		"id": "<string>",
-		"role": "<enum{'admin', 'editor'}>",
-		"website_ids": [
-			"<string>"
-		]
-	}
+  {
+    "account_id": "<string>",
+    "id": "<string>",
+    "role": "<enum{'admin', 'editor'}>",
+    "website_ids": [
+      "<string>"
+    ]
+  }
 ]
 ```
 
@@ -29,20 +29,20 @@ At least 1 object is required in the request.
 
 The response is an array of objects. If the collaborator can be updated successfully, the object will have the following shape:
 
-```
+```json
 {
-	"_idx": <integer>,
-	"id": "<string>",
-	"account_id": "<string>",
-	"email": "<string>",
-	"first_name": "<string|null>",
-	"last_name": "<string|null>",
-	"invitation_url": "<string>",
-	"invitation_status": "<enum{'pending', 'accepted'}>",
-	"role": "<enum{'admin', 'editor'}>",
-	"website_ids": [
-		"<string>"
-	]
+  "_idx": <integer>,
+  "id": "<string>",
+  "account_id": "<string>",
+  "email": "<string>",
+  "first_name": "<string|null>",
+  "last_name": "<string|null>",
+  "invitation_url": "<string>",
+  "invitation_status": "<enum{'pending', 'accepted'}>",
+  "role": "<enum{'admin', 'editor'}>",
+  "website_ids": [
+    "<string>"
+  ]
 }
 ```
 
@@ -60,37 +60,40 @@ The response is an array of objects. If the collaborator can be updated successf
 If one of the collaborators cannot be updated, the object will be an [error object](../../other/error-object). If the error is a validation error, there will be a field called [validation errors](../../other/validation-error-object).
 
 # Example 1
+
 Request for a single collaborator
 
 ## Request
-```shell
+
+```http
 PUT https://api.termly.io/v1/collaborators
 
 [
-	{
-		"account_id": "acct_1234",
-		"id": "col_12",
-		"role": "editor",
-		"website_ids": [ "web_12", "web_34" ]
-	}
+  {
+    "account_id": "acct_1234",
+    "id": "col_12",
+    "role": "editor",
+    "website_ids": [ "web_12", "web_34" ]
+  }
 ]
 
 ```
 
 ## Response
+
 ```json
 [
-	{
-		"_idx": 0,
-		"id": "col_1",
-		"account_id": "acct_1234",
-		"email": "collaborator1@example.com",
-		"first_name": "Collaborator",
-		"last_name": "One",
-		"role": "editor",
-		"website_ids": [ "web_12", "web_34" ],
-		"invitation_url": null,
-		"invitation_status": "accepted"
-	}
+  {
+    "_idx": 0,
+    "id": "col_1",
+    "account_id": "acct_1234",
+    "email": "collaborator1@example.com",
+    "first_name": "Collaborator",
+    "last_name": "One",
+    "role": "editor",
+    "website_ids": [ "web_12", "web_34" ],
+    "invitation_url": null,
+    "invitation_status": "accepted"
+  }
 ]
 ```

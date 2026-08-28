@@ -17,7 +17,7 @@ record. Each object describes one lookup:
 
 URL-encoded, that becomes the value you actually send:
 
-```
+```http
 GET https://api.termly.io/v1/websites?query=%5B%7B%22account_id%22%3A%22acct_1234%22%7D%5D
 ```
 

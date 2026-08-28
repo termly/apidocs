@@ -27,8 +27,8 @@ The response has the following shape:
 
 ```json
 {
-	"results": [],
-	"errors": []
+  "results": [],
+  "errors": []
 }
 ```
 
@@ -48,7 +48,9 @@ Delete one cookie.
 
 ## Request
 
-`DELETE https://api.termly.io/v1/websites/cookies?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22id%22%3A%20%22ck_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%0A%5D`
+```http
+DELETE https://api.termly.io/v1/websites/cookies?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22id%22%3A%20%22ck_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%0A%5D
+```
 
 ## Query
 
@@ -66,7 +68,7 @@ Delete one cookie.
 
 ```json
 {
-	"results": [
+  "results": [
       {
         "account_id": "acct_1234",
         "cookie_id": "ck_1234",
@@ -74,7 +76,7 @@ Delete one cookie.
         "_idx": 1
       }    
     ],
-	"errors": []
+  "errors": []
 }
 ```
 
@@ -84,7 +86,9 @@ Delete multiple cookies.
 
 ## Request
 
-`DELETE https://api.termly.io/v1/websites/cookies?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22id%22%3A%20%22ck_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22id%22%3A%20%22ck_0123%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%0A%5D%0A`
+```http
+DELETE https://api.termly.io/v1/websites/cookies?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22id%22%3A%20%22ck_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22id%22%3A%20%22ck_0123%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%0A%5D%0A
+```
 
 ## Query
 
@@ -107,7 +111,7 @@ Delete multiple cookies.
 
 ```json
 {
-	"results": [
+  "results": [
       {
         "account_id": "acct_1234",
         "cookie_id": "ck_1234",
@@ -121,7 +125,7 @@ Delete multiple cookies.
         "_idx": 1
       }    
     ],
-	"errors": []
+  "errors": []
 }
 ```
 
@@ -131,7 +135,9 @@ Delete multiple cookies with one not found.
 
 ## Request
 
-`DELETE https://api.termly.io/v1/websites/cookies?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22id%22%3A%20%22ck_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22id%22%3A%20%22ck_0123%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%0A%5D%0A`
+```http
+DELETE https://api.termly.io/v1/websites/cookies?query=%5B%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22id%22%3A%20%22ck_1234%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%2C%0A%20%20%7B%0A%20%20%20%20%22account_id%22%3A%20%22acct_1234%22%2C%0A%20%20%20%20%22id%22%3A%20%22ck_0123%22%2C%0A%20%20%20%20%22website_id%22%3A%20%22web_1234%22%0A%20%20%7D%0A%5D%0A
+```
 
 ## Query
 
@@ -154,7 +160,7 @@ Delete multiple cookies with one not found.
 
 ```json
 {
-	"results": [
+  "results": [
       {
         "account_id": "acct_1234",
         "cookie_id": "ck_1234",
@@ -162,7 +168,7 @@ Delete multiple cookies with one not found.
         "_idx": 0
       }    
     ],
-	"errors": [
+  "errors": [
       {
         "error": "object_not_found",
         "_idx": 1

@@ -5,7 +5,7 @@ description: A guide on how to use the Custom Consent Themes endpoint
 
 ## GET
 
-```JSON
+```json
 [
   {
     "account_id": "<string>",
@@ -27,7 +27,7 @@ All ```GET``` requests are subject to paging, please refer to [Result Paging](..
 
 The response will look like:
 
-```JSON
+```json
 {
   "results": [],
   "errors": [],
@@ -37,7 +37,7 @@ The response will look like:
 
 `results` will be 0 or more objects with this shape:
 
-```JSON
+```json
 {
   "account_id": "<string>",
   "website_id": "<string>",
@@ -71,13 +71,13 @@ Request all custom themes for a given website.
 
 ## Request
 
-```
+```http
 GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_id%22%3A%20%22acct_123%22%2C%22website_id%22%3A%20%22web_123%22%2C%20%22ids%22%3A%20%5B%22cct_123%22%5D%7D%5D
 ```
 
 ## Query
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -89,7 +89,7 @@ GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_
 
 ## Response
 
-```JSON
+```json
 {
   "results": [
     {
@@ -118,13 +118,13 @@ Request a specific custom theme that does not exist
 
 ## Request
 
-```
+```http
 GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_id%22%3A%20%22acct_123%22%2C%22website_id%22%3A%20%22web_123%22%2C%20%22ids%22%3A%20%5B%22cct_1234%22%5D%7D%5D
 ```
 
 ## Query
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -136,7 +136,7 @@ GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_
 
 ## Response
 
-```JSON
+```json
 {
   "results": [],
   "errors": [

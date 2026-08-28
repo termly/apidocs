@@ -40,6 +40,3 @@ public_1 | priv_3 | nil
 With the prior data, Termly will try to validate requests first with `priv_3` and then `priv_1`.
 
 Termly tracks usages of keys and exposes that on your key management page. This way you'll know if there is still usage of an expiring key.
-
-
-

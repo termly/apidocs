@@ -5,11 +5,11 @@ description: A Node.js example of how to make a request to the Termly API
 
 Follow these steps to get the example up and running on your local machine.
 
-### Prerequisites
+## Prerequisites
 
 You will need to add the following files to your project:
 
-#### env.example
+### env.example
 
 ```bash
 PUBLIC_KEY=YOUR_PUBLIC_KEY
@@ -19,7 +19,7 @@ WEBSITE_ID=YOUR_WEBSITE_ID
 API_BASE_URL=https://api.termly.io
 ```
 
-#### package.json
+### package.json
 
 ```json
 {
@@ -42,7 +42,7 @@ API_BASE_URL=https://api.termly.io
 }
 ```
 
-#### server.js
+### server.js
 
 ```javascript
 import express from 'express';
@@ -231,32 +231,38 @@ app.listen(port, () => {
     console.log('  PUT  /custom-consent-themes/:themeId   - Update a theme');
 });
 ```
+
 ### Steps
 
 1. **Install dependencies:**
+
 ``` bash
 npm install
 ```
 
-2. **Set up environment variables:**
+1. **Set up environment variables:**
 
 Copy the .env.example file to a new file named .env and update it with your API credentials:
 
 ``` bash
 cp .env.example .env
 ```
+
 Then open .env and fill in your values:
+
 - `PUBLIC_KEY` and `PRIVATE_KEY` — your API key pair
 - `ACCOUNT_ID` — your Termly account ID (e.g. `acct_xxxx`)
 - `WEBSITE_ID` — the website ID to manage themes for (e.g. `web_xxxx`)
 - `API_BASE_URL` — use `https://api.termly.io`
 
 ## Running the Example
+
 To run the example, execute:
 
 ``` bash
 npm start
 ```
+
 This will start the server on port 3000.
 
 ### Test Authentication
