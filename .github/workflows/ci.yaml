@@ -23,7 +23,8 @@ jobs:
       - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --no-progress --exclude-all-private --accept 200,206,429 './dist/**/*.html'
+          # Everything else comes from lychee.toml, shared with `npm run check:links`.
+          args: --root-dir ${{ github.workspace }}/dist './dist/**/*.html'
           fail: true
 
   lint:

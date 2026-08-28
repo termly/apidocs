@@ -40,6 +40,21 @@ npm run dev      # http://localhost:4321
 | `npm run dev` | Start the local dev server on port 4321 |
 | `npm run build` | Build the production site to `./dist/` |
 | `npm run preview` | Preview the production build locally |
+| `npm run check` | Everything CI runs: build, sidebar, links, lint |
+| `npm run lint` | Lint the markdown |
+| `npm run lint:fix` | Fix what the linter can fix automatically |
+| `npm run check:sidebar` | Fail if a page is missing from the sidebar |
+| `npm run check:links` | Check links in `./dist` (needs a build first) |
+
+`npm run check` runs the same checks as CI, so run it before opening a PR.
+Link checking uses [lychee](https://lychee.cli.rs), which is a separate binary:
+
+```sh
+brew install lychee
+```
+
+Its settings live in `lychee.toml` and are shared with CI. External link checks
+occasionally fail on a dropped connection — re-run before assuming a link is dead.
 
 ## Adding a page
 
