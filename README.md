@@ -61,13 +61,15 @@ npm run dev      # http://localhost:4321
 
 ## Deployment
 
-Merges to the default branch publish automatically to
-[docs.termly.io](https://docs.termly.io) via Netlify. Every pull request gets its own
-Netlify deploy preview, linked in a comment on the PR — always check the preview before
-merging.
+Merges to `main` publish automatically to [docs.termly.io](https://docs.termly.io) via
+GitHub Pages, using the `Deploy Astro site to Pages` workflow in
+`.github/workflows/astro.yml`.
 
-Termly staff: the Netlify project, DNS, and rollback procedure are documented in the
-[Public API Docs — Netlify](https://termly.slite.com/app/docs/Bf2lxbjz-XOxfU) runbook
+Pull requests get a build check (`.github/workflows/ci.yml`) but no preview deployment —
+GitHub Pages only serves `main`. To see rendered changes, run `npm run dev` locally.
+
+Termly staff: the Pages setup, DNS, and rollback procedure are documented in the
+[Public API Docs — hosting](https://termly.slite.com/app/docs/Bf2lxbjz-XOxfU) runbook
 in Slite.
 
 ## Contributing
