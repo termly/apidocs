@@ -7,8 +7,13 @@ no_progress = true
 # Nothing in the built site should point at a private or local address.
 exclude_all_private = true
 
-# The 404 page's own canonical URL returns 404 by design.
-exclude = ["docs\\.termly\\.io/404"]
+exclude = [
+  # The 404 page's own canonical URL returns 404 by design.
+  "docs\\.termly\\.io/404",
+  # The Intercom-hosted help centre serves 403 to datacenter IPs, so these
+  # resolve fine in a browser but always fail from a CI runner.
+  "support\\.termly\\.io",
+]
 
 # 206 for range responses, 429 for hosts that rate-limit our checker.
 accept = ["200", "206", "429"]

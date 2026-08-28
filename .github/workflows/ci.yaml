@@ -24,7 +24,7 @@ jobs:
         uses: lycheeverse/lychee-action@v2
         with:
           # Everything else comes from lychee.toml, shared with `npm run check:links`.
-          args: --root-dir ${{ github.workspace }}/dist './dist/**/*.html'
+          args: --config lychee.toml --root-dir ${{ github.workspace }}/dist './dist/**/*.html'
           fail: true
 
   lint:

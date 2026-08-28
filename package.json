@@ -11,7 +11,7 @@
     "lint": "markdownlint-cli2",
     "lint:fix": "markdownlint-cli2 --fix",
     "check:sidebar": "node scripts/check-sidebar.mjs",
-    "check:links": "lychee --root-dir \"$PWD/dist\" './dist/**/*.html'",
+    "check:links": "lychee --config lychee.toml --root-dir \"$PWD/dist\" './dist/**/*.html'",
     "check": "npm run build && npm run check:sidebar && npm run check:links && npm run lint"
   },
   "dependencies": {
