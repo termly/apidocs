@@ -78,7 +78,7 @@ occasionally fail on a dropped connection — re-run before assuming a link is d
 
 Merges to `main` publish automatically to [docs.termly.io](https://docs.termly.io) via
 GitHub Pages, using the `Deploy Astro site to Pages` workflow in
-`.github/workflows/astro.yml`.
+`.github/workflows/astro.yaml`.
 
 Pull requests get a build check (`.github/workflows/ci.yml`) but no preview deployment —
 GitHub Pages only serves `main`. To see rendered changes, run `npm run dev` locally.
