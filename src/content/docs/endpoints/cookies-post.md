@@ -53,7 +53,7 @@ The response has the following shape:
 
 ```json
 {
-	[]
+  []
 }
 ```
 
@@ -90,7 +90,9 @@ Creates a single cookie for a single website.
 
 ## Request
 
-POST `https://api.termly.io/v1/websites/cookies`
+```http
+POST https://api.termly.io/v1/websites/cookies
+```
 
 ## Request Body
 
@@ -137,7 +139,9 @@ Creates multiple cookies for multiple websites.
 
 ## Request
 
-POST `https://api.termly.io/v1/websites/cookies`
+```http
+POST https://api.termly.io/v1/websites/cookies
+```
 
 ## Request Body
 
@@ -211,7 +215,9 @@ Creates single cookie with multiple requests due to website not found.
 
 ## Request
 
-POST `https://api.termly.io/v1/websites/cookies`
+```http
+POST https://api.termly.io/v1/websites/cookies
+```
 
 ## Request Body
 

@@ -40,6 +40,21 @@ npm run dev      # http://localhost:4321
 | `npm run dev` | Start the local dev server on port 4321 |
 | `npm run build` | Build the production site to `./dist/` |
 | `npm run preview` | Preview the production build locally |
+| `npm run check` | Everything CI runs: build, sidebar, links, lint |
+| `npm run lint` | Lint the markdown |
+| `npm run lint:fix` | Fix what the linter can fix automatically |
+| `npm run check:sidebar` | Fail if a page is missing from the sidebar |
+| `npm run check:links` | Check links in `./dist` (needs a build first) |
+
+`npm run check` runs the same checks as CI, so run it before opening a PR.
+Link checking uses [lychee](https://lychee.cli.rs), which is a separate binary:
+
+```sh
+brew install lychee
+```
+
+Its settings live in `lychee.toml` and are shared with CI. External link checks
+occasionally fail on a dropped connection — re-run before assuming a link is dead.
 
 ## Adding a page
 
@@ -61,13 +76,15 @@ npm run dev      # http://localhost:4321
 
 ## Deployment
 
-Merges to the default branch publish automatically to
-[docs.termly.io](https://docs.termly.io) via Netlify. Every pull request gets its own
-Netlify deploy preview, linked in a comment on the PR — always check the preview before
-merging.
+Merges to `main` publish automatically to [docs.termly.io](https://docs.termly.io) via
+GitHub Pages, using the `Deploy Astro site to Pages` workflow in
+`.github/workflows/astro.yaml`.
 
-Termly staff: the Netlify project, DNS, and rollback procedure are documented in the
-[Public API Docs — Netlify](https://termly.slite.com/app/docs/Bf2lxbjz-XOxfU) runbook
+Pull requests get a build check (`.github/workflows/ci.yml`) but no preview deployment —
+GitHub Pages only serves `main`. To see rendered changes, run `npm run dev` locally.
+
+Termly staff: the Pages setup, DNS, and rollback procedure are documented in the
+[Public API Docs — hosting](https://termly.slite.com/app/docs/Bf2lxbjz-XOxfU) runbook
 in Slite.
 
 ## Contributing

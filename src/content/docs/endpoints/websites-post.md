@@ -6,7 +6,7 @@ description: A guide on how to use the Websites endpoint
 
 Create new websites in the given account. The request body will be JSON:
 
-```
+```json
 [
   {
     "account_id": "<string>",
@@ -40,7 +40,7 @@ The body must have 1 or more of these objects.  Once created, the JSON must be p
 
 The response is an array of success or error response objects with this shape:
 
-```
+```json
 [
   {
     "account_id": "<string>",
@@ -89,20 +89,19 @@ The shape of an error object is described [here](../../other/error-object#post-p
 
 If the entire request is in error or invalid the result JSON will be [request error object](../../other/request-errors)
 
-
 # Example 1
 
 Request to create a single website
 
 ## Request
 
-```
+```http
 POST https://api.termly.io/v1/websites
 ```
 
 ## Request Body
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -132,7 +131,7 @@ POST https://api.termly.io/v1/websites
 
 ## Response
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -183,13 +182,13 @@ Submit multiple websites one of which has a validation error
 
 ## Request
 
-```
+```http
   POST https://api.termly.io/v1/websites
 ```
 
 ## Request Body
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -242,7 +241,7 @@ Submit multiple websites one of which has a validation error
 
 ## Response
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -296,4 +295,3 @@ Submit multiple websites one of which has a validation error
   }
 ]
 ```
-

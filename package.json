@@ -7,11 +7,18 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "markdownlint-cli2",
+    "lint:fix": "markdownlint-cli2 --fix",
+    "check:sidebar": "node scripts/check-sidebar.mjs",
+    "check:links": "lychee --config lychee.toml --root-dir \"$PWD/dist\" './dist/**/*.html'",
+    "check": "npm run build && npm run check:sidebar && npm run check:links && npm run lint"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.32.5",
-    "astro": "^5.5.3",
-    "sharp": "^0.32.5"
+    "@astrojs/starlight": "^0.41.10",
+    "astro": "^7.2.9"
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "^0.23.2"
   }
 }

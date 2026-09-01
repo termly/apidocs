@@ -5,13 +5,14 @@ description: A guide on how to use cursor-based pagination to navigate through A
 
 # Overview
 
-The Termly Public API uses cursor-based pagination to handle large result sets efficiently. 
+The Termly Public API uses cursor-based pagination to handle large result sets efficiently.
 This system provides stable, consistent pagination even when data changes between requests.
 
 ## How It Works
 
 - Default page size is 20 results per request
 - Page size can be customized using the `limit` parameter. If provided, the response object will include a `paging` object with `next` and `previous` properties
+
 ```json
 {
   "results": [...],
@@ -22,27 +23,33 @@ This system provides stable, consistent pagination even when data changes betwee
   }
 }
 ```
+
 - The `next` and `previous` tokens contain all necessary state information
 - In subsequent requests, include the `next` token (if not null) to get the next page and the `previous` token (if not null) to get the previous page
 
 ## Request Parameters
+
 We use the `GET /v1/websites` in these examples, but the same pagination logic/rules apply to all `GET` endpoints.
 
 ### First Request
-```shell
+
+```http
 GET /v1/websites?query=<encoded_json_body>&limit=<number>
 ```
 
 **Parameters:**
+
 - `query` (required): JSON-encoded request body containing your search criteria
 - `limit` (optional): Maximum number of results per page (default: 20)
 
 ### Subsequent Requests
-```shell
+
+```http
 GET /v1/websites?paging=<pagination_token>
 ```
 
 **Parameters:**
+
 - `paging` (required): Pagination token from the previous response. This can be either the `next` or `previous` token
 
 ## Response Structure
@@ -61,6 +68,7 @@ The API response includes a `paging` object with pagination information:
 ```
 
 **Fields:**
+
 - `next`: Pagination token for the next page (null if no more results)
 - `previous`: Pagination token for the previous page (null if on first page)
 
@@ -75,6 +83,7 @@ The API response includes a `paging` object with pagination information:
 ## Troubleshooting
 
 **Common Issues:**
+
 - **"Invalid paging token"**: The token may be malformed or corrupted. Start over with a fresh request.
 - **Empty results**: Check that your `account_id` is correct.
 - **Pagination not working**: Ensure you're using the `paging` parameter (not `query`) for subsequent requests.

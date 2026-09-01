@@ -10,7 +10,7 @@ When information in the cookie policy is changed it needs to be republished.  In
 * `company information` in the `/websites` endpoint
 * `cookies`
 
-```JSON
+```json
 [
   {
     "account_id": "<string>",
@@ -23,7 +23,7 @@ The body must have 1 or more of these objects.  Once created, the JSON must be p
 
 The response is an array of success or error response objects with this shape:
 
-```
+```json
 [
   {
     "account_id": "<string>",
@@ -37,20 +37,19 @@ The shape of an error object is described [here](../../other/error-object#post-p
 
 If the entire request is in error or invalid the result JSON will be [request error object](../../other/request-errors)
 
-
 # Example 1
 
 Request the cookie policy be published for a given website.
 
 ## Request
 
-```
+```http
 POST https://api.termly.io/v1/websites/documents/publish_cookie_policies
-``` 
+```
 
 ## Query
 
-```JSON
+```json
 [
   {
     "account_id": "acct_1234",
@@ -61,7 +60,7 @@ POST https://api.termly.io/v1/websites/documents/publish_cookie_policies
 
 ## Response
 
-```JSON
+```json
 [
   {
     "account_id": "acct_1234",
@@ -76,13 +75,13 @@ Multiple accounts and websites to publish document or website cannot be found.
 
 ## Request
 
-```
+```http
 GET https://api.termly.io/v1/websites/documents/publish_cookie_policies
-``` 
+```
 
 ## Query
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -98,7 +97,7 @@ GET https://api.termly.io/v1/websites/documents/publish_cookie_policies
 
 ## Response
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",

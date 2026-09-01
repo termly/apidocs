@@ -1,0 +1,17 @@
+{
+  "globs": ["src/content/docs/**/*.md"],
+  "config": {
+    "default": true,
+    // Indentation in the JSON and JS examples is two spaces per level.
+    "MD010": { "spaces_per_tab": 2 },
+    // Prose wraps freely and JSON examples run long.
+    "MD013": false,
+    // Endpoint pages repeat Request/Response headings per verb.
+    "MD024": false,
+    // Pages use multiple H1s as section breaks.
+    "MD025": false,
+    // "Click here to read about `query`" is the established link style.
+    "MD059": false,
+    "MD060": false
+  }
+}

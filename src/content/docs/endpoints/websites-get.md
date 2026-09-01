@@ -65,7 +65,6 @@ description: A guide on how to use the Websites endpoint
 | `website_public_id_invalid` | Invalid format for website public ID |
 | `json_is_invalid` | Invalid JSON in the request body |
 
-
 ### Paging
 
 All ```GET``` requests are subject to paging, please refer to [Result Paging](../../other/results-paging) for details.
@@ -74,7 +73,7 @@ All ```GET``` requests are subject to paging, please refer to [Result Paging](..
 
 The response will look like:
 
-```JSON
+```json
 {
   "results": [],
   "errors": [],
@@ -161,11 +160,10 @@ The response will look like:
   * `country` country
 * `consent_count` number of users who have consented to cookies
 * `code_snippet` object that contains JavaScript snippets to install termly on the website
-    * `banner` JavaScript snippet to install the banner on the website
-      * Note: The auto blocker is enabled by default with `autoBlock=on` in the snippet. It may be manually disabled by changing the snippet to `autoBlock=off`
-    * `cookie_preference_button` JavaScript snippet to install the preferences button on the website
+  * `banner` JavaScript snippet to install the banner on the website
+    * Note: The auto blocker is enabled by default with `autoBlock=on` in the snippet. It may be manually disabled by changing the snippet to `autoBlock=off`
+  * `cookie_preference_button` JavaScript snippet to install the preferences button on the website
 * `api_key` WordPress API key of the website
-
 
 ### Example 1
 
@@ -173,7 +171,7 @@ Request all websites for a given account
 
 #### Body
 
-```JSON
+```json
 [
   {
     "account_id": "acct_1234"
@@ -187,7 +185,7 @@ Multiple accounts and websites in each account and one website cannot be found
 
 #### Body
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -207,7 +205,7 @@ Request with `ids` parameter but value is empty array
 
 #### Body
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -218,7 +216,7 @@ Request with `ids` parameter but value is empty array
 
 This would result in an error response
 
-```JSON
+```json
 {
   "results": [],
   "errors": [
@@ -243,7 +241,7 @@ Request with `domain` parameter
 
 #### Body
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -255,7 +253,7 @@ Request with `domain` parameter
 This would result in a response containing websites for all domains and subdomains for `example.com`.
 Note that the value of some fields in the result objects (websites) have been removed to reduce clutter in the example.
 
-```JSON
+```json
 {
   "results": [
     {

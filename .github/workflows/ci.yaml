@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      # A page can build cleanly and still be unreachable from the nav.
+      - run: npm run check:sidebar
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Everything else comes from lychee.toml, shared with `npm run check:links`.
+          args: --config lychee.toml --root-dir ${{ github.workspace }}/dist './dist/**/*.html'
+          fail: true
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npm run lint

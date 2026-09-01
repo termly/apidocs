@@ -3,9 +3,10 @@ title: Make a Request
 description: A guide on how to make a request to the Termly API
 ---
 
-When making requests to the Termly API, the host to use is api.termly.io. It is only accessible via https. Please note that your requests are made against a live account. If you need a test account for integration purposes, at this time please reach out to support@termly.io to ask for one to be setup.
+When making requests to the Termly API, the host to use is api.termly.io. It is only accessible via https. Please note that your requests are made against a live account. If you need a test account for integration purposes, at this time please reach out to <support@termly.io> to ask for one to be setup.
 
 ## All Requests
+
 All requests to `api.termly.io` must include the following two HTTP headers:
 
 1. X-Termly-Timestamp
@@ -62,4 +63,3 @@ There is one exception to this rule. For authorization, it is all or nothing. Fo
 ## Example
 
 If you'd like to see an example of how to make a request to the Termly API, you can see the [Node.js Auth Example](/quickstart/node-js-example).
-

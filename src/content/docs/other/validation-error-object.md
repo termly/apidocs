@@ -7,7 +7,7 @@ description: Shape of validation error objects for each request verb
 
 This type of error is returned when the request has a validation errors. This response will be part of an array that may contain other errors or successful responses.  The error will be formatted like this:
 
-```JSON
+```json
 {
   "error": "<string",
   "_idx": <integer>,
@@ -26,12 +26,11 @@ This type of error is returned when the request has a validation errors. This re
   * `field` the attribute of the object that caused this validation failure. If the validation failure is general to the object this will be `"object"`
   * `error` validation error code
 
-
 ### Example
 
 Returned when the requested change is not valid
 
-```JSON
+```json
 {
   "error": "validation_errors",
   "_idx": 2,

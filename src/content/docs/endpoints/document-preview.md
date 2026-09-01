@@ -9,7 +9,7 @@ Preview the documents for a website. If all the documents for the website should
 
 ## Request
 
-```JSON
+```json
 [
   {
     "account_id": "<string>",
@@ -32,7 +32,7 @@ All ```GET``` requests are subject to paging, please refer to [Result Paging](..
 
 The response will look like:
 
-```JSON
+```json
 {
   "results": [],
   "errors": [],
@@ -42,7 +42,7 @@ The response will look like:
 
 `results` will be 0 or more objects with this shape:
 
-```
+```json
 {
   "account_id": "<string>",
   "website_id": "<string>",
@@ -79,7 +79,7 @@ Paste both lines into the page where the policy should appear.
 
 The script replaces the `<div>` with an iframe served from `https://app.termly.io`. If the page sends a `Content-Security-Policy` header, it must allow both the script and the frame:
 
-```
+```text
 script-src https://app.termly.io;
 frame-src  https://app.termly.io;
 ```
@@ -92,7 +92,7 @@ Without `frame-src`, the script loads and the request succeeds, but the browser 
 
 If it does not, the endpoint still succeeds and still returns the document, but `code_snippet` is `null`:
 
-```JSON
+```json
 {
   "account_id": "acct_123",
   "website_id": "web_123",
@@ -109,7 +109,7 @@ A `null` here is a provisioning issue, not a request error. Nothing appears in `
 
 The `data-id` in the snippet is the document's UUID. It is the `id` field from the same response with the `doc_` prefix removed:
 
-```
+```text
 id       doc_8f2c1e4a-3b7d-4c19-9e5a-6d0f2b8c7a31
 data-id      8f2c1e4a-3b7d-4c19-9e5a-6d0f2b8c7a31
 ```
@@ -126,13 +126,13 @@ Request the preview of all documents for a given website
 
 ## Request
 
-```
+```http
 GET https://api.termly.io/v1/websites/documents/preview?query=%5B%7B%22account_id%22%3A%20%22acct_1234%22%2C%22website_id%22%3A%20%22web_123%22%7D%5D
 ```
 
 ## Query
 
-```JSON
+```json
 [
   {
     "account_id": "acct_1234",
@@ -143,7 +143,7 @@ GET https://api.termly.io/v1/websites/documents/preview?query=%5B%7B%22account_i
 
 ## Response
 
-```JSON
+```json
 {
   "results": [
     {
@@ -177,13 +177,13 @@ Multiple accounts and documents in each account, one document cannot be found, a
 
 ## Request
 
-```
+```http
 GET https://api.termly.io/v1/websites/documents/preview?query=%5B%20%7B%20%22account_id%22%3A%20%22acct_123%22%2C%20%22ids%22%3A%20%5B%22web_123%22%5D%7D%2C%20%7B%22account_id%22%3A%20%22acct_1234%22%2C%20%22ids%22%3A%20%5B%22web_13%22%2C%20%22web_14%22%5D%7D%5D
 ```
 
 ## Query
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -201,7 +201,7 @@ GET https://api.termly.io/v1/websites/documents/preview?query=%5B%20%7B%20%22acc
 
 ## Response
 
-```JSON
+```json
 {
   "results": [
     {
@@ -242,13 +242,13 @@ Request the French-localized preview of all documents for a given website
 
 ## Request
 
-```
+```http
 GET https://api.termly.io/v1/websites/documents/preview?query=%5B%7B%22account_id%22%3A%20%22acct_1234%22%2C%22website_id%22%3A%20%22web_123%22%2C%22lang%22%3A%20%22fr%22%7D%5D
 ```
 
 ## Query
 
-```JSON
+```json
 [
   {
     "account_id": "acct_1234",
@@ -260,7 +260,7 @@ GET https://api.termly.io/v1/websites/documents/preview?query=%5B%7B%22account_i
 
 ## Response
 
-```JSON
+```json
 {
   "results": [
     {

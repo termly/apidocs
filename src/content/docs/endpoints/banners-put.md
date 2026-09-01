@@ -7,7 +7,7 @@ Banners are the interface to managing cookies, they are displayed when a visitor
 
 ## Update (PUT)
 
-#### Overview
+### Overview
 
 Updates the banner for a website. The body has the following shape:
 
@@ -105,9 +105,11 @@ The response will contain the full list of objects that were PUT including, but 
 
 Request update for a single banner.
 
-#### Request
+### Request
 
-PUT ```https://api.termly.io/v1/banners```
+```http
+PUT https://api.termly.io/v1/banners
+```
 
 #### Request Body
 
@@ -238,10 +240,11 @@ The response will contain the full object that was PUT including, but not limite
 
 Request update for multiple banners.
 
-#### Request
+### Request
 
-PUT ```https://api.termly.io/v1/banners```
-
+```http
+PUT https://api.termly.io/v1/banners
+```
 
 #### Request Body
 
@@ -479,9 +482,11 @@ PUT ```https://api.termly.io/v1/banners```
 
 Request update for multiple banners. One website does not exist.
 
-#### Request
+### Request
 
-PUT ```https://api.termly.io/v1/banners```
+```http
+PUT https://api.termly.io/v1/banners
+```
 
 #### Request Body
 
@@ -605,7 +610,3 @@ PUT ```https://api.termly.io/v1/banners```
     }
 ]
 ```
-
-
-
-

@@ -7,7 +7,7 @@ description: Shape of error objects for each request verb
 
 When a GET request has an error it will be represented by an object in the `error` array with this shape:
 
-```JSON
+```json
 {
   "error": "<string>",
   "account_id": "<string>",
@@ -19,8 +19,7 @@ When a GET request has an error it will be represented by an object in the `erro
 
 Returned when the given `id` does not exist:
 
-
-```JSON
+```json
 {
   "error": "object_not_found",
   "account_id": "acct_123",
@@ -32,7 +31,7 @@ Returned when the given `id` does not exist:
 
 This type of error is returned when the request that made it was in error. This response will be part of an array that may contain other errors or successful responses.  The error will be formatted like this:
 
-```JSON
+```json
 {
   "error": "<string",
   "_idx": <integer>,
@@ -46,7 +45,7 @@ This type of error is returned when the request that made it was in error. This 
 
 Returned when the requested object cannot be found
 
-```JSON
+```json
 {
   "error": "object_not_found",
   "_idx": 1

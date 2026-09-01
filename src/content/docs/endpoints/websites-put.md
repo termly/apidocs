@@ -6,7 +6,7 @@ description: A guide on how to use the Websites endpoint
 
 Update an existing websites in the given account. The request body will be JSON:
 
-```
+```json
 [
   {
     "account_id": "<string>",
@@ -41,7 +41,7 @@ The body must have 1 or more of these objects. Any attributes not passed in will
 
 The response is an array of success or error response objects
 
-```
+```json
 [
   {
     "account_id": "<string>",
@@ -90,20 +90,19 @@ An error response is detailed in [error object](../../other/error-object#delete-
 
 If the entire request is in error or invalid, the result JSON will be [request error object](../../other/request-errors)
 
-
 # Example 1
 
 Request to update a single website
 
 ## Request
 
-```
+```http
 PUT https://api.termly.io/v1/websites
 ```
 
 ## Request Body
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -134,7 +133,7 @@ PUT https://api.termly.io/v1/websites
 
 ## Response
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -185,13 +184,13 @@ Submit multiple websites, one of which does not exist.
 
 ## Request
 
-```
+```http
   PUT https://api.termly.io/v1/websites
 ```
 
 ## Request Body
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -246,7 +245,7 @@ Submit multiple websites, one of which does not exist.
 
 ## Response
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",

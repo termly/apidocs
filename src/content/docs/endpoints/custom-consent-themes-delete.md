@@ -7,7 +7,7 @@ description: A guide on how to use the Custom Consent Themes endpoint
 
 Delete an existing custom consent theme. The query has the following JSON shape:
 
-```JSON
+```json
 [
   {
     "account_id": "<string>",
@@ -27,13 +27,13 @@ Multiple deletion requests
 
 ## Request
 
-```
+```http
 DELETE https://api.termly.io/v1/websites/custom_consent_themes?query=%5B%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_124%22%2C%22id%22%3A%22cct_123%22%7D%2C%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_123%22%2C%22id%22%3A%22cct_12%22%7D%5D
 ```
 
 ## Query
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -50,7 +50,7 @@ DELETE https://api.termly.io/v1/websites/custom_consent_themes?query=%5B%7B%22ac
 
 ## Response
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -73,13 +73,13 @@ Multiple requests with one failure
 
 ## Request
 
-```
+```http
 DELETE https://api.termly.io/v1/websites/custom_consent_themes?query=%5B%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_124%22%2C%22id%22%3A%22cct_123%22%7D%2C%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_123%22%2C%22id%22%3A%22cct_12%22%7D%2C%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_123%22%2C%22id%22%3A%22cct_123%22%7D%5D
 ```
 
 ## Query
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
@@ -101,7 +101,7 @@ DELETE https://api.termly.io/v1/websites/custom_consent_themes?query=%5B%7B%22ac
 
 ## Response
 
-```JSON
+```json
 [
   {
     "account_id": "acct_123",
