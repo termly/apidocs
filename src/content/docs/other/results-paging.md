@@ -41,6 +41,9 @@ GET /v1/websites?query=<encoded_json_body>&limit=<number>
 
 - `query` (required): JSON-encoded request body containing your search criteria
 - `limit` (optional): Maximum number of results per page (default: 20)
+  - Values of `0` or below return `1` result
+  - Non-integer values use the default
+  - Some endpoints enforce a maximum; see the endpoint's page (e.g. [Get Websites](../../endpoints/websites-get))
 
 ### Subsequent Requests
 
