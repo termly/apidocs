@@ -33,8 +33,10 @@ description: A guide on how to use the Websites endpoint
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `query` | `string` | ✅ | JSON-encoded request body containing the `json` array |
-| `limit` | `integer` | ❌ | Maximum number of results to return (default: system limit) |
+| `limit` | `integer` | ❌ | Maximum number of results to return (default: `20`, maximum: `20`) |
 | `paging` | `object` | ❌ | Pagination parameters for cursor-based pagination |
+
+Values above `20` are capped at `20`. Values of `0` or below return `1` result. Non-integer values use the default.
 
 ### Response Structure
 
