@@ -15,7 +15,7 @@
     "check": "npm run build && npm run check:sidebar && npm run check:links && npm run lint"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.41.10",
+    "@astrojs/starlight": "^0.42.4",
     "astro": "^7.2.9"
   },
   "devDependencies": {
